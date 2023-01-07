@@ -1,0 +1,45 @@
+.card{
+  padding: 10px;
+  border: none !important;
+  background-color: #ffffff;
+}
+.img{
+  width: 100%;
+  height: 140px;
+  background-image: url("https://www.ifad.org/documents/38714174/46178650/africa_numbers_cover.jpg/cef00dbd-c030-5aae-c607-8f0d9a19cd3f");
+  border-radius: 8px;
+  position: relative;
+}
+
+h2{
+  font-size: 16px;
+  font-weight: 600;
+}
+h3{
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.bg-success{
+  background-color: #1D9874 !important;
+}
+
+hr {
+  margin-top: .2rem;
+  margin-bottom: .2rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn{
+  display: block;
+  width: 32px;
+  height: 32px;
+  padding: 0 !important;
+  margin: 0 !important;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
