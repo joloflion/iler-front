@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-signup-form',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./signup-form.component.scss']
 })
 export class SignupFormComponent {
+  constructor(public authService: AuthService){
 
+  }
 }

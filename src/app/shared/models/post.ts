@@ -6,5 +6,10 @@ export interface Post {
   target: number;
   rised: number;
   remainingTime: number;
+  validated: boolean;
+  image: string;
+  author: any;
+  startDate: string;
+  endDate: string;
 
 }

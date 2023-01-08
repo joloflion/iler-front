@@ -1,5 +1,5 @@
 <div *ngIf="post != undefined" class="container">
-  <img src="assets/images/post.jpg" alt="" class="img-fluid rounded">
+  <img [src]="post.image" alt="" class="img-fluid rounded">
 <h3 class="title mt-3">{{post.title}}</h3>
   <h6>Autor</h6>
   <div class="d-flex  justify-content-between">

@@ -2,6 +2,7 @@ import { PostService } from './../../shared/services/post.service';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Post } from 'src/app/shared/models/post';
+import { QueryDocumentSnapshot } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-post-caroursel',
@@ -19,8 +20,8 @@ export class PostCarourselComponent implements OnInit{
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
-    touchDrag: false,
-    pullDrag: false,
+    touchDrag: true,
+    pullDrag: true,
     dots: false,
     navSpeed: 700,
 
@@ -42,7 +43,13 @@ export class PostCarourselComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.posts = this.postService.getPosts();
+    this.postService.getPosts().subscribe(res =>{
+      res.docs.forEach((d: QueryDocumentSnapshot<any>) =>{
+        let data = d.data();
+        data.id = d.id;
+        this.posts.push(data)
+      })
+    })
   }
 
 

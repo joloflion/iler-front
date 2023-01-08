@@ -5,10 +5,10 @@
   <div class="collapse navbar-collapse" >
     <ul class="navbar-nav ms-auto">
       <li class="nav-item">
-        <a class="nav-link" [href]="link">
+        <a class="nav-link" [href]=" authService.userData != null ? 'account/'+authService.userData.uid: 'sign-in'">
           <i class="far fa-user fa-lg"></i>
-          <span *ngIf="!isAuthenticated"> Se connecter</span>
-          <span *ngIf="isAuthenticated"> Mon espace</span>
+          <span *ngIf="!authService.isLoggedIn"> Se connecter</span>
+          <span *ngIf="authService.isLoggedIn"> Mon espace</span>
         </a>
       </li>
     </ul>

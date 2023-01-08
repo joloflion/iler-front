@@ -1,3 +1,7 @@
+import { AuthGuard } from './shared/guard/auth.guard';
+import { AccountComponent } from './pages/account/account.component';
+import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
+import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { PostDetailsComponent } from './pages/post-details/post-details.component';
 import { SigninComponent } from './pages/signin/signin.component';
@@ -12,11 +16,11 @@ const routes: Routes = [
     component: HomePageComponent
   },
   {
-    path: 'signin',
+    path: 'sign-in',
     component: SigninComponent
   },
   {
-   path: 'signup',
+   path: 'sign-up',
    component: SignupComponent
   },
   {
@@ -24,8 +28,21 @@ const routes: Routes = [
     component: PostDetailsComponent
   },
   {
+    path: 'account/:id',
+    component: AccountComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'add',
     component: AddPostPageComponent
+  },
+  {
+    path: 'forgot-password',
+    component: ForgetPasswordComponent
+  },
+  {
+    path: 'verify-email-address',
+    component: VerifyEmailComponent
   }
 ];
 

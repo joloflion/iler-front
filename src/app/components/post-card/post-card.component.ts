@@ -19,6 +19,12 @@ export class PostCardComponent {
   this.router.navigate(['posts/'+id])
   }
 
+ getTime(start: string, end: string): number{
 
+  let date1 =  new Date(start);
+   let date2 =  new Date(end);
+
+  return date2.getTime() - date1.getTime();
+ }
 
 }

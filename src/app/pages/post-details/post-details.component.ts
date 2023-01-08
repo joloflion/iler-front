@@ -18,12 +18,14 @@ export class PostDetailsComponent implements OnInit{
 
   ngOnInit(){
      this.route.paramMap.subscribe(p =>{
-     this.post = this.postService.getById(p.get('id')!)
+      this.postService.getById(p.get('id')!).subscribe((res: any)=>{
+        console.log(res.data())
+        this.post = res.data()
+      })
      })
   }
 
   getPercent(target: number, raised: number){
-    console.log(raised)
     return (raised/target)*100;
   }
 

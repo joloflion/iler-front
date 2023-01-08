@@ -1,16 +1,16 @@
-<div class="card mx-2" (click)="go(post.id!)">
+<div *ngIf="post" class="card mx-2" (click)="go(post.id!)">
   <div class="img p-2">
     <button class="btn rounded-circle bg-white">
       <i class="fa fa-heart text-success"></i>
     </button>
   </div>
   <h2 class="mt-3">{{post.title}}</h2>
-  <h6 class="text-muted">Babacar Senghor</h6>
+  <h6 class="text-muted">{{post.author?.displayName}}</h6>
   <hr>
-  <h3 >Budget: 200 000 f cfa</h3>
+  <h3 >Budget: {{post.target}} </h3>
   <div class="d-flex justify-content-between ">
     <div class="align-self-center">
-      <cd-timer [countdown]="true" [startTime]="100" format="hms"></cd-timer>
+      <cd-timer [countdown]="true" [startTime]="getTime(post.startDate, post.endDate)" format="hms"></cd-timer>
     </div>
     <circle-progress
         class="smooth align-self-center"

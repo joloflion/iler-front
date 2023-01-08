@@ -1,1 +1,60 @@
-<p>signup-form works!</p>
+<div class="displayTable">
+  <div class="displayTableCell">
+    <div class="authBlock">
+      <h3>Inscription </h3>
+      <div class="form-group mt-3">
+        <input
+          type="text"
+          class="form-control form-control-lg"
+          placeholder="Prenom et nom"
+          #name
+          required
+        />
+      </div>
+      <div class="form-group mt-3">
+        <input
+          type="email"
+          class="form-control form-control-lg"
+          placeholder="Email"
+          #userEmail
+          required
+        />
+      </div>
+      <div class="form-group mt-3">
+        <input
+          type="password"
+          class="form-control form-control-lg"
+          placeholder="Mot de passe"
+          #userPwd
+          required
+        />
+      </div>
+      <div class="d-grid gap-2 d-md-block mt-4">
+        <input
+          type="button"
+          class="btn"
+          value="S'inscrire"
+          (click)="authService.SignUp(userEmail.value, userPwd.value, name.value)"
+        />
+      </div>
+
+      <!-- Continue with Google -->
+      <div class="d-grid gap-2 d-md-block mt-5">
+        <button
+          type="button"
+          class="btn google-btn"
+          (click)="authService.GoogleAuth()"
+        >
+          <i class="fab fa-google-plus-g"></i>
+          Utiliser mon compte google
+        </button>
+      </div>
+    </div>
+    <div class="redirect-to-login text-muted mt-3">
+      <span
+        > Deja un compte ?
+        <span class="redirect" routerLink="/sign-in">Se connecter</span></span
+      >
+    </div>
+  </div>
+</div>

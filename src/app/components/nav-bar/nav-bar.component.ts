@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/shared/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit{
+  constructor(public authService: AuthService){
 
-  link: string = "/signin";
-  isAuthenticated: boolean = true;
+  }
 
+  link: string = "/sign-in";
 
   ngOnInit(){
-     this.link = !this.isAuthenticated ? this.link : "/account/233"
+
   }
 
 }

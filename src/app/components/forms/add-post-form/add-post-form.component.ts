@@ -1,3 +1,7 @@
+import { Post } from 'src/app/shared/models/post';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { PostService } from './../../../shared/services/post.service';
 import { FileUploadService } from './../../../shared/services/file-upload.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
@@ -15,10 +19,14 @@ export class AddPostFormComponent implements OnInit{
   file!: File;
   isSubmitted: boolean = false;
   url: any;
+  post!: Post;
 
 
   constructor(private fileUploadService: FileUploadService,
-     private fb: FormBuilder){
+     private fb: FormBuilder,
+     public authService: AuthService,
+     private router: Router,
+     private postService: PostService){
 
   }
 
@@ -89,6 +97,16 @@ export class AddPostFormComponent implements OnInit{
 
  save(){
   this.isSubmitted = true;
+  if(this.authService.isLoggedIn && this.authService.userData != null){
+    this.post = this.campagnForm.value;
+    this.post.validated = false;
+    this.post.rised = 0;
+    this.post.target = this.campagnForm.get('amount')?.value;
+    this.post.author = this.authService.userData.displayName;
+    this.post.author = this.authService.userData;
+    this.postService.save(this.post);
+  }
+
 
  }
 

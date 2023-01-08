@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/shared/services/auth.service';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -7,6 +8,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./signin-form.component.scss']
 })
 export class SigninFormComponent {
+
+  constructor(public authService:AuthService){
+
+  }
 
   form: FormGroup = new FormGroup({
     username: new FormControl('', [Validators.email, Validators.required]),

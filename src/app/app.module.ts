@@ -24,6 +24,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { CdTimerModule } from 'angular-cd-timer';
 import { AddPostPageComponent } from './pages/add-post-page/add-post-page.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environments/environment';
+import { AuthService } from './shared/services/auth.service';
+import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
+import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
+import { AccountComponent } from './pages/account/account.component';
 
 
 
@@ -46,7 +56,10 @@ import { AddPostPageComponent } from './pages/add-post-page/add-post-page.compon
     TitleComponent,
     NavBarComponent,
     AboutUsComponent,
-    AddPostPageComponent
+    AddPostPageComponent,
+    ForgetPasswordComponent,
+    VerifyEmailComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
@@ -56,11 +69,16 @@ import { AddPostPageComponent } from './pages/add-post-page/add-post-page.compon
     NgCircleProgressModule.forRoot(),
     AngularMaterialModule,
     ReactiveFormsModule,
-    CdTimerModule
+    CdTimerModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
 
 
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
