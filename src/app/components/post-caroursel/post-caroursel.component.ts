@@ -44,7 +44,7 @@ export class PostCarourselComponent implements OnInit{
 
   ngOnInit(): void {
     this.postService.getPosts().subscribe(res =>{
-      res.docs.forEach((d: QueryDocumentSnapshot<any>) =>{
+      res.docs.forEach((d: any) =>{
         let data = d.data();
         data.id = d.id;
         this.posts.push(data)
