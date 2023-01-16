@@ -28,7 +28,7 @@ export class PostCarourselComponent implements OnInit{
 
     responsive: {
       0: {
-        items: 2
+        items: 1
       },
       400: {
         items: 3
@@ -37,7 +37,13 @@ export class PostCarourselComponent implements OnInit{
         items: 4
       },
       940: {
-        items: 6
+        items: 4
+      },
+      992:{
+        items: 4
+      },
+     1200: {
+         items: 6
       }
     },
     nav: false

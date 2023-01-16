@@ -25,6 +25,27 @@ export class PostCardComponent {
    let date2 =  new Date(end);
 
   return date2.getTime() - date1.getTime();
+
+
+ }
+
+
+ colorByDeadline(target: number, collected: number){
+
+  let p = (collected/target)*100;
+
+  if(p <= 30 ){
+    return '#FD5D5D'
+  }
+  if(p <= 60 &&  p>30){
+    return '#EC9B3B'
+  }
+  if(p >= 60){
+    return '#379237'
+  }
+
+  return '';
+
  }
 
 }

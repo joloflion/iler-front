@@ -37,6 +37,7 @@ import { VerifyEmailComponent } from './pages/verify-email/verify-email.componen
 import { AccountComponent } from './pages/account/account.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import  {TruncatePipe} from './shared/pipes/transform.pipe';
 
 
 
@@ -63,7 +64,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     ForgetPasswordComponent,
     VerifyEmailComponent,
     AccountComponent,
-    LoaderComponent
+    LoaderComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
