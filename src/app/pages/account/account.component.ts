@@ -1,13 +1,29 @@
+import { Post } from 'src/app/shared/models/post';
+import { PostService } from './../../shared/services/post.service';
 import { AuthService } from './../../shared/services/auth.service';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.scss']
 })
-export class AccountComponent {
-  constructor(public authService: AuthService){
+export class AccountComponent implements OnInit {
 
+  user$ = this.authService.userData;
+posts: Post[] = [];
+  constructor(public authService: AuthService, public postService: PostService) {
+
+  }
+
+  ngOnInit(): void {
+    this.authService.afAuth.authState.subscribe(user =>{
+      this.getPosts(user?.uid!)
+    })
+  }
+
+
+  getPosts(id: string): void{
+    this.postService.getByUserId(id);
   }
 }

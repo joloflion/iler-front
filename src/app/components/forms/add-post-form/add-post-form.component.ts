@@ -5,7 +5,6 @@ import { PostService } from './../../../shared/services/post.service';
 import { FileUploadService } from './../../../shared/services/file-upload.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import DateFormatter from 'src/app/shared/utils/date-formater';
 
 @Component({
   selector: 'app-add-post-form',
@@ -103,7 +102,11 @@ export class AddPostFormComponent implements OnInit{
     this.post.rised = 0;
     this.post.target = this.campagnForm.get('amount')?.value;
     this.post.author = this.authService.userData.displayName;
-    this.post.author = this.authService.userData;
+    this.post.author = {
+      name: this.authService.userData.displayName,
+      uid:  this.authService.userData.uid,
+      phone: ''
+    }
     this.postService.save(this.post);
   }
 

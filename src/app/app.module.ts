@@ -1,3 +1,4 @@
+import { LoaderInterceptor } from './shared/interceptor/loader.interceptor';
 import { AngularMaterialModule } from './shared/material.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -34,6 +35,8 @@ import { AuthService } from './shared/services/auth.service';
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
 import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
 import { AccountComponent } from './pages/account/account.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 
@@ -59,7 +62,8 @@ import { AccountComponent } from './pages/account/account.component';
     AddPostPageComponent,
     ForgetPasswordComponent,
     VerifyEmailComponent,
-    AccountComponent
+    AccountComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +82,12 @@ import { AccountComponent } from './pages/account/account.component';
 
 
   ],
-  providers: [AuthService],
+  providers: [AuthService,
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoaderInterceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,6 +11,8 @@ import { map } from 'rxjs';
 })
 export class PostService {
 
+  posts$: Post[] = [];
+
   constructor(
     public afs: AngularFirestore, // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
@@ -27,6 +29,17 @@ export class PostService {
    getById(id: string) {
     return this.afs.collection('posts').doc(id).get();
 
+  }
+
+  getByUserId(id: string){
+     this.afs.collection('posts', ref => ref.where('author.uid', '==', id))
+
+                      .valueChanges()
+                      .subscribe(d =>{
+                        d.map((data: any) => {
+                          this.posts$.push(data);
+                        })
+                      })
   }
 
   save(post: Post){

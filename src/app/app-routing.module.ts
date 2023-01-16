@@ -34,7 +34,8 @@ const routes: Routes = [
   },
   {
     path: 'add',
-    component: AddPostPageComponent
+    component: AddPostPageComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'forgot-password',

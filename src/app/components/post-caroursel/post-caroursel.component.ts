@@ -1,3 +1,4 @@
+import { LoaderService } from './../../shared/services/loader.service';
 import { PostService } from './../../shared/services/post.service';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
@@ -11,7 +12,7 @@ import { QueryDocumentSnapshot } from '@angular/fire/compat/firestore';
 })
 export class PostCarourselComponent implements OnInit{
 
-  constructor (private postService: PostService){
+  constructor (private postService: PostService, private loaderService: LoaderService){
 
   }
 
@@ -27,27 +28,30 @@ export class PostCarourselComponent implements OnInit{
 
     responsive: {
       0: {
-        items: 1
-      },
-      400: {
         items: 2
       },
-      740: {
+      400: {
         items: 3
       },
-      940: {
+      740: {
         items: 4
+      },
+      940: {
+        items: 6
       }
     },
     nav: false
   }
 
   ngOnInit(): void {
+    this.loaderService.show()
     this.postService.getPosts().subscribe(res =>{
+
       res.docs.forEach((d: any) =>{
         let data = d.data();
         data.id = d.id;
-        this.posts.push(data)
+        this.posts.push(data);
+        this.loaderService.hide()
       })
     })
   }
