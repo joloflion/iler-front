@@ -1,5 +1,36 @@
-.footer{
+
+footer {
+  background-color: #104d3b;
+  color: #fff;
+  padding: 50px 0;
+  position: relative;
+}
+.footer-section {
+  display: inline-block;
+  vertical-align: top;
+}
+.footer-section h3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+.footer-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-section li {
+  margin-bottom: 10px;
+}
+.footer-section a {
+  color: #fff;
+  text-decoration: none;
+}
+.copyright {
+  margin-top: 20px;
+  text-align: center;
+  padding: 20px 0;
   background-color: #0d3d2f;
-  min-height: 180px;
+  position: absolute;
+  width: 100vw;
 
 }

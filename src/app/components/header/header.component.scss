@@ -36,10 +36,21 @@ p{
 @media only screen and (min-width: 768px) {
 h2{
   margin-top: 1em;
-  font-size: 64px;
-  line-height: 72px;
+  font-size: 56px;
+  line-height: 65px;
 }
 .overlayer, .header{
   height: 60vh;
 }
 }
+
+@media only screen and (min-width: 1200px) {
+  h2{
+    margin-top: 1em;
+    font-size: 56px;
+    line-height: 65px;
+  }
+  .overlayer, .header{
+    height: 91vh;
+  }
+  }

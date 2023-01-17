@@ -38,6 +38,7 @@ import { AccountComponent } from './pages/account/account.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import  {TruncatePipe} from './shared/pipes/transform.pipe';
+import { OurServicesComponent } from './components/our-services/our-services.component';
 
 
 
@@ -65,7 +66,8 @@ import  {TruncatePipe} from './shared/pipes/transform.pipe';
     VerifyEmailComponent,
     AccountComponent,
     LoaderComponent,
-    TruncatePipe
+    TruncatePipe,
+    OurServicesComponent
   ],
   imports: [
     BrowserModule,
