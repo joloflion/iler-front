@@ -1,9 +1,9 @@
 <div class="container p-3 p-md-5">
-  <div class="row">
-    <div class="col-md-7 panel">
+  <div class="row d-flex justify-content-between">
+    <div class="col-md-7 panel align-self-center d-none d-md-block">
 
     </div>
-    <div class="col-sm-12 col-md-5">
+    <div class="col-sm-12 col-md-5 align-self-center form-panel">
       <app-signin-form [error]="'Username or password invalid'" (menu)='open($event)'>Your Form With Error Message</app-signin-form>
     </div>
 

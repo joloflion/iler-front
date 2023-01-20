@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="card card-body py-4" >
+  <div class="card card-body py-5" >
     <h3>Authentification</h3>
     <div class="display-table">
       <div class="display-table-cell">
@@ -13,14 +13,6 @@
           <!-- Calling SignIn Api from AuthService -->
           <div class="d-grid gap-2 d-md-block">
             <input type="button" class="btn btn-lg mt-5" value="Se connecter" (click)="authService.SignIn(userName.value, userPassword.value)">
-          </div>
-
-          <!-- Calling GoogleAuth Api from AuthService -->
-          <div class="d-grid gap-2 d-md-block mt-5">
-            <button type="button" class="btn google-btn" (click)="authService.GoogleAuth()">
-              <i class="fab fa-google-plus-g"></i>
-              Utiliser mon compte google
-            </button>
           </div>
           <div class="forgot-password text-muted my-3">
             <span routerLink="/forgot-password">Mot de passe oublie ?</span>

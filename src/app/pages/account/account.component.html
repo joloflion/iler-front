@@ -6,12 +6,13 @@
         <p class="text-white font-weight-bolder ml-4">{{authService.userData.displayName}}</p>
         <span class="text-white">{{authService.userData.email}}</span>
       </div>
+      <button class="btn btn-outline-danger" (click)="authService.SignOut()">Logout</button>
     </div>
 
   </div>
-  <div class="container">
+  <div class="container p-2 p-5">
     <div class="row">
-      <div *ngFor="let post of postService.posts$"  class="col-12 col-2-ms col-4-md mt-3">
+      <div *ngFor="let post of postService.posts$"  class="col-12 col-md-3 col-md-4 mt-3">
         <app-post-card  [post]="post"></app-post-card>
       </div>
     </div>
