@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-img p-4 text-center">
+    <img [src]="product.image" alt="{{product.title}}"  class="img-fluid">
+  </div>
+  <div class="card-body">
+  <h5 class="card-title text-center">{{product.title}}</h5>
+    <p class="card-text text-center">
+      <i *ngFor="let s of [1,2,3,4,5] " class="fas fa-star"></i>
+    </p>
+    <h5  class="text-center">
+      <span>CFA </span>
+      <span class="price"> {{product.price}}</span>
+      <span> / kg</span>
+    </h5>
+  </div>
+</div>

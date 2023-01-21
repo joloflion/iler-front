@@ -39,6 +39,10 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import  {TruncatePipe} from './shared/pipes/transform.pipe';
 import { OurServicesComponent } from './components/our-services/our-services.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { StarRatingModule } from 'angular-star-rating';
 
 
 
@@ -67,7 +71,10 @@ import { OurServicesComponent } from './components/our-services/our-services.com
     AccountComponent,
     LoaderComponent,
     TruncatePipe,
-    OurServicesComponent
+    OurServicesComponent,
+    ProductsListComponent,
+    ProductCardComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -83,6 +90,7 @@ import { OurServicesComponent } from './components/our-services/our-services.com
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    StarRatingModule.forRoot()
 
 
   ],
