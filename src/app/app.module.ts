@@ -43,6 +43,8 @@ import { ProductsListComponent } from './components/products-list/products-list.
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { StarRatingModule } from 'angular-star-rating';
+import { ServiceButtonComponent } from './components/service-button/service-button.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 
@@ -74,7 +76,9 @@ import { StarRatingModule } from 'angular-star-rating';
     OurServicesComponent,
     ProductsListComponent,
     ProductCardComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ServiceButtonComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

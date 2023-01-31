@@ -1,14 +1,37 @@
-<nav class="navbar navbar-expand navbar-dark bg-white fixed-top px-3">
+<nav class="navbar navbar-expand navbar-dark bg-white fixed-top px-5">
   <a class="navbar-brand" href="#">
     <img width="120px" src="assets/images/logo.png" alt="">
   </a>
-  <div class="collapse navbar-collapse" >
+  <div class="collapse navbar-collapse d-none d-md-block" >
     <ul class="navbar-nav ms-auto">
       <li class="nav-item">
-        <a class="nav-link" [href]=" authService.userData != null ? 'account/'+authService.userData.uid: 'sign-in'">
+        <a class="nav-link " href="">
+          Acceuil
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="">
+          Nos Produits
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="">
+          Nos Services
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="">
+         Contact
+        </a>
+      </li>
+      <li class="nav-item">
+        <app-cart></app-cart>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn btn-warning text-dark join-btn" [href]="authService.userData != null ? 'account/'+authService.userData.uid: 'sign-in'">
           <i class="far fa-user fa-lg"></i>
-          <span *ngIf="!authService.isLoggedIn"> Se connecter</span>
-          <span *ngIf="authService.isLoggedIn"> Mon espace</span>
+          <span *ngIf="!authService.isLoggedIn">NOUS REJOINDRE</span>
+          <span *ngIf="authService.isLoggedIn"> MON ESPACE</span>
         </a>
       </li>
     </ul>

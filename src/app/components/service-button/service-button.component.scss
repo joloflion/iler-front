@@ -1,0 +1,43 @@
+.card{
+  width: 220px;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  .icon-card{
+    width: 60px;
+    height: 60px;
+    border: 2px solid #4DAF48;
+    align-self: center;
+    justify-content: center;
+    padding: auto;
+  }
+  i{
+    font-size: 36px;
+    align-self: center;
+    vertical-align: middle;
+    margin-top: 8px;
+    color: #6f6f6f;
+  }
+  p{
+    margin-top: -10px;
+    font-size: 12px;
+  }
+  &:hover{
+     /* Firefox */
+     -moz-transition: all 1s ease-in-out;
+     /* WebKit */
+     -webkit-transition: all 1s ease-in-out;
+     /* Opera */
+     -o-transition: all 1s ease-in-out;
+     /* Standard */
+     transition: all 1s ease-in-out;
+    background-color: #4DAF48;
+    .icon-card{
+      border: 2px solid #FFFFFF;
+    }
+    h3,p, i{
+      color: #FFFFFF !important;
+    }
+  }
+}
