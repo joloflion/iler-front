@@ -1,6 +1,25 @@
-<button>
+<button (click)="opened = !opened">
   <img src="assets/images/shopping-bag.png" alt="">
   <div class="badge">
-    <span>0</span>
+    <span>{{carts.length}}</span>
   </div>
 </button>
+
+<div class="products" *ngIf="opened">
+ <div *ngFor="let c of carts">
+  <div class="d-flex">
+    <div>
+      <img [src]="c.product.image" class="p-img" />
+    </div>
+    <div>
+      <p>{{c.product.title}}</p>
+      <p>{{c.product.price}}</p>
+    </div>
+    <div>
+      <button>+</button>
+      <div>0</div>
+      <button>-</button>
+    </div>
+  </div>
+ </div>
+</div>

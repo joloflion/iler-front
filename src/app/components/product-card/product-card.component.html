@@ -2,15 +2,19 @@
   <div class="card-img p-4 text-center">
     <img [src]="product.image" alt="{{product.title}}"  class="img-fluid">
   </div>
-  <div class="card-body">
+  <div class="card-body text-center mb-3">
   <h5 class="card-title text-center">{{product.title}}</h5>
     <p class="card-text text-center">
-      <i *ngFor="let s of [1,2,3,4,5] " class="fas fa-star"></i>
+      <i *ngFor="let s of [1,2,3,4,5] " class="fas fa-star text-warning"></i>
     </p>
     <h5  class="text-center">
       <span>CFA </span>
-      <span class="price"> {{product.price}}</span>
+      <span class="price mx-2"> {{product.price}}</span>
       <span> / kg</span>
     </h5>
+    <button class="btn btn-block text-white" (click)="add(product)">
+      <i class="fas fa-cart-plus"></i>
+      Ajouter au panier
+    </button>
   </div>
 </div>

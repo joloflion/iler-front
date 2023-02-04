@@ -4,6 +4,9 @@
   border: none;
   cursor: pointer;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  button{
+    display: none;
+  }
   .icon-card{
     width: 60px;
     height: 60px;
@@ -38,6 +41,12 @@
     }
     h3,p, i{
       color: #FFFFFF !important;
+    }
+    .btn{
+      display:block;
+      border: 1px solid #FFFFFF;
+      font-size: 12px;
+      color: #FFFFFF;
     }
   }
 }

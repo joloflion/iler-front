@@ -2,7 +2,7 @@
   <a class="navbar-brand" href="#">
     <img width="120px" src="assets/images/logo.png" alt="">
   </a>
-  <div class="collapse navbar-collapse d-none d-md-block" >
+  <div class="collapse navbar-collapse" >
     <ul class="navbar-nav ms-auto">
       <li class="nav-item">
         <a class="nav-link " href="">
@@ -28,10 +28,12 @@
         <app-cart></app-cart>
       </li>
       <li class="nav-item">
-        <a class="nav-link btn btn-warning text-dark join-btn" [href]="authService.userData != null ? 'account/'+authService.userData.uid: 'sign-in'">
-          <i class="far fa-user fa-lg"></i>
-          <span *ngIf="!authService.isLoggedIn">NOUS REJOINDRE</span>
-          <span *ngIf="authService.isLoggedIn"> MON ESPACE</span>
+        <a class="nav-link btn text-dark join-btn" [href]="authService.userData != null ? 'account/'+authService.userData.uid: 'sign-in'">
+          <span *ngIf="!authService.isLoggedIn">Nous rejoindre</span>
+          <span *ngIf="authService.isLoggedIn">
+            <i class="far fa-user fa-lg"></i>
+            MON ESPACE
+          </span>
         </a>
       </li>
     </ul>

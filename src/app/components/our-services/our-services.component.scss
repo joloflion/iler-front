@@ -1,9 +1,31 @@
 .services {
-  padding: 60px 20px;
-  background-color: #F4FAF1;
+  background-color: #3E755F;
+  color: #FFFFFF;
 
+  i{
+    font-size: 16px !important;
 
+  }
+  .title{
+    border-bottom: .5px solid #f4faf1b9;
+    margin-top: 16px;
+    cursor: pointer;
+  }
+  p{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
 }
+
+.cover-img{
+  height: 650px;
+  background-image: url('../../../assets/images/panel.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+
 
 .services .row {
   display: flex;
@@ -66,6 +88,6 @@
 
 @media only screen and (min-width: 768px) {
 .services{
-  padding-top: 230px;
+ // padding-top: 230px;
 }
 }

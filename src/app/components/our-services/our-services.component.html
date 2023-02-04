@@ -1,49 +1,18 @@
-<div class="services px-3 px-md-5">
+<div class="services">
   <div class="row">
-      <div class="col-12 mt-3 col-md-4">
-          <i class="fas fa-money-bill-wave icon-financial"></i>
-          <h3>Soutien financier</h3>
-          <p class="text-muted">Les contributeurs peuvent soutenir les projets agricoles en effectuant des contributions financières via la plateforme.</p>
+     <div class="col-12 col-md-6 col-md-5 cover-img"></div>
+     <div class="col-12 col-md-6 col-md-5 p-4">
+      <div class="row">
+        <div *ngFor="let service of services" class="col-12">
+            <div class="d-flex justify-content-between title" (click)="open(service)">
+              <h3 class="align-items-center">{{service.title}}</h3>
+              <i *ngIf="service.opened" class="fas fa-chevron-down align-items-center"></i>
+              <i *ngIf="!service.opened" class="fas fa-chevron-right align-items-center"></i>
+            </div>
+            <p *ngIf="service.opened" class="mt-3">{{service.desc}}</p>
+        </div>
       </div>
-      <div class="col-12 mt-3 col-md-4">
-        <i class="fas fa-hands-helping icon-agriculture"></i>
-          <h3>Coaching agricole</h3>
-          <p class="text-muted">Les projets soutenus à plus de 60 % seront accompagnés grâce à du coaching aux techniques agricoles pour aider les porteurs de projets à réussir.</p>
-      </div>
-      <div class="col-12 mt-3 col-md-4">
-          <i class="fas fa-shopping-cart icon-market"></i>
-          <h3>Écoulement des produits</h3>
-          <p class="text-muted">La plateforme peut aider les porteurs de projets à écouler leurs produits en les mettant en relation avec des acheteurs potentiels.</p>
-      </div>
-      <div class="col-12 mt-3 col-md-4">
-          <i class="fas fa-chart-line icon-transparency "></i>
-          <h3>Transparence</h3>
-          <p class="text-muted">Les smart contracts permettent une transparence accrue pour les projets soutenus, en permettant aux contributeurs de suivre l'utilisation des fonds de manière automatisée et décentralisée.</p>
-      </div>
-      <div class="col-12 mt-3 col-md-4">
-          <i class="fas fa-robot icon-automation"></i>
-          <h3>Automatisation</h3>
-          <p class="text-muted">Les smart contracts permettent d'automatiser les transactions et les distributions de fonds, ce qui facilite la gestion des contributions et des récompenses pour les projets soutenus.</p>
-        </div>
-        <div class="col-12 mt-3 col-md-4">
-            <i class="fas fa-shield-alt icon-security"></i>
-            <h3>Sécurité</h3>
-            <p class="text-muted">La plateforme utilise des smart contracts et des protocoles de sécurité pour protéger les informations personnelles des utilisateurs et des contributeurs.</p>
-        </div>
-        <div class="col-12 mt-3 col-md-4">
-            <i class="fas fa-check-circle icon-project-tracking"></i>
-            <h3>Conformité</h3>
-            <p class="text-muted">La plateforme garantit que les projets proposés respectent les lois et les réglementations en vigueur dans chaque pays.</p>
-        </div>
-        <div class="col-12 mt-3 col-md-4">
-          <i class="fas fa-tasks icon-technical-support"></i>
-          <h3>Support et suivi</h3>
-          <p class="text-muted">La plateforme fournit un système de suivi pour les projets soutenus, afin que les contributeurs puissent suivre l'avancée des projets et voir les résultats obtenus grâce à leur soutien.</p>
-        </div>
-        <div class="col-12 mt-3 col-md-4">
-          <i class="fas fa-gift icon-legal-assistance"></i>
-          <h3>Récompenses pour les contributeurs</h3>
-          <p class="text-muted">La plateforme propose des récompenses pour les contributeurs en fonction de leur niveau de soutien, cela peut varier de produits agricoles à des visites de fermes ou des ateliers de formation agricole.</p>
-        </div>
-    </div>
+     </div>
+  </div>
+
  </div>
