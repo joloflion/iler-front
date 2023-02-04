@@ -1,12 +1,13 @@
 <app-header></app-header>
-<div class="container-fluid">
+<div class="container-fluid p-0">
   <app-our-services></app-our-services>
-  <app-title [title]="'Les meilleurs projets'" [link]="''" ></app-title>
-  <app-post-caroursel></app-post-caroursel>
+  <div class="container">
+    <app-title [title]="'Les meilleurs projets'" [link]="''" ></app-title>
+    <app-post-caroursel></app-post-caroursel>
+  </div>
   <app-about-us></app-about-us>
-  <app-title [title]="'Compagnes rencents'" [link]="''" ></app-title>
-  <app-post-caroursel></app-post-caroursel>
   <app-products-list></app-products-list>
+  <app-results></app-results>
 </div>
 
 

@@ -7,18 +7,19 @@
 
 <div class="products" *ngIf="opened">
  <div *ngFor="let c of carts">
-  <div class="d-flex">
-    <div>
+  <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-space">
       <img [src]="c.product.image" class="p-img" />
+      <div>
+        <p>{{c.product.title}}</p>
+        <p>{{c.product.price}}</p>
+      </div>
     </div>
+
     <div>
-      <p>{{c.product.title}}</p>
-      <p>{{c.product.price}}</p>
-    </div>
-    <div>
-      <button>+</button>
-      <div>0</div>
-      <button>-</button>
+      <button class="next">+</button>
+      <div class="quantity">{{c.quantity}}</div>
+      <button class="prev">-</button>
     </div>
   </div>
  </div>

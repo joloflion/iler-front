@@ -45,6 +45,8 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { StarRatingModule } from 'angular-star-rating';
 import { ServiceButtonComponent } from './components/service-button/service-button.component';
 import { CartComponent } from './components/cart/cart.component';
+import { ResultsComponent } from './components/results/results.component';
+import { NgAnimatedCounterModule } from '@bugsplat/ng-animated-counter';
 
 
 
@@ -78,7 +80,8 @@ import { CartComponent } from './components/cart/cart.component';
     ProductCardComponent,
     ProductDetailsComponent,
     ServiceButtonComponent,
-    CartComponent
+    CartComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +97,8 @@ import { CartComponent } from './components/cart/cart.component';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
-    StarRatingModule.forRoot()
+    StarRatingModule.forRoot(),
+    NgAnimatedCounterModule
 
 
   ],
