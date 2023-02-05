@@ -47,6 +47,8 @@ import { ServiceButtonComponent } from './components/service-button/service-butt
 import { CartComponent } from './components/cart/cart.component';
 import { ResultsComponent } from './components/results/results.component';
 import { NgAnimatedCounterModule } from '@bugsplat/ng-animated-counter';
+import { CoachCardComponent } from './components/coach-card/coach-card.component';
+import { CoachListComponent } from './components/coach-list/coach-list.component';
 
 
 
@@ -81,7 +83,9 @@ import { NgAnimatedCounterModule } from '@bugsplat/ng-animated-counter';
     ProductDetailsComponent,
     ServiceButtonComponent,
     CartComponent,
-    ResultsComponent
+    ResultsComponent,
+    CoachCardComponent,
+    CoachListComponent
   ],
   imports: [
     BrowserModule,

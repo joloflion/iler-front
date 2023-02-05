@@ -1,6 +1,13 @@
 {
-  "name": "iler-front",
-  "version": "0.0.0",
+  "name": "ILER",
+  "description": "Plateforme pour les agriculteurs proposant un service de financement participatif, un service de coaching agricole et un service de vente de produits agricoles.",
+  "version": "1.0.0",
+  "author": {
+    "email": "senghor.pape912@hotmail.com",
+    "name": "Papa Babacar Senghor",
+    "url": "https://www.linkedin.com/in/papa-babacar-ngor-senghor-90b81413b/"
+  },
+
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
