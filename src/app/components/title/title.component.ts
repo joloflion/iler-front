@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Title } from 'src/app/shared/models/title';
 
 @Component({
   selector: 'app-title',
@@ -7,7 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class TitleComponent {
 
-  @Input() title!: string;
-  @Input() link!:  string;
+  @Input() title!: Title;
 
 }

@@ -1,10 +1,28 @@
+.title{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 h3{
-  font-size: 26px;
+  color: #6cbe03;
+  font-family: "Poppins", Sans-serif;
+  font-size: 18px;
   font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+h5{
+   color: #151515;
+    font-family: "Poppins", Sans-serif;
+    font-size: 45px;
+    font-weight: 600;
+    letter-spacing: 5px;
+
 }
 
-a{
-  color: #1D9874;
-  text-decoration: none;
 
+@media only screen and (max-width: 768px) {
+  h5{
+    font-size: 36px;
+    line-height: 44px;
+  }
 }

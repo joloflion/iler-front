@@ -2,9 +2,12 @@ button{
   border: none;
   background-color: transparent;
   img{
-    width: 32px;
+    width: 30px;
   }
   position: relative;
+}
+.price{
+  margin-top: -4px;
 }
 .badge{
   display: block;
@@ -21,16 +24,22 @@ button{
     margin-right: 4px;
   }
 }
-
+.price{
+  font-size: 16px;
+  color: #EE9019;
+}
 .products{
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  border-radius: 8px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   position: absolute;
   top: 60px;
   right: 8px;
   width: 320px;
   height: 440px;
   overflow-y: auto;
-  background-color: #FFFFFF;
+  background-color: #F4FAF1;
   padding: 8px;
   .p-img{
     width: 80px;
@@ -39,13 +48,31 @@ button{
 
 .next, .prev, .quantity{
   width: 30px;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 11px;
+  font-weight: 400;
   text-align: center;
 }
 .next, .prev{
   background-color: #EE9019;
   color: #FFFFFF;
 
+}
+
+.label{
+  font-size: 16px;
+  padding: 8px;
+}
+.list{
+  overflow-y: auto;
+  height: 300px;
+}
+.total{
+  font-size: 14px;
+  font-weight: 700;
+  color: #EE9019;
+}
+.command-btn{
+  background-color: #4DAF48;
+  color: #FFFFFF;
 }
 

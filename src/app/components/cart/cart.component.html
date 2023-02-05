@@ -6,21 +6,36 @@
 </button>
 
 <div class="products" *ngIf="opened">
- <div *ngFor="let c of carts">
-  <div class="d-flex justify-content-between">
-    <div class="d-flex justify-content-space">
-      <img [src]="c.product.image" class="p-img" />
-      <div>
-        <p>{{c.product.title}}</p>
-        <p>{{c.product.price}}</p>
-      </div>
-    </div>
+  <p class="label">Mon panier</p>
+  <div class="list my-3">
+    <div *ngFor="let c of carts" class="border-bottom py-3">
+      <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-space">
+          <button class="btn" (click)="cartService.remove(c)">
+            <i class="far fa-trash-alt text-danger"></i>
+          </button>
+          <img [src]="c.product.image" class="p-img" />
+          <div class="ml-3">
+            <p>{{c.product.title}}</p>
+            <p class="price">{{c.product.price}} / kg</p>
+          </div>
+        </div>
 
-    <div>
-      <button class="next">+</button>
-      <div class="quantity">{{c.quantity}}</div>
-      <button class="prev">-</button>
-    </div>
+        <div>
+          <button class="next" (click)="cartService.increase(c)">+</button>
+          <div class="quantity">{{c.quantity}} kg</div>
+          <button class="prev" (click)="cartService.decrease(c)">-</button>
+        </div>
+      </div>
+     </div>
   </div>
- </div>
+  <div class="d-flex justify-content-between px-4">
+    <p>TOTAL</p>
+    <p class="total">{{cartService.getTotal()}} F cfa</p>
+  </div>
+  <div class="text-center">
+    <button class="btn command-btn">
+      Passer ma commande
+    </button>
+  </div>
 </div>

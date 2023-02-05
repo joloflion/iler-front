@@ -1,4 +1,4 @@
-<div *ngIf="post" class="card mx-2" (click)="go(post.id!)">
+<div *ngIf="post" class="card mx-2" (click)="go(post.id!)" data-aos="flip-left" data-aos-duration="1500">
   <div class="img p-2" style="background-image: url('{{post.image}}');">
     <circle-progress
     class="smooth align-self-center"

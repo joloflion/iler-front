@@ -1,3 +1,4 @@
+import { Title } from './../../shared/models/title';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent {
+
+  projetTitle: Title = {
+    name: "Projets",
+    desc: "Soutenir les meilleurs projets",
+    type: "",
+    link: ""
+  }
+
 
 }
