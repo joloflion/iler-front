@@ -49,6 +49,11 @@ import { ResultsComponent } from './components/results/results.component';
 import { NgAnimatedCounterModule } from '@bugsplat/ng-animated-counter';
 import { CoachCardComponent } from './components/coach-card/coach-card.component';
 import { CoachListComponent } from './components/coach-list/coach-list.component';
+import { ProductComponent } from './pages/product/product.component';
+import { ProductBannerComponent } from './components/product-banner/product-banner.component';
+import { ProductCategoriesComponent } from './components/product-categories/product-categories.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductFilterComponent } from './components/product-filter/product-filter.component';
 
 
 
@@ -85,7 +90,12 @@ import { CoachListComponent } from './components/coach-list/coach-list.component
     CartComponent,
     ResultsComponent,
     CoachCardComponent,
-    CoachListComponent
+    CoachListComponent,
+    ProductComponent,
+    ProductBannerComponent,
+    ProductCategoriesComponent,
+    ProductListComponent,
+    ProductFilterComponent
   ],
   imports: [
     BrowserModule,

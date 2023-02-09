@@ -1,3 +1,5 @@
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductComponent } from './pages/product/product.component';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { AccountComponent } from './pages/account/account.component';
 import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
@@ -44,6 +46,14 @@ const routes: Routes = [
   {
     path: 'verify-email-address',
     component: VerifyEmailComponent
+  },
+  {
+    path: 'shop',
+    component: ProductComponent
+  },
+  {
+    path: 'product/:id',
+    component: ProductDetailsComponent
   }
 ];
 

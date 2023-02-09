@@ -17,8 +17,8 @@ export class HeaderComponent {
     },
     {
       id: '2',
-      title: 'Assistance technique',
-      desc: 'Faites-vous accompagner par des Ingenieurs',
+      title: 'Coaching',
+      desc: 'Faites-vous accompagner par des Ingenieurs agronomes',
       icon: 'fas fa-hands-helping'
     },
     {

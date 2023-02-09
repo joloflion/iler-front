@@ -1,12 +1,47 @@
+
 .card{
   border-radius: 8px;
+
+
 }
 .card-img{
+  position: relative;
  height: 160px;
  z-index: 4;
  img{
   height: 140px;
  }
+ .details{
+  transition: all .5s;
+  visibility: hidden;
+  display: flex;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+
+
+}
+
+&:hover{
+  .details{
+    visibility: visible;
+    z-index: 16;
+  }
+}
+}
+.d-btn{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  align-content: center;
+
+  i{
+    font-size: 16px;
+    color: #FFFFFF;
+  }
 }
 .card-title {
   font-size: 14px;
@@ -22,7 +57,7 @@
   transform: scale(1.3, 1.3);
   -ms-transform: scale(1.3, 1.3);
   -webkit-transform: scale(1.3, 1.3);
-  z-index: 2800;
+  z-index: 8;
 }
 
 .card{

@@ -1,11 +1,11 @@
-<button (click)="opened = !opened">
+<button #cartBtn (click)="opened = !opened">
   <img src="assets/images/shopping-bag.png" alt="">
-  <div class="badge">
+  <div class="badge" #cartBtn >
     {{carts.length}}
   </div>
 </button>
 
-<div class="products" *ngIf="opened">
+<div class="products" *ngIf="opened" #shopCart>
   <p class="label">Mon panier</p>
   <div class="list my-3">
     <div *ngFor="let c of carts" class="border-bottom py-3">

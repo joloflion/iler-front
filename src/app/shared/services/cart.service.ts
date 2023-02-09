@@ -46,6 +46,7 @@ public  increase(cart: Cart){
     this.cart$.subscribe((cartList: any) => {
       if(cartList.includes(cart)){
         var newP = cartList.filter((obj:Cart) => {return obj !== cart});
+        this.saveCartLocal(newP);
         this.cart$.next(newP);
       }
     })
@@ -54,6 +55,8 @@ public  increase(cart: Cart){
   saveCartLocal(cart: Cart[]){
     localStorage.setItem(CART, JSON.stringify(cart))
   }
+
+
 
   loadCartLocal(): Cart[]{
     return localStorage.getItem(CART) != null ? JSON.parse(localStorage.getItem(CART)!) : [];
