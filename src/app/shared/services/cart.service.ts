@@ -23,15 +23,15 @@ export class CartService {
     })
   }
 
-public  increase(cart: Cart){
+public  increase(p: Product){
   this.cart$.subscribe(r => {
-   r.find(v => cart === v)!.quantity ++
+   r.find(v => p.id === v.product.id)!.quantity ++
   })
   }
 
-  decrease(cart: Cart){
+  decrease(p: Product){
     this.cart$.subscribe(r => {
-     var result = r.find(v => cart === v);
+     var result = r.find(v => p.id === v.product.id);
       result!.quantity > 1 ? result!.quantity -- : 1;
      })
   }
@@ -42,6 +42,15 @@ public  increase(cart: Cart){
     return total;
   }
 
+  public totalByProd(p: Product): any{
+    var price;
+    this.cart$.subscribe(r => {
+     var result = r.find(v => v.product.id === p.id);
+     price = ''+result!.quantity*result!.product.price;
+    });
+    return price;
+  }
+
   remove(cart: Cart){
     this.cart$.subscribe((cartList: any) => {
       if(cartList.includes(cart)){
@@ -50,6 +59,24 @@ public  increase(cart: Cart){
         this.cart$.next(newP);
       }
     })
+  }
+
+  findCartByProduct(p: Product): any{
+   var cart: any
+
+   this.cart$.subscribe(c => {
+   cart = c.find(v => v.product.id === p.id);
+  })
+   return cart;
+  }
+
+  isFound(p: Product): boolean{
+    var status = false;
+    this.cart$.subscribe(v => {
+     if(v.find(c => c.product.id === p.id) !== undefined) {
+       status = true;
+     }})
+    return status;
   }
 
   saveCartLocal(cart: Cart[]){

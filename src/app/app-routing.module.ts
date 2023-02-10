@@ -1,3 +1,4 @@
+import { CartDetailsComponent } from './pages/cart-details/cart-details.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProductComponent } from './pages/product/product.component';
 import { AuthGuard } from './shared/guard/auth.guard';
@@ -54,6 +55,10 @@ const routes: Routes = [
   {
     path: 'product/:id',
     component: ProductDetailsComponent
+  },
+  {
+    path: 'cart',
+    component: CartDetailsComponent
   }
 ];
 

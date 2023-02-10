@@ -1,11 +1,4 @@
-.cart-btn{
-  border: none;
-  background-color: transparent;
-  img{
-    width: 30px;
-  }
-  position: relative;
-}
+
 .price{
   margin-top: -4px;
 }
@@ -29,8 +22,8 @@
 }
 .products{
   border-radius: 8px;
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 30px;
+  border-top-left-radius: 40px;
+  border-bottom-right-radius: 40px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   position: absolute;
   top: 60px;
@@ -75,5 +68,18 @@
 .command-btn{
   background-color: #4DAF48;
   color: #FFFFFF;
+}
+
+.close{
+  font-size: 22px;
+  color: rgb(189, 50, 50);
+  font-weight: 700;
+  border: none;
+  outline: none;
+  position: absolute;
+  background-color: transparent;
+  right: 10px;
+  top: 10px;
+
 }
 

@@ -1,7 +1,9 @@
+import { Router } from '@angular/router';
 import { Product } from './../../shared/models/product';
 import { CartService } from './../../shared/services/cart.service';
 import { Component, Renderer2, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Cart } from 'src/app/shared/models/cart';
+import { SmallCartComponent } from '../small-cart/small-cart.component';
 
 @Component({
   selector: 'app-cart',
@@ -11,22 +13,26 @@ import { Cart } from 'src/app/shared/models/cart';
 export class CartComponent implements OnInit {
 
   public opened: boolean = false;
+  public outside: boolean = false;
   public carts: Cart[] = [];
   @ViewChild('cartBtn') cartButton!: ElementRef;
-  @ViewChild('shopCart') cart!: ElementRef;
+  @ViewChild('cartView') cart!: ElementRef<SmallCartComponent>;
 
-  constructor(public cartService: CartService, private renderer: Renderer2){
+  constructor(
+    public cartService: CartService){
     cartService.cart$.subscribe((c:any) => {
       this.carts = c;
     })
-    this.renderer.listen('window', 'click',(e:Event)=>{
-      if(e.target !== this.cartButton!.nativeElement && this.cart != undefined && e.target!==this.cart!.nativeElement){
-        this.opened=true;
-    }
-  })
+
   }
 
   ngOnInit(): void {
 
 }
+
+listenClose(value: boolean){
+  this.opened  = false;
+}
+
+
 }

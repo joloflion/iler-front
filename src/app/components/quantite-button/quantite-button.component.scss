@@ -1,0 +1,18 @@
+.q-btn{
+  width: 110px;
+  border-radius: 20px;
+  background-color: #e0e0e0;
+  padding: 2px;
+  .btn{
+    width:  32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    font-weight: 700;
+  }
+}
+.quantity{
+  font-size: 16px;
+  font-weight: 700;
+  color: #6cbe03;
+}

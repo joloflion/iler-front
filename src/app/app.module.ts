@@ -54,6 +54,9 @@ import { ProductBannerComponent } from './components/product-banner/product-bann
 import { ProductCategoriesComponent } from './components/product-categories/product-categories.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductFilterComponent } from './components/product-filter/product-filter.component';
+import { QuantiteButtonComponent } from './components/quantite-button/quantite-button.component';
+import { CartDetailsComponent } from './pages/cart-details/cart-details.component';
+import { SmallCartComponent } from './components/small-cart/small-cart.component';
 
 
 
@@ -95,7 +98,10 @@ import { ProductFilterComponent } from './components/product-filter/product-filt
     ProductBannerComponent,
     ProductCategoriesComponent,
     ProductListComponent,
-    ProductFilterComponent
+    ProductFilterComponent,
+    QuantiteButtonComponent,
+    CartDetailsComponent,
+    SmallCartComponent
   ],
   imports: [
     BrowserModule,
