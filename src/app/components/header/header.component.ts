@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { Component } from '@angular/core';
 
@@ -30,8 +31,14 @@ export class HeaderComponent {
 
   ]
 
-  constructor(public authService: AuthService){
+  constructor(
+    public authService: AuthService,
+    public router: Router
+    ){}
 
-  }
+
+    navigate(){
+      this.router.navigateByUrl('/sign-up')
+    }
 
 }

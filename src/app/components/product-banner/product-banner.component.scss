@@ -1,8 +1,11 @@
 .banner{
-  background-image: url("https://images.dailycaller.com/image/width=960,height=411,fit=cover,f=auto/https://cdn01.dailycaller.com/wp-content/uploads/2020/03/Supermarket-e1585239041941.jpg");
+  background-image: url("../../../assets/images/shop-banner.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   width: 100%;
   height: 260px;
+  background-color: greenyellow;
+  margin-top: -12px;
+  margin-bottom: -20px;
 }

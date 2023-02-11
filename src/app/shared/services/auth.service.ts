@@ -36,7 +36,7 @@ export class AuthService {
     return this.afAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
-        this.SetUserData(result.user);
+       // this.SetUserData(result.user, "");
         this.afAuth.authState.subscribe((user) => {
           if (user) {
             this.router.navigate(['account/', user.uid]);
@@ -48,7 +48,7 @@ export class AuthService {
       });
   }
   // Sign up with email/password
-  SignUp(email: string, password: string, name: string) {
+  SignUp(email: string, password: string, name: string, group: string) {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
@@ -57,7 +57,8 @@ export class AuthService {
         this.SendVerificationMail();
         result.user?.updateProfile({
           displayName: name,
-        }).then(() => this.SetUserData(result.user));
+
+        }).then(() => this.SetUserData(result.user, group));
       })
       .catch((error) => {
         window.alert(error.message);
@@ -87,19 +88,14 @@ export class AuthService {
     const user = JSON.parse(localStorage.getItem('user')!);
     return user !== null && user.emailVerified !== false ? true : false;
   }
-  // Sign in with Google
-  GoogleAuth() {
-    return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      this.router.navigate(['account/', res.user?.uid]);
-    });
-  }
+
   // Auth logic to run auth providers
-  AuthLogin(provider: any) {
+  AuthLogin(provider: any, group: string) {
     return this.afAuth
       .signInWithPopup(provider)
       .then((result) => {
         this.router.navigate(['account/', result.user?.uid]);
-        this.SetUserData(result.user);
+        this.SetUserData(result.user, group);
       })
       .catch((error) => {
         window.alert(error);
@@ -108,7 +104,7 @@ export class AuthService {
   /* Setting up user data when sign in with username/password,
   sign up with username/password and sign in with social auth
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-  SetUserData(user: any) {
+  SetUserData(user: any, group: any) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
@@ -118,6 +114,8 @@ export class AuthService {
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
+      group: group
+
     };
     return userRef.set(userData, {
       merge: true,

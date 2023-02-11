@@ -1,32 +1,24 @@
 <div class="displayTable">
   <h3>Inscription </h3>
 
-  <div class="userType mt-3">
+  <div class="userType mt-5">
     <h3>Je suis </h3>
     <div class="row">
-      <div class="col-4">
-        <div class="option">
-          <h3>Agriculteur</h3>
-        </div>
+      <div *ngFor="let g of userGroup" class="col-6 col-md-3 mt-3">
+        <div  class="option" [class.selected]="selected == g" (click)="selected = g"><h3>{{g.key}}</h3></div>
       </div>
-      <div class="col-4">
-        <div>Ingénieur Agronome</div>
-      </div>
-      <div class="col-4">
-        <div>Acheteur</div>
-      </div>
-
     </div>
   </div>
-  <div class="displayTableCell">
+  <div class="displayTableCell mt-5 px-0 px-md-5">
 
     <div class="authBlock">
+      <form [formGroup]="signUpForm">
       <div class="form-group mt-3">
         <input
           type="text"
           class="form-control form-control-lg"
           placeholder="Prenom et nom"
-          #name
+          formControlName="name"
           required
         />
       </div>
@@ -35,7 +27,7 @@
           type="email"
           class="form-control form-control-lg"
           placeholder="Email"
-          #userEmail
+          formControlName="userEmail"
           required
         />
       </div>
@@ -44,18 +36,18 @@
           type="password"
           class="form-control form-control-lg"
           placeholder="Mot de passe"
-          #userPwd
+          formControlName="userPwd"
           required
         />
       </div>
       <div class="d-grid gap-2 d-md-block mt-4">
-        <input
-          type="button"
-          class="btn"
-          value="S'inscrire"
-          (click)="authService.SignUp(userEmail.value, userPwd.value, name.value)"
-        />
+        <button
+          class="rounded-button"
+          [disabled]="!isFormValid()"
+          (click)="signUp()"
+        >S'inscrire</button>
       </div>
+    </form>
     </div>
     <div class="redirect-to-login text-muted mt-3">
       <span

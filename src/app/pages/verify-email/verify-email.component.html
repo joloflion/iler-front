@@ -1,5 +1,5 @@
-<div class="displayTable">
-  <div class="displayTableCell">
+<div class="container mt-5 pt-5">
+  <div class="mt-5">
     <div class="authBlock">
       <h3>Merci pour votre inscription</h3>
       <div class="formGroup" *ngIf="authService.userData as user">
@@ -11,14 +11,14 @@
 
       <!-- Calling SendVerificationMail() method using authService Api -->
       <div class="formGroup">
-        <button type="button" class="btn btnPrimary" (click)="authService.SendVerificationMail()">
+        <button type="button" class="btn btn-primary" (click)="authService.SendVerificationMail()">
           <i class="fas fa-redo-alt"></i>
           Renvoyer le lien
         </button>
       </div>
     </div>
-    <div class="redirectToLogin">
-      <a class="redirect" routerLink="/sign-in"> Se connecter</a>
+    <div class="text-center mt-5">
+      <a class="btn btn-outline-primary" routerLink="/"> Retour à l'acceuil</a>
     </div>
   </div>
 </div>
