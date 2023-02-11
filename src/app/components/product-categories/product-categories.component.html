@@ -1,1 +1,12 @@
-<p>product-categories works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-4" *ngFor="let cat of categories">
+      <div class="card" style="background-image: url({{cat.image}});">
+        <div class="cover">
+          <span>{{cat.name}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

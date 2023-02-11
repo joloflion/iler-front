@@ -5,6 +5,7 @@ import { ProductService } from './../../shared/services/product.service';
 import { Product } from './../../shared/models/product';
 import { Component, OnInit } from '@angular/core';
 import { Cart } from 'src/app/shared/models/cart';
+import { Title } from 'src/app/shared/models/title';
 
 @Component({
   selector: 'app-product-details',
@@ -14,6 +15,13 @@ import { Cart } from 'src/app/shared/models/cart';
 export class ProductDetailsComponent implements OnInit {
 
    public product!: Product;
+   public products: Product[] = [];
+   public prodTitle:Title = {
+    name: "PRODUITS",
+    desc: "Produits similaires",
+    type: "",
+    link: ""
+   }
    constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
@@ -28,6 +36,14 @@ export class ProductDetailsComponent implements OnInit {
     var d: any = r.data();
     d.id = r.id;
     this.product = d;
+    this.productService.findByCategory(this.product.categoryId!)
+    .then(r =>  {
+      r.docs.map(d => {
+        var sp: any =d.data()
+        sp.id = d.id;
+        this.products.push(sp)
+      })
+    })
   })
 
  })}

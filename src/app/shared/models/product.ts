@@ -1,5 +1,5 @@
 export interface Product {
-  id: string;
+  id?: string;
   title: string;
   price: number;
   shortDesc?: string;
@@ -7,4 +7,5 @@ export interface Product {
   star: number;
   createdAt: string;
   image: string;
+  categoryId?: string;
 }

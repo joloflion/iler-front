@@ -23,6 +23,7 @@ export class SmallCartComponent {
    }
 
    navigate(){
+    this.close()
     this.router.navigate(['/cart'])
   }
 
