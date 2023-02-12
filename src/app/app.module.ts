@@ -57,6 +57,7 @@ import { ProductFilterComponent } from './components/product-filter/product-filt
 import { QuantiteButtonComponent } from './components/quantite-button/quantite-button.component';
 import { CartDetailsComponent } from './pages/cart-details/cart-details.component';
 import { SmallCartComponent } from './components/small-cart/small-cart.component';
+import { RentabiliteComponent } from './components/rentabilite/rentabilite.component';
 
 
 
@@ -101,7 +102,8 @@ import { SmallCartComponent } from './components/small-cart/small-cart.component
     ProductFilterComponent,
     QuantiteButtonComponent,
     CartDetailsComponent,
-    SmallCartComponent
+    SmallCartComponent,
+    RentabiliteComponent
   ],
   imports: [
     BrowserModule,

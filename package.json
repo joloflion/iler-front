@@ -7,7 +7,6 @@
     "name": "Papa Babacar Senghor",
     "url": "https://www.linkedin.com/in/papa-babacar-ngor-senghor-90b81413b/"
   },
-
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -35,9 +34,12 @@
     "aos": "^2.3.4",
     "bootstrap": "^5.2.3",
     "firebase": "^9.15.0",
+    "moment": "^2.29.4",
+    "momentjs": "^2.0.0",
     "ng-circle-progress": "1.5.1",
     "ngx-owl-carousel-o": "^15.0.0",
     "rxjs": "~7.5.0",
+    "save": "^2.9.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },

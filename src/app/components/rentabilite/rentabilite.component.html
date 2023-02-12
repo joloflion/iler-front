@@ -1,0 +1,125 @@
+<div>
+  <h3>Coûts de production</h3>
+  <table class="table table-success">
+    <thead>
+      <tr>
+        <th scope="col">Culture</th>
+        <th scope="col">Semences</th>
+        <th scope="col">Préparation sol</th>
+        <th scope="col">Engrais</th>
+        <th scope="col">Pesticides</th>
+        <th scope="col">Main d'oeuvre</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cp of coutProd">
+        <td>{{cp.name}}</td>
+        <td>{{cp.sem}}</td>
+        <td>{{cp.sol}}</td>
+        <td>{{cp.eng}}</td>
+        <td>{{cp.pest}}</td>
+        <td>{{cp.main}}</td>
+        <td>{{cp.total}}</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+  <div class="d-flex justify-content-between">
+    <span>Total</span>
+    <span>230 000</span>
+   </div>
+</div>
+
+<div class="mt-5">
+  <h3>Coûts de commercialisation</h3>
+  <table class="table table-success">
+    <thead>
+      <tr>
+        <th scope="col">Culture</th>
+        <th scope="col">Transport</th>
+        <th scope="col">Stockage (manutention)</th>
+        <th scope="col">Conditionnement</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cc of coutCom">
+        <th>{{cc.name}}</th>
+        <td>{{cc.trans}}</td>
+        <td>{{cc.stock}}</td>
+        <td>{{cc.cond}}</td>
+        <td>{{cc.total}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h3>Coûts indirects</h3>
+  <table class="table table-success">
+    <thead>
+      <tr>
+        <th scope="col">Administratif</th>
+        <th scope="col">Frais d’emprunt</th>
+        <th scope="col">Assurance</th>
+        <th scope="col">Amortissements (matériels agricoles, foncier)</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ci of coutInd">
+        <th>{{ci.admin}}</th>
+        <td>{{ci.emp}}</td>
+        <td>{{ci.ass}}</td>
+        <td>{{ci.amort}}</td>
+        <td>{{ci.total}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h3>Volume de production</h3>
+  <table class="table table-success">
+    <thead>
+      <tr>
+        <th scope="col">Culture</th>
+        <th scope="col">Spéculations</th>
+        <th scope="col">Superficie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vp of volumProd">
+        <th>{{vp.name}}</th>
+        <td>{{vp.spec}}</td>
+        <td>{{vp.sup}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h3>Estimation de rentabilité</h3>
+  <table class="table table-success">
+    <thead>
+      <tr>
+        <th scope="col">Culture</th>
+        <th scope="col">Nombre de recolte</th>
+        <th scope="col">Estimation de la prouction total (en kg)</th>
+        <th scope="col">Estimation prix du kg (en F cfa)</th>
+        <th scope="col">Chiffres d'affaires (en F cfa)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rent of rentabilite">
+        <th>{{rent.name}}</th>
+        <td>{{rent.nbRecolte}}</td>
+        <td>{{rent.estimProd}}</td>
+        <td>{{rent.prixKilo}}</td>
+        <td>{{rent.chiffAff}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

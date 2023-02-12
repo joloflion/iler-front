@@ -1,8 +1,10 @@
 import { PostService } from './../../shared/services/post.service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/shared/models/post';
-import { ObservableInput, switchMap } from 'rxjs';
+import * as moment from 'moment';
+
+
 
 @Component({
   selector: 'app-post-details',
@@ -11,6 +13,8 @@ import { ObservableInput, switchMap } from 'rxjs';
 })
 export class PostDetailsComponent implements OnInit{
   post!: Post;
+  closed: boolean = false;
+  loading: boolean = true;
 
   constructor(private route: ActivatedRoute, private postService: PostService){
 
@@ -20,7 +24,8 @@ export class PostDetailsComponent implements OnInit{
      this.route.paramMap.subscribe(p =>{
       this.postService.getById(p.get('id')!).subscribe((res: any)=>{
         console.log(res.data())
-        this.post = res.data()
+        this.post = res.data();
+        this.loading = false;
       })
      })
   }
@@ -31,5 +36,13 @@ export class PostDetailsComponent implements OnInit{
 
   getProgressWidth(percent: number){
   return percent+'%';
+  }
+
+  getEndDate(end: string): number{
+    var startDate: moment.Moment = moment();
+    var endDate: moment.Moment = moment(end);
+    var r = startDate.days() - endDate.days()
+    if(r < 0) this.closed = true;
+    return r
   }
 }
