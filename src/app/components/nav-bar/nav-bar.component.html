@@ -54,22 +54,22 @@
   <img width="120px" style="margin-top: -15px;" src="assets/images/logo.png" alt="">
   <ul class="navbar-nav ms-auto mt-5 pl-3">
     <li class="nav-item mt-3" >
-      <a class="nav-link " [routerLink]="['/']" [routerLinkActive]="'is-active'"  (click)="navigate('')">
+      <a class="nav-link " [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/']" [routerLinkActive]="'is-active'" (click)="navigate('')">
         Acceuil
       </a>
     </li>
     <li class="nav-item mt-3"  >
-      <a class="nav-link " [routerLink]="['/shop']" [routerLinkActive]="'is-active'"  (click)="navigate('/shop')">
+      <a class="nav-link " [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/product']" [routerLinkActive]="'is-active'"  (click)="navigate('/product')">
         Nos Produits
       </a>
     </li>
     <li class="nav-item mt-3"  >
-      <a class="nav-link " [routerLink]="['/service']" [routerLinkActive]="'is-active'"   (click)="navigate('#')">
+      <a class="nav-link " [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/service']" [routerLinkActive]="'is-active'"   (click)="navigate('/service')">
         Nos Services
       </a>
     </li>
     <li class="nav-item mt-3"  >
-      <a class="nav-link "  [routerLink]="['/contact']" [routerLinkActive]="'is-active'"  (click)="navigate('#')">
+      <a class="nav-link "  [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/contact']" [routerLinkActive]="'is-active'"  (click)="navigate('/contact')">
        Contact
       </a>
     </li>
