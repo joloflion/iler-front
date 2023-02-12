@@ -58,6 +58,7 @@ import { QuantiteButtonComponent } from './components/quantite-button/quantite-b
 import { CartDetailsComponent } from './pages/cart-details/cart-details.component';
 import { SmallCartComponent } from './components/small-cart/small-cart.component';
 import { RentabiliteComponent } from './components/rentabilite/rentabilite.component';
+import { ProjectFormComponent } from './components/forms/project-form/project-form.component';
 
 
 
@@ -103,7 +104,8 @@ import { RentabiliteComponent } from './components/rentabilite/rentabilite.compo
     QuantiteButtonComponent,
     CartDetailsComponent,
     SmallCartComponent,
-    RentabiliteComponent
+    RentabiliteComponent,
+    ProjectFormComponent
   ],
   imports: [
     BrowserModule,

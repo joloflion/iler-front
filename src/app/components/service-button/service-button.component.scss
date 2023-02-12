@@ -7,6 +7,7 @@
   button{
     display: none;
   }
+
   .icon-card{
     width: 60px;
     height: 60px;
@@ -50,3 +51,9 @@
     }
   }
 }
+
+@media only screen and (max-width: 750px) {
+  .card{
+    width: 100%;
+  }
+  }

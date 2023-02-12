@@ -1,20 +1,9 @@
-<div  class="container-fluid px-">
-  <div class="profil p-2 rounded">
-    <div class="d-flex">
-      <div class="img-circle align-items-center"></div>
-      <div class="align-items-center p-4 pt-0">
-        <p class="text-white font-weight-bolder ml-4">{{authService.userData.displayName}}</p>
-        <span class="text-white">{{authService.userData.email}}</span>
-      </div>
-      <button class="btn btn-outline-danger" (click)="authService.SignOut()">Logout</button>
+<div  class="container-fluid wrapper">
+  <div class="d-flex">
+    <div class="side-menu card"></div>
+    <div class="body">
+      <app-project-form></app-project-form>
     </div>
+  </div>
 
-  </div>
-  <div class="container p-2 p-5">
-    <div class="row">
-      <div *ngFor="let post of postService.posts$"  class="col-12 col-md-3 col-md-4 mt-3">
-        <app-post-card  [post]="post"></app-post-card>
-      </div>
-    </div>
-  </div>
 </div>
