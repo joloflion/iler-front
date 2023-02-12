@@ -1,3 +1,4 @@
+import { ServiceDetailsComponent } from './pages/service-details/service-details.component';
 import { CartDetailsComponent } from './pages/cart-details/cart-details.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProductComponent } from './pages/product/product.component';
@@ -16,6 +17,7 @@ import { AddPostPageComponent } from './pages/add-post-page/add-post-page.compon
 const routes: Routes = [
   {
     path: '',
+
     component: HomePageComponent
   },
   {
@@ -49,9 +51,14 @@ const routes: Routes = [
     component: VerifyEmailComponent
   },
   {
-    path: 'shop',
+    path: 'product',
     component: ProductComponent
   },
+  {
+    path: 'service',
+    component: ServiceDetailsComponent
+  },
+
   {
     path: 'product/:id',
     component: ProductDetailsComponent

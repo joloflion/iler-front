@@ -1,26 +1,32 @@
-<nav class="navbar navbar-expand navbar-dark bg-white fixed-top px-5">
+<nav class="navbar navbar-expand d-flex justify-content-between align-items-center navbar-dark bg-white fixed-top px-2 px-md-5">
+ <div class="align-self-center">
+  <button class="menu-bar mx-3 d-md-none" (click)="opened = !opened">
+    <i class="fas fa-bars"></i>
+  </button>
   <a class="navbar-brand" href="#">
     <img width="120px" src="assets/images/logo.png" alt="">
   </a>
+ </div>
+
   <div class="collapse navbar-collapse" >
     <ul class="navbar-nav ms-auto">
       <li class="nav-item">
-        <a class="nav-link " href="">
+        <a class="nav-link " [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/']" [routerLinkActive]="'is-active'" >
           Acceuil
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="shop">
+        <a class="nav-link " [routerLinkActiveOptions]="{ exact: false }" [routerLink]="['/product']" [routerLinkActive]="'is-active'" >
           Nos Produits
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="">
+        <a class="nav-link " [routerLink]="['/service']" [routerLinkActive]="'is-active'" >
           Nos Services
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="">
+        <a class="nav-link " [routerLink]="['/contact']" [routerLinkActive]="'is-active'" >
          Contact
         </a>
       </li>
@@ -38,5 +44,43 @@
       </li>
     </ul>
   </div>
-  <app-cart class="d-block d-md-none"></app-cart>
+  <app-cart class="d-block d-md-none align-self-center"></app-cart>
 </nav>
+
+<div class="side-menu pl-5 pt-4 d-block d-md-none " [class.menu-closed]="!opened"  data-aos="zoom-out-right" data-aos-duration="1200">
+  <button class="close-btn mx-3" (click)="opened = !opened">
+    <i class="fas fa-times"></i>
+  </button>
+  <img width="120px" style="margin-top: -15px;" src="assets/images/logo.png" alt="">
+  <ul class="navbar-nav ms-auto mt-5 pl-3">
+    <li class="nav-item mt-3" >
+      <a class="nav-link " [routerLink]="['/']" [routerLinkActive]="'is-active'"  (click)="navigate('')">
+        Acceuil
+      </a>
+    </li>
+    <li class="nav-item mt-3"  >
+      <a class="nav-link " [routerLink]="['/shop']" [routerLinkActive]="'is-active'"  (click)="navigate('/shop')">
+        Nos Produits
+      </a>
+    </li>
+    <li class="nav-item mt-3"  >
+      <a class="nav-link " [routerLink]="['/service']" [routerLinkActive]="'is-active'"   (click)="navigate('#')">
+        Nos Services
+      </a>
+    </li>
+    <li class="nav-item mt-3"  >
+      <a class="nav-link "  [routerLink]="['/contact']" [routerLinkActive]="'is-active'"  (click)="navigate('#')">
+       Contact
+      </a>
+    </li>
+    <li class="nav-item mt-3"  >
+      <a class="nav-link btn text-dark join-btn" (click)="navigate(authService.userData != null ? 'account/'+authService.userData.uid: 'sign-in')">
+        <span *ngIf="!authService.isLoggedIn">Nous rejoindre</span>
+        <span *ngIf="authService.isLoggedIn">
+          <i class="far fa-user fa-lg"></i>
+          MON ESPACE
+        </span>
+      </a>
+    </li>
+  </ul>
+</div>

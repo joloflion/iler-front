@@ -5,6 +5,15 @@
   font-weight: 700;
 }
 
+
+.menu-bar{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 32px;
+  color: #4DAF48;
+}
+
 .nav-item{
   margin: 0 8px;
 }
@@ -17,8 +26,41 @@
 
 }
 
+.side-menu{
+  position: fixed;
+  width: 70vw;
+  height: 100vh;
+  z-index: 1800;
+  background-color: #FFFFFF;
+  transition: all 1s;
+}
+
+.close-btn{
+  color: #cd4109;
+  font-size: 26px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.menu-closed{
+  margin-left: -72vw !important;
+
+}
+
+.is-active{
+  color: #4DAF48 !important;
+}
+
 @media only screen and (max-width: 750px) {
   .navbar-collapse{
     display: none !important;
   }
+  .navbar-brand{
+    img{
+      margin-top: -16px;
+    }
+
+  }
+
 }

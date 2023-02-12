@@ -59,6 +59,7 @@ import { CartDetailsComponent } from './pages/cart-details/cart-details.componen
 import { SmallCartComponent } from './components/small-cart/small-cart.component';
 import { RentabiliteComponent } from './components/rentabilite/rentabilite.component';
 import { ProjectFormComponent } from './components/forms/project-form/project-form.component';
+import { ServiceDetailsComponent } from './pages/service-details/service-details.component';
 
 
 
@@ -105,7 +106,8 @@ import { ProjectFormComponent } from './components/forms/project-form/project-fo
     CartDetailsComponent,
     SmallCartComponent,
     RentabiliteComponent,
-    ProjectFormComponent
+    ProjectFormComponent,
+    ServiceDetailsComponent
   ],
   imports: [
     BrowserModule,
