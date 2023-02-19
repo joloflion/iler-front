@@ -1,3 +1,4 @@
+import { ScrollTopService } from './../../shared/services/scrolltop.service';
 import { CartService } from './../../shared/services/cart.service';
 import { filter, map } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -26,11 +27,13 @@ export class ProductDetailsComponent implements OnInit {
     private productService: ProductService,
     private route: ActivatedRoute,
     private router: Router,
+    private scrollTopService: ScrollTopService,
     public cartService: CartService){
 
   }
 
   ngOnInit(): void {
+    this.scrollTopService.setScrollTop()
  this.route.params.subscribe(p => {
   this.productService.getById(p['id']).subscribe(r =>{
     var d: any = r.data();

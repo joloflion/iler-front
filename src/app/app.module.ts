@@ -1,3 +1,4 @@
+import { ScrollTopService } from './shared/services/scrolltop.service';
 import { LoaderInterceptor } from './shared/interceptor/loader.interceptor';
 import { AngularMaterialModule } from './shared/material.module';
 import { NgModule } from '@angular/core';
@@ -38,7 +39,7 @@ import { AccountComponent } from './pages/account/account.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import  {TruncatePipe} from './shared/pipes/transform.pipe';
-import { OurServicesComponent } from './components/our-services/our-services.component';
+import { WhyUsComponent } from './components/why-us/why-us.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
@@ -60,6 +61,15 @@ import { SmallCartComponent } from './components/small-cart/small-cart.component
 import { RentabiliteComponent } from './components/rentabilite/rentabilite.component';
 import { ProjectFormComponent } from './components/forms/project-form/project-form.component';
 import { ServiceDetailsComponent } from './pages/service-details/service-details.component';
+import { MaterialCardComponent } from './components/material-card/material-card.component';
+import { MaterialListComponent } from './components/material-list/material-list.component';
+import { LocationMaterielPageComponent } from './components/location-materiel-page/location-materiel-page.component';
+import { CoachDetailPageComponent } from './pages/coach-detail-page/coach-detail-page.component';
+import { OurServicesComponent } from './components/our-services/our-services.component';
+import { MaterielPostCardComponent } from './components/materiel-post-card/materiel-post-card.component';
+import { AvatarComponent } from './components/avatar/avatar.component';
+import { MaterielPostDetailsComponent } from './pages/materiel-post-details/materiel-post-details.component';
+import { MaterielReservationFormComponent } from './components/forms/materiel-reservation-form/materiel-reservation-form.component';
 
 
 
@@ -88,7 +98,7 @@ import { ServiceDetailsComponent } from './pages/service-details/service-details
     AccountComponent,
     LoaderComponent,
     TruncatePipe,
-    OurServicesComponent,
+    WhyUsComponent,
     ProductsListComponent,
     ProductCardComponent,
     ProductDetailsComponent,
@@ -107,7 +117,16 @@ import { ServiceDetailsComponent } from './pages/service-details/service-details
     SmallCartComponent,
     RentabiliteComponent,
     ProjectFormComponent,
-    ServiceDetailsComponent
+    ServiceDetailsComponent,
+    MaterialCardComponent,
+    MaterialListComponent,
+    LocationMaterielPageComponent,
+    CoachDetailPageComponent,
+    OurServicesComponent,
+    MaterielPostCardComponent,
+    AvatarComponent,
+    MaterielPostDetailsComponent,
+    MaterielReservationFormComponent
   ],
   imports: [
     BrowserModule,
@@ -129,6 +148,8 @@ import { ServiceDetailsComponent } from './pages/service-details/service-details
 
   ],
   providers: [AuthService,
+    ScrollTopService,
+
   {
     provide: HTTP_INTERCEPTORS,
     useClass: LoaderInterceptor,

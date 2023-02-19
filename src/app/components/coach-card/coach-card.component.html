@@ -1,9 +1,7 @@
 <div class="card mx-3" >
   <img class="card-img-top" [src]="coach.bannerImage" alt="Babacar">
   <div class="card-body text-center pb-5">
-    <div class="avatar">
-      {{coach.user.displayName.charAt(0)}}
-    </div>
+   <avatar [name]="coach.user.displayName"></avatar>
     <h5 class="card-title">{{coach.speciality }}</h5>
     <p class="card-text text-center">
       <span class="name">{{coach.user.displayName}}</span><br>

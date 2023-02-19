@@ -1,0 +1,41 @@
+.image{
+  width: 100%;
+  height: 160px;
+  border-radius: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  transition: all .5s;
+  &:hover{
+    scale: 1.05;
+  }
+}
+.card{
+  border-top-left-radius: 20px !important;
+  border-top-right-radius: 20px !important;
+  border: none !important;
+  height: 390px;
+  position: relative;
+  .card-body{
+    h3{
+      font-size: 13px;
+      font-weight: 700;
+    }
+  }
+  .btn{
+    width: 90%;
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFFFFF;
+    border: none;
+    outline: none;
+    background-color: #EE9019;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

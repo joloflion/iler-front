@@ -1,0 +1,23 @@
+<div class="container-fluid p-0">
+  <app-title [title] ="title" ></app-title>
+  <div class="services">
+
+    <div class="row">
+       <div class="col-12 col-md-6 col-md-5 cover-img"></div>
+       <div class="col-12 col-md-6 col-md-5 p-4">
+        <div class="row">
+          <div *ngFor="let service of services" class="col-12">
+              <div class="d-flex justify-content-between title" (click)="open(service)">
+                <h3 class="align-items-center">{{service.title}}</h3>
+                <i *ngIf="service.opened" class="fas fa-chevron-down align-items-center"></i>
+                <i *ngIf="!service.opened" class="fas fa-chevron-right align-items-center"></i>
+              </div>
+              <p *ngIf="service.opened" class="mt-3">{{service.desc}}</p>
+          </div>
+        </div>
+       </div>
+    </div>
+
+   </div>
+</div>
+

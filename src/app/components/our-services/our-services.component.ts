@@ -1,68 +1,60 @@
+import { Title } from './../../shared/models/title';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-our-services',
+  selector: 'our-services',
   templateUrl: './our-services.component.html',
   styleUrls: ['./our-services.component.scss']
 })
 export class OurServicesComponent {
-   public services = [
-    {
-      title: "Soutien financier",
-      desc:  "Les contributeurs peuvent soutenir les projets agricoles en effectuant des contributions financières via la plateforme.",
-      opened: false
-    },
-    {
-      title: "Coaching agricole",
-      desc:  "Les projets soutenus à plus de 60 % seront accompagnés grâce à du coaching aux techniques agricoles pour aider les porteurs de projets à réussir.",
-      opened: false
-    },
-    {
-      title: "Écoulement des produits",
-      desc:  "La plateforme peut aider les porteurs de projets à écouler leurs produits en les mettant en relation avec des acheteurs potentiels.",
-      opened: false
-    },
-    {
-      title: "Transparence",
-      desc:  "Les smart contracts permettent une transparence accrue pour les projets soutenus, en permettant aux contributeurs de suivre l'utilisation des fonds de manière automatisée et décentralisée.",
-      opened: false
-    },
-    {
-      title: "Automatisation",
-      desc: "Les smart contracts permettent d'automatiser les transactions et les distributions de fonds, ce qui facilite la gestion des contributions et des récompenses pour les projets soutenus.",
-      opened: false
-    },
-    {
-      title: "Sécurité",
-      desc:  "La plateforme utilise des smart contracts et des protocoles de sécurité pour protéger les informations personnelles des utilisateurs et des contributeurs.",
-      opened: false
-    },
-    {
-      title: "Conformité",
-      desc:  "La plateforme garantit que les projets proposés respectent les lois et les réglementations en vigueur dans chaque pays.",
-      opened: false
-    },
-    {
-      title: "Support et suivi",
-      desc:  "La plateforme fournit un système de suivi pour les projets soutenus, afin que les contributeurs puissent suivre l'avancée des projets et voir les résultats obtenus grâce à leur soutien.",
-      opened: false
-    },
-    {
-      title: "Récompenses pour les contributeurs",
-      desc:  "La plateforme propose des récompenses pour les contributeurs en fonction de leur niveau de soutien, cela peut varier de produits agricoles à des visites de fermes ou des ateliers de formation agricole.",
-      opened: false
-    }
-   ];
 
-   open(service:any){
-    this.services.map(s => {
-      if(s === service) {
-        s.opened = !s.opened;
-      } else{
-        s.opened = false;
-      }
+  projetTitle: Title = {
+    name: "Services",
+    desc: "Découvrer nos servies",
+    type: "",
+    link: ""
+  }
 
-    });
+  public services: any [] = [
+    {
+      id: '1',
+      title: 'Financement projet',
+      desc: 'Nous proposons des services de financement participatif pour aider les agriculteurs à concrétiser leurs projets et à développer leur activité agricole.',
+      icon: 'fas fa-hand-holding-usd'
+    },
+    {
+      id: '2',
+      title: 'Vente de produits',
+      desc: 'Nous proposons des services de mise en relation entre les agriculteurs et les sociétés de vente pour leur permettre de commercialiser leurs produits sur des marchés locaux, nationaux et internationaux.',
+      icon: 'fas fa-shopping-basket'
+    },
+    {
+      id: '3',
+      title: 'Louer du matériels agricoles',
+      desc: 'Nous mettons en relation les agriculteurs avec des prestataires de services agricoles pour leur permettre de louer du matériel agricole pour leurs activités à des tarifs préférentiels.',
+      icon: 'fas fa-tractor'
+    },
+    {
+      id: '4',
+      title: 'Suivi et conseil personnalisé',
+      desc: "Nous proposons un suivi personnalisé et un conseil sur mesure pour aider les agriculteurs à surmonter les difficultés qu'ils peuvent rencontrer dans leur activité et à améliorer leur performance.",
+      icon: 'fas fa-comments-dollar'
+      },
+    {
+      id: '5',
+      title: 'Mise en relation avec des partenaires',
+      desc: 'Nous mettons les agriculteurs en relation avec des partenaires pour leur permettre de trouver des débouchés pour leur production, des solutions de stockage, des fournisseurs de matières premières et des experts-conseils.',
+      icon: 'fas fa-handshake'
+      },
+      {
+        id: '6',
+        title: 'Formations et ateliers',
+        desc: 'Nous organisons des formations et des ateliers pour aider les agriculteurs à se former aux nouvelles pratiques agricoles, aux technologies de pointe, à la gestion de leur exploitation et à la commercialisation de leurs produits.',
+        icon: 'fas fa-chalkboard-teacher'
+        },
 
-   }
+
+  ]
+
+
 }

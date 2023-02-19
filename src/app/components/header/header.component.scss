@@ -1,5 +1,5 @@
 .header{
-  height: 570px;
+  height: 89vh;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -14,15 +14,16 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 440px;
+  height: 89vh;
   width: 100%;
   position: absolute !important;
 }
 .overlayer{
-  height: 440px;
+  height: 89vh;
   width: 100%;
-  padding-top: 60px;
   background-color: rgba(0, 0, 0, 0.391);
+  padding-top: 20vh;
+  padding-left: 20px;
 }
 
 .services-cover{
@@ -34,8 +35,8 @@
 }
 
 .title{
-  font-size: 36px;
-  font-weight: 600;
+  font-size: 42px;
+  font-weight: 700;
   color: #FFFFFF;
   line-height: 48px;
 }
@@ -54,8 +55,4 @@
 
 
    }
-   .header{
-    height: 370px;}
-    .overlayer, .banner{
-      height: 340px;}
-  }
+}

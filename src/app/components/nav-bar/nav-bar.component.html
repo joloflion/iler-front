@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand d-flex justify-content-between align-items-center navbar-dark bg-white fixed-top px-2 px-md-5">
- <div class="align-self-center">
-  <button class="menu-bar mx-3 d-md-none" (click)="opened = !opened">
+ <div class="align-self-center d-flex ">
+  <button class="menu-bar  d-md-none align-items-center" (click)="opened = !opened">
     <i class="fas fa-bars"></i>
   </button>
-  <a class="navbar-brand" href="#">
-    <img width="120px" src="assets/images/logo.png" alt="">
+  <a class="navbar-brand align-items-center" href="#">
+    <img class="logo" src="assets/images/iler.png" alt="">
   </a>
  </div>
 
@@ -47,11 +47,13 @@
   <app-cart class="d-block d-md-none align-self-center"></app-cart>
 </nav>
 
-<div class="side-menu pl-5 pt-4 d-block d-md-none " [class.menu-closed]="!opened"  data-aos="zoom-out-right" data-aos-duration="1200">
-  <button class="close-btn mx-3" (click)="opened = !opened">
-    <i class="fas fa-times"></i>
-  </button>
-  <img width="120px" style="margin-top: -15px;" src="assets/images/logo.png" alt="">
+<div class="side-menu pl-5 pt-4 d-block d-md-none  " [class.menu-closed]="!opened"  data-aos="zoom-out-right" data-aos-duration="1200">
+  <div class="d-flex">
+    <button class="close-btn" (click)="opened = !opened">
+      <i class="fas fa-times"></i>
+    </button>
+    <img width="120px" style="margin-top: -15px;" src="assets/images/logo.png" alt="">
+  </div>
   <ul class="navbar-nav ms-auto mt-5 pl-3">
     <li class="nav-item mt-3" >
       <a class="nav-link " [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/']" [routerLinkActive]="'is-active'" (click)="navigate('')">
@@ -61,6 +63,16 @@
     <li class="nav-item mt-3"  >
       <a class="nav-link " [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/product']" [routerLinkActive]="'is-active'"  (click)="navigate('/product')">
         Nos Produits
+      </a>
+    </li>
+    <li class="nav-item mt-3"  >
+      <a class="nav-link " [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/product']" [routerLinkActive]="'is-active'"  (click)="navigate('/product')">
+        Matériels
+      </a>
+    </li>
+    <li class="nav-item mt-3"  >
+      <a class="nav-link " [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/product']" [routerLinkActive]="'is-active'"  (click)="navigate('/product')">
+        Prestations
       </a>
     </li>
     <li class="nav-item mt-3"  >

@@ -4,14 +4,20 @@
   font-size: 14px;
   font-weight: 700;
 }
+.logo{
+  width: 64px;
 
+}
 
 .menu-bar{
   background-color: transparent;
   border: none;
   outline: none;
   font-size: 32px;
-  color: #4DAF48;
+  color: #FFFFFF;
+  background-color: #4DAF48;
+  width: 50px;
+  border-radius: 4px;
 }
 
 .nav-item{
@@ -58,7 +64,7 @@
   }
   .navbar-brand{
     img{
-      margin-top: -16px;
+      //margin-top: -16px;
     }
 
   }

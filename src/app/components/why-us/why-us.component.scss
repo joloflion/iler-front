@@ -1,0 +1,93 @@
+.services {
+  background-color: #3E755F;
+  color: #FFFFFF;
+
+  i{
+    font-size: 16px !important;
+
+  }
+  .title{
+    border-bottom: .5px solid #f4faf1b9;
+    margin-top: 16px;
+    cursor: pointer;
+  }
+  p{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+}
+
+.cover-img{
+  height: 650px;
+  background-image: url('../../../assets/images/panel.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+
+
+.services .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.services .col-4 {
+  width: 33.3333%;
+  padding: 0 15px;
+  text-align: center;
+}
+.services h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.services i {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.icon-financial {
+  color: #00BFA5;
+}
+.icon-agriculture {
+  color: #43A047;
+}
+.icon-market {
+  color: #FB8C00;
+}
+
+.icon-transparency {
+  color: #00ACC1;
+}
+.icon-automation {
+  color: #4CAF50;
+}
+.icon-security {
+  color: #F57C00;
+}
+.icon-compliance {
+  color: #9E9E9E;
+}
+.icon-project-tracking {
+  color: #00897B;
+}
+.icon-communication {
+  color: #AB47BC;
+}
+.icon-technical-support {
+  color: #FF5722;
+}
+.icon-legal-assistance {
+  color: #795548;
+}
+.icon-contributor-rewards {
+  color: #8BC34A;
+}
+
+
+@media only screen and (min-width: 768px) {
+.services{
+ // padding-top: 230px;
+}
+}

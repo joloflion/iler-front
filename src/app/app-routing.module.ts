@@ -1,3 +1,4 @@
+import { MaterielPostDetailsComponent } from './pages/materiel-post-details/materiel-post-details.component';
 import { ServiceDetailsComponent } from './pages/service-details/service-details.component';
 import { CartDetailsComponent } from './pages/cart-details/cart-details.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
@@ -66,6 +67,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartDetailsComponent
+  },
+  {
+    path: 'post/materiel/:id',
+    component: MaterielPostDetailsComponent
   }
 ];
 
