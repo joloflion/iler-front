@@ -31,8 +31,30 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Nunito', sans-serif !important;
 }
 
+.title{
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark-color);
+}
+
+.card-title{
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--dark-color);
+}
+
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
   background-color: #6cbe03 ;
+}
+
+.autocomplete-container {
+  box-shadow: none !important;
+  padding: 0 !important;
+
+}
+
+.autocomplete-container input{
+  border-radius: 29px !important;
 }
 
 

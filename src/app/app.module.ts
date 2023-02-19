@@ -1,3 +1,4 @@
+import { MapViewerComponent } from './components/map-viewer/map-viewer.component';
 import { ScrollTopService } from './shared/services/scrolltop.service';
 import { LoaderInterceptor } from './shared/interceptor/loader.interceptor';
 import { AngularMaterialModule } from './shared/material.module';
@@ -72,6 +73,9 @@ import { MaterielPostDetailsComponent } from './pages/materiel-post-details/mate
 import { MaterielReservationFormComponent } from './components/forms/materiel-reservation-form/materiel-reservation-form.component';
 import { RoundedButtonComponent } from './components/butons/rounded-button/rounded-button.component';
 import { SquareButtonComponent } from './components/butons/square-button/square-button.component';
+import { AddressAutocompleteComponent } from './components/address-autocomplete/address-autocomplete.component';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 
@@ -130,7 +134,9 @@ import { SquareButtonComponent } from './components/butons/square-button/square-
     MaterielPostDetailsComponent,
     MaterielReservationFormComponent,
     RoundedButtonComponent,
-    SquareButtonComponent
+    SquareButtonComponent,
+    AddressAutocompleteComponent,
+    MapViewerComponent
   ],
   imports: [
     BrowserModule,
@@ -147,7 +153,10 @@ import { SquareButtonComponent } from './components/butons/square-button/square-
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     StarRatingModule.forRoot(),
-    NgAnimatedCounterModule
+    NgAnimatedCounterModule,
+    AutocompleteLibModule,
+    GoogleMapsModule
+
 
 
   ],

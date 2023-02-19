@@ -1,29 +1,26 @@
 <div class="container">
-  <form action="">
-    <label for="">Période</label>
-      <div class="form-group">
-        <label for="">Date de début</label>
-        <div class="d-flex">
-          <input type="date" class="form-control" >
-          <input type="time" class="form-control" >
-        </div>
+  <form [formGroup]="reservationForm">
+    <label for="" class="text-muted">Période</label>
+    <div class="row mt-2">
+      <div class="col">
+        <label for="dateDebut" class="text-muted">Du</label>
+        <input type="date" id="dateDebut" class="form-control form-control-lg" formControlName="dateDebut" >
+      </div>
+      <div class="col">
+        <label for="dateFin" class="text-muted">Au</label>
+        <input type="date" id="dateFin" class="form-control form-control-lg" formControlName="dateFin">
+      </div>
+    </div>
+      <div class="form-group my-4">
+        <label for="addresse" class="text-muted">Où ?</label>
+        <address-autocomplete></address-autocomplete>
       </div>
       <div class="form-group mt-3">
-        <label for="">Date de fin</label>
-        <div class="d-flex">
-          <input type="date" class="form-control" >
-          <input type="time" class="form-control" >
-        </div>
+        <label for="comentaire" class="text-muted">Autre informations</label>
+        <textarea class="form-control" id="comentaire" formControlName="comentaire" rows="3"></textarea>
       </div>
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Ou ?</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      <div class="text-center">
+        <square-button [value]="'Réserver maintenant'" [action]="onClicked" ></square-button>
       </div>
-      <div class="form-group mt-3">
-        <label for="exampleFormControlTextarea1">Autre informations</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-      </div>
-
-      <button class="rounded-button">Reserver</button>
   </form>
 </div>
