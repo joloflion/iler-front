@@ -16,8 +16,8 @@ export class HeaderComponent {
     ){}
 
 
-    navigate(){
-      this.router.navigateByUrl('/sign-up')
+   public navigate(){
+      this.router!.navigateByUrl('/sign-up')
     }
 
 }

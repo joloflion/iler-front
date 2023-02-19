@@ -1,13 +1,26 @@
-<nav class="navbar navbar-expand d-flex justify-content-between align-items-center navbar-dark bg-white fixed-top px-2 px-md-5">
+<nav class="navbar navbar-expand d-flex justify-content-between align-items-center navbar-dark bg-white fixed-top px-2 px-md-3">
+<nav role="navigation">
+  <div id="menuToggle">
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
+    <ul id="menu">
+      <div class="menu-list">
+        <a [routerLinkActiveOptions]="{ exact: true }"  [routerLink]="['/']"        [routerLinkActive]="'is-active'" ><li>Acceuil</li></a>
+        <a [routerLinkActiveOptions]="{ exact: false }" [routerLink]="['/service']" [routerLinkActive]="'is-active'"><li>Services</li></a>
+        <a [routerLinkActiveOptions]="{ exact: false }" [routerLink]="['/product']" [routerLinkActive]="'is-active'"><li>Produits</li></a>
+        <a [routerLinkActiveOptions]="{ exact: true }"  [routerLink]="['/post/materiel']" [routerLinkActive]="'is-active'"><li>Matériels</li></a>
+        <a [routerLinkActiveOptions]="{ exact: true }"  [routerLink]="['/contact']" [routerLinkActive]="'is-active'"><li>Contact</li></a>
+      </div>
+    </ul>
+  </div>
+</nav>
  <div class="align-self-center d-flex ">
-  <button class="menu-bar  d-md-none align-items-center" (click)="opened = !opened">
-    <i class="fas fa-bars"></i>
-  </button>
   <a class="navbar-brand align-items-center" href="#">
     <img class="logo" src="assets/images/iler.png" alt="">
   </a>
  </div>
-
   <div class="collapse navbar-collapse" >
     <ul class="navbar-nav ms-auto">
       <li class="nav-item">
@@ -15,18 +28,24 @@
           Acceuil
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link " [routerLinkActiveOptions]="{ exact: false }" [routerLink]="['/product']" [routerLinkActive]="'is-active'" >
-          Nos Produits
-        </a>
-      </li>
+
       <li class="nav-item">
         <a class="nav-link " [routerLink]="['/service']" [routerLinkActive]="'is-active'" >
-          Nos Services
+          Services
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " [routerLink]="['/contact']" [routerLinkActive]="'is-active'" >
+        <a class="nav-link " [routerLinkActiveOptions]="{ exact: false }" [routerLink]="['/product']" [routerLinkActive]="'is-active'" >
+          Produits
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " [routerLinkActiveOptions]="{ exact: false }" [routerLink]="['/post/materiel']" [routerLinkActive]="'is-active'" >
+          Matériels
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link "[routerLink]="['/contact']" [routerLinkActive]="'is-active'" >
          Contact
         </a>
       </li>
@@ -47,52 +66,5 @@
   <app-cart class="d-block d-md-none align-self-center"></app-cart>
 </nav>
 
-<div class="side-menu pl-5 pt-4 d-block d-md-none  " [class.menu-closed]="!opened"  data-aos="zoom-out-right" data-aos-duration="1200">
-  <div class="d-flex">
-    <button class="close-btn" (click)="opened = !opened">
-      <i class="fas fa-times"></i>
-    </button>
-    <img width="120px" style="margin-top: -15px;" src="assets/images/logo.png" alt="">
-  </div>
-  <ul class="navbar-nav ms-auto mt-5 pl-3">
-    <li class="nav-item mt-3" >
-      <a class="nav-link " [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/']" [routerLinkActive]="'is-active'" (click)="navigate('')">
-        Acceuil
-      </a>
-    </li>
-    <li class="nav-item mt-3"  >
-      <a class="nav-link " [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/product']" [routerLinkActive]="'is-active'"  (click)="navigate('/product')">
-        Nos Produits
-      </a>
-    </li>
-    <li class="nav-item mt-3"  >
-      <a class="nav-link " [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/product']" [routerLinkActive]="'is-active'"  (click)="navigate('/product')">
-        Matériels
-      </a>
-    </li>
-    <li class="nav-item mt-3"  >
-      <a class="nav-link " [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/product']" [routerLinkActive]="'is-active'"  (click)="navigate('/product')">
-        Prestations
-      </a>
-    </li>
-    <li class="nav-item mt-3"  >
-      <a class="nav-link " [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/service']" [routerLinkActive]="'is-active'"   (click)="navigate('/service')">
-        Nos Services
-      </a>
-    </li>
-    <li class="nav-item mt-3"  >
-      <a class="nav-link "  [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/contact']" [routerLinkActive]="'is-active'"  (click)="navigate('/contact')">
-       Contact
-      </a>
-    </li>
-    <li class="nav-item mt-3"  >
-      <a class="nav-link btn text-dark join-btn" (click)="navigate(authService.userData != null ? 'account/'+authService.userData.uid: 'sign-in')">
-        <span *ngIf="!authService.isLoggedIn">Nous rejoindre</span>
-        <span *ngIf="authService.isLoggedIn">
-          <i class="far fa-user fa-lg"></i>
-          MON ESPACE
-        </span>
-      </a>
-    </li>
-  </ul>
-</div>
+
+

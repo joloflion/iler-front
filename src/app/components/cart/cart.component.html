@@ -1,8 +1,7 @@
 <button (click)="opened = !opened" class="cart-btn">
-  <img #cartBtn  src="assets/images/shopping-bag.png" alt="">
+  <img #cartBtn  src="assets/images/shopping-cart.png" alt="">
   <div  class="badge" #cartBtn >
     {{carts.length}}
   </div>
 </button>
-
 <app-small-cart *ngIf="opened" (closed)="listenClose($event)" ></app-small-cart>

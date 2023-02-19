@@ -3,6 +3,12 @@
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
+:root {
+  --green-color: #6cbe03;
+  --background-color: #e5e5e5;
+  --dark-color: #374151;
+}
+
 html, body {
   padding: 0;
   margin: 0;
@@ -22,21 +28,12 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Nunito', sans-serif !important;
 }
 
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
   background-color: #6cbe03 ;
 }
 
-.rounded-button {
-  padding: 10px 20px;
-  background-color: #6cbe03;
-  color: white;
-  border-radius: 30px;
-  border: none;
-  font-size: 14px;
-  cursor: pointer;
-  font-weight: 700;
-}
+
 

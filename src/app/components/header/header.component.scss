@@ -6,7 +6,7 @@
   margin-top: 70px;
 }
 .btn{
-  background-color: #6cbe03;
+  background-color: var(--green-color);
   color: #FFFFFF;
 }
 .banner{
@@ -21,8 +21,8 @@
 .overlayer{
   height: 89vh;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.391);
-  padding-top: 20vh;
+  background-color: rgba(160, 160, 160, 0.569);
+  padding-top: 25vh;
   padding-left: 20px;
 }
 
@@ -35,15 +35,15 @@
 }
 
 .title{
-  font-size: 42px;
-  font-weight: 700;
-  color: #FFFFFF;
-  line-height: 48px;
+  font-size: 28.6px;
+  font-weight: 770;
+  color: var(--dark-color);
+  line-height: 40px;
 }
 .sub-title{
   font-size: 14px;
-  font-weight: 400;
-  color: #FFFFFF;
+  font-weight: 700;
+  color: var(--dark-color);
 }
 
 

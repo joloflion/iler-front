@@ -70,6 +70,8 @@ import { MaterielPostCardComponent } from './components/materiel-post-card/mater
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { MaterielPostDetailsComponent } from './pages/materiel-post-details/materiel-post-details.component';
 import { MaterielReservationFormComponent } from './components/forms/materiel-reservation-form/materiel-reservation-form.component';
+import { RoundedButtonComponent } from './components/butons/rounded-button/rounded-button.component';
+import { SquareButtonComponent } from './components/butons/square-button/square-button.component';
 
 
 
@@ -126,7 +128,9 @@ import { MaterielReservationFormComponent } from './components/forms/materiel-re
     MaterielPostCardComponent,
     AvatarComponent,
     MaterielPostDetailsComponent,
-    MaterielReservationFormComponent
+    MaterielReservationFormComponent,
+    RoundedButtonComponent,
+    SquareButtonComponent
   ],
   imports: [
     BrowserModule,
