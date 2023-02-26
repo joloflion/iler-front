@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SquareButtonComponent } from './square-button.component';
+import { CommentFormComponent } from './comment-form.component';
 
-describe('SquareButtonComponent', () => {
-  let component: SquareButtonComponent;
-  let fixture: ComponentFixture<SquareButtonComponent>;
+describe('CommentFormComponent', () => {
+  let component: CommentFormComponent;
+  let fixture: ComponentFixture<CommentFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SquareButtonComponent ]
+      declarations: [ CommentFormComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SquareButtonComponent);
+    fixture = TestBed.createComponent(CommentFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

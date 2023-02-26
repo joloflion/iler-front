@@ -7,21 +7,28 @@
           <h3 class="title">{{post.materiel.titre}}</h3>
           <p>{{post.materiel.desc}}</p>
         </div>
+        <h6 class="mt-4">Localisation</h6>
         <map-viewer [coord]=""></map-viewer>
       </div>
       <div class="col-12 col-md-5">
-         <div class="card card-body p-2">
-          <div class="d-flex align-items-center">
-            <avatar [name]="post.prop.displayName"></avatar>
-            <span>{{post.prop.displayName}}</span>
-          </div>
-         </div>
-         <div class="card card-body mt-3">
-          <h5 class="card-title mb-3">Réservation</h5>
-           <app-materiel-reservation-form [post]="post"></app-materiel-reservation-form>
-         </div>
+        <div class="">
+          <div class="card card-body p-2">
+            <div class="d-flex align-items-center">
+              <avatar [name]="post.prop.displayName"></avatar>
+              <span>{{post.prop.displayName}}</span>
+            </div>
+           </div>
+           <div class="card card-body mt-3">
+            <h5 class="card-title mb-3">Réservation</h5>
+             <app-materiel-reservation-form [post]="post"></app-materiel-reservation-form>
+           </div>
+        </div>
+
       </div>
     </div>
   </div>
+  <div class="container mt-5">
+    <materiel-list></materiel-list>
+   </div>
 </section>
 

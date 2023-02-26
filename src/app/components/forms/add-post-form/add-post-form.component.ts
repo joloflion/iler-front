@@ -1,4 +1,4 @@
-import { Post } from 'src/app/shared/models/post';
+import { ProjetCompagne } from 'src/app/shared/models/projet-campagne';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { PostService } from './../../../shared/services/post.service';
@@ -18,7 +18,7 @@ export class AddPostFormComponent implements OnInit{
   file!: File;
   isSubmitted: boolean = false;
   url: any;
-  post!: Post;
+  post!: ProjetCompagne;
 
 
   constructor(private fileUploadService: FileUploadService,

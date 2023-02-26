@@ -14,6 +14,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddPostPageComponent } from './pages/add-post-page/add-post-page.component';
+import { FormationDetailsPageComponent } from './pages/formation-details-page/formation-details-page.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,10 @@ const routes: Routes = [
   {
     path: 'post/materiel/:id',
     component: MaterielPostDetailsComponent
+  },
+  {
+    path: 'formation/post/:id',
+    component: FormationDetailsPageComponent
   }
 ];
 

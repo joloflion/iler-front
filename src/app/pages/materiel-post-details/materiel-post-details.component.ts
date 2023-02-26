@@ -1,13 +1,15 @@
 import { ActivatedRoute } from '@angular/router';
 import { MaterielPost } from './../../shared/models/materiel-post';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ScrollTopService } from 'src/app/shared/services/scrolltop.service';
 
 @Component({
   selector: 'app-materiel-post-details',
   templateUrl: './materiel-post-details.component.html',
   styleUrls: ['./materiel-post-details.component.scss']
 })
-export class MaterielPostDetailsComponent {
+export class MaterielPostDetailsComponent  implements OnInit{
+
 
   post: MaterielPost =  {
     id: "1",
@@ -35,10 +37,14 @@ export class MaterielPostDetailsComponent {
   }
 
 
-  constructor(private route: ActivatedRoute){
+  constructor(private route: ActivatedRoute, private scrollTopService: ScrollTopService){
     route.params.subscribe(v =>{
      console.log(v['id'])
     })
+  }
+
+  ngOnInit(): void {
+    this.scrollTopService.setScrollTop();
   }
 
 }

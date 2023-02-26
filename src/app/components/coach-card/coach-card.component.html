@@ -1,14 +1,17 @@
 <div class="card mx-3" >
   <img class="card-img-top" [src]="coach.bannerImage" alt="Babacar">
   <div class="card-body text-center pb-5">
-   <avatar [name]="coach.user.displayName"></avatar>
+    <div class="d-flex" style="margin-top: -25px">
+      <avatar class="align-self-end" [name]="coach.user.displayName" ></avatar>
+      <h2 class="title align-self-end">{{coach.user.displayName}}</h2>
+    </div>
     <h5 class="card-title">{{coach.speciality }}</h5>
     <p class="card-text text-center">
       <span class="name">{{coach.user.displayName}}</span><br>
-     <span>{{coach.description | truncate}}</span>
+      <span>{{coach.description | truncate}}</span>
     </p>
-    <button class="c-btn btn btn-lg">
-      Contacter
+    <button class="c-btn btn btn-lg btn-block" (click)="navigate(coach.id)">
+      Suivre cette formation
     </button>
   </div>
 </div>

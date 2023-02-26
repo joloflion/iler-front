@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Post } from 'src/app/shared/models/post';
+import { Router } from '@angular/router';
+import { ProjetCompagne } from 'src/app/shared/models/projet-campagne';
 
 @Component({
   selector: 'app-post-card',
@@ -13,7 +13,7 @@ export class PostCardComponent {
 
   }
 
-  @Input() post!: Post
+  @Input() post!: ProjetCompagne
 
   go(id: string){
   this.router.navigate(['posts/'+id])

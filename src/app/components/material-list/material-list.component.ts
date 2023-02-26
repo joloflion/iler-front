@@ -1,5 +1,6 @@
 import { MaterielPost } from './../../shared/models/materiel-post';
 import { Component } from '@angular/core';
+import { Title } from 'src/app/shared/models/title';
 
 @Component({
   selector: 'materiel-list',
@@ -7,6 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./material-list.component.scss']
 })
 export class MaterialListComponent {
+
+  public title: Title =
+    {
+      name: "Matériéls",
+      desc: "Louer du matériéls agricoles",
+      type: "",
+      link: ""
+    };
 
   public posts: MaterielPost[] = [
     {

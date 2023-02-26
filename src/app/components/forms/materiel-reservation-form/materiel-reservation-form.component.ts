@@ -18,16 +18,14 @@ export class MaterielReservationFormComponent implements OnInit{
 
   ngOnInit(): void {
       this.reservationForm = this.fb.group({
-        dateDebut: [],
-        dateFin:   [],
+        dateDebut:  [],
+        dateFin:    [],
         comentaire: []
 
       })
   }
 
-  onClicked(){
-
-  }
+  navigate(){}
 
 
 }

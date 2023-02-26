@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-4">
+      <div class="card card-body mb-3 p-2">
+         <div class="d-flex">
+            <avatar [name]="'Babacar'" class="align-self-center"></avatar>
+            <h2 class="align-self-center title" style="font-size: 14px;">Babacar</h2>
+         </div>
+      </div>
+      <h3 class="mt-4 title">Chapitres</h3>
+      <ul *ngFor="let chap of formation.chapitres" class="list-unstyled m-0">
+       <li class="m-0 ">
+         <div class="chapitre d-flex justify-content-between px-4">
+             <h4 class="align-self-center">{{chap.titre}}</h4>
+             <i class="fas fa-check-circle fa-lg align-self-center"></i>
+         </div>
+       </li>
+      </ul>
+   </div>
+   <div class="col-12 col-md-8">
+     <h3 class="title" style="font-size: 22px;">{{formation.titre}}</h3>
+     <div class="cover" style="background-image: url('{{formation.image}}');">
+     </div>
+     <h3 class="title mt-5 mb-3">Introduction</h3>
+     <p>{{formation.introduction}}</p>
+     <div>
+       <div *ngFor="let chap of formation.chapitres" class="mt-4">
+       <div class="overlayer">
+          <div class="d-flex justify-content-between mb-3">
+            <h1 class="title align-self-center">{{chap.titre}}</h1>
+            <i class="fas fa-check-circle fa-lg align-self-center text-success"></i>
+          </div>
+          <p>{{chap.contenu}}</p>
+       </div>
+       </div>
+     </div>
+     <app-comment-form></app-comment-form>
+   </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-export interface Post {
+export interface ProjetCompagne {
   id?: string;
   title: string;
   description: string;

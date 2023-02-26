@@ -33,7 +33,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.scrollTopService.setScrollTop()
+    this.scrollTopService.setScrollTop();
  this.route.params.subscribe(p => {
   this.productService.getById(p['id']).subscribe(r =>{
     var d: any = r.data();

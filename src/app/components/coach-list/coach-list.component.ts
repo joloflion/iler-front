@@ -1,6 +1,7 @@
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Component } from '@angular/core';
 import { Coach } from 'src/app/shared/models/coach';
+import { Title } from 'src/app/shared/models/title';
 
 @Component({
   selector: 'app-coach-list',
@@ -8,6 +9,13 @@ import { Coach } from 'src/app/shared/models/coach';
   styleUrls: ['./coach-list.component.scss']
 })
 export class CoachListComponent {
+
+ public  title: Title = {
+     name: "Accompagnement",
+     desc: "Faites-vous accompanger par des spécialistes",
+     type: "",
+     link: ""
+  }
   public coaches: Coach[] = [
     {
       id: "1",

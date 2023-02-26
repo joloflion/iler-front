@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as AOS from 'aos';
+import { LoadFixtureService } from './shared/services/load-fixture.service';
+
+
 
 
 
@@ -12,10 +15,11 @@ export class AppComponent implements OnInit {
 
   title = 'ILER';
 
-  constructor(){
+  constructor(private loadFixtures: LoadFixtureService){
 
   }
   ngOnInit() {
+    this.loadFixtures.loadProjetCampagne()
     AOS.init();//AOS - 2
     //AOS.refresh();//refresh method is called on window resize and so on, as it doesn't require to build new store with AOS elements and should be as light as possible.
   }

@@ -19,8 +19,9 @@
         <label for="comentaire" class="text-muted">Autre informations</label>
         <textarea class="form-control" id="comentaire" formControlName="comentaire" rows="3"></textarea>
       </div>
-      <div class="text-center">
-        <square-button [value]="'Réserver maintenant'" [action]="onClicked" ></square-button>
+      <div class="text-center mt-4">
+        <button class="square-button" (click)="navigate()">Réserver maintenant</button>
       </div>
   </form>
 </div>
+

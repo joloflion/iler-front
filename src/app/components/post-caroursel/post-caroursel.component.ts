@@ -2,8 +2,7 @@ import { LoaderService } from './../../shared/services/loader.service';
 import { PostService } from './../../shared/services/post.service';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { Post } from 'src/app/shared/models/post';
-import { QueryDocumentSnapshot } from '@angular/fire/compat/firestore';
+import { ProjetCompagne } from 'src/app/shared/models/projet-campagne';
 
 @Component({
   selector: 'app-post-caroursel',
@@ -16,7 +15,7 @@ export class PostCarourselComponent implements OnInit{
 
   }
 
-  public posts: Post[] = [];
+  public posts: ProjetCompagne[] = [];
 
   customOptions: OwlOptions = {
     loop: true,
@@ -52,7 +51,6 @@ export class PostCarourselComponent implements OnInit{
   ngOnInit(): void {
     this.loaderService.show()
     this.postService.getPosts().subscribe(res =>{
-
       res.docs.forEach((d: any) =>{
         let data = d.data();
         data.id = d.id;

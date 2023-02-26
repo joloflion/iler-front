@@ -1,8 +1,10 @@
 import { PostService } from './../../shared/services/post.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { Post } from 'src/app/shared/models/post';
+import { ProjetCompagne } from 'src/app/shared/models/projet-campagne';
 import * as moment from 'moment';
+import { MatDialog } from '@angular/material/dialog';
+import { PaiementOptionsComponent } from 'src/app/components/paiement-options/paiement-options.component';
 
 
 
@@ -12,11 +14,14 @@ import * as moment from 'moment';
   styleUrls: ['./post-details.component.scss']
 })
 export class PostDetailsComponent implements OnInit{
-  post!: Post;
+  post!: ProjetCompagne;
   closed: boolean = false;
   loading: boolean = true;
 
-  constructor(private route: ActivatedRoute, private postService: PostService){
+  constructor(
+     private route: ActivatedRoute,
+     private dialog: MatDialog,
+     private postService: PostService){
 
   }
 
@@ -44,5 +49,10 @@ export class PostDetailsComponent implements OnInit{
     var r = startDate.days() - endDate.days()
     if(r < 0) this.closed = true;
     return r
+  }
+
+  invest(){
+
+
   }
 }

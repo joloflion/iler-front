@@ -32,13 +32,17 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { VgCoreModule } from '@videogular/ngx-videogular/core';
+import { VgControlsModule } from '@videogular/ngx-videogular/controls';
+import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
+import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
 import { environment } from '../environments/environment';
 import { AuthService } from './shared/services/auth.service';
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
 import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
 import { AccountComponent } from './pages/account/account.component';
 import { LoaderComponent } from './components/loader/loader.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import  {TruncatePipe} from './shared/pipes/transform.pipe';
 import { WhyUsComponent } from './components/why-us/why-us.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
@@ -71,11 +75,17 @@ import { MaterielPostCardComponent } from './components/materiel-post-card/mater
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { MaterielPostDetailsComponent } from './pages/materiel-post-details/materiel-post-details.component';
 import { MaterielReservationFormComponent } from './components/forms/materiel-reservation-form/materiel-reservation-form.component';
-import { RoundedButtonComponent } from './components/butons/rounded-button/rounded-button.component';
-import { SquareButtonComponent } from './components/butons/square-button/square-button.component';
 import { AddressAutocompleteComponent } from './components/address-autocomplete/address-autocomplete.component';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { PaiementOptionsComponent } from './components/paiement-options/paiement-options.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormationDetailsPageComponent } from './pages/formation-details-page/formation-details-page.component';
+import { FormationVideoPlayerComponent } from './components/formation-video-player/formation-video-player.component';
+import { FormationSummaryComponent } from './components/formation-summary/formation-summary.component';
+import { FormationContentComponent } from './components/formation-content/formation-content.component';
+import { CommentFormComponent } from './components/forms/comment-form/comment-form.component';
+import { FormationCardComponent } from './components/formation-card/formation-card.component';
 
 
 
@@ -133,10 +143,15 @@ import { GoogleMapsModule } from '@angular/google-maps';
     AvatarComponent,
     MaterielPostDetailsComponent,
     MaterielReservationFormComponent,
-    RoundedButtonComponent,
-    SquareButtonComponent,
     AddressAutocompleteComponent,
-    MapViewerComponent
+    MapViewerComponent,
+    PaiementOptionsComponent,
+    FormationDetailsPageComponent,
+    FormationVideoPlayerComponent,
+    FormationSummaryComponent,
+    FormationContentComponent,
+    CommentFormComponent,
+    FormationCardComponent
   ],
   imports: [
     BrowserModule,
@@ -155,7 +170,13 @@ import { GoogleMapsModule } from '@angular/google-maps';
     StarRatingModule.forRoot(),
     NgAnimatedCounterModule,
     AutocompleteLibModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    MatDialogModule,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule,
+    HttpClientModule
 
 
 

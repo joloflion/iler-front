@@ -1,4 +1,4 @@
-import { Post } from 'src/app/shared/models/post';
+import { ProjetCompagne } from 'src/app/shared/models/projet-campagne';
 import { PostService } from './../../shared/services/post.service';
 import { AuthService } from './../../shared/services/auth.service';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
@@ -11,7 +11,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 export class AccountComponent implements OnInit {
 
   user$ = this.authService.userData;
-posts: Post[] = [];
+posts: ProjetCompagne[] = [];
   constructor(public authService: AuthService, public postService: PostService) {
 
   }

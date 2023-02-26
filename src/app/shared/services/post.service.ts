@@ -1,17 +1,18 @@
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Post } from 'src/app/shared/models/post';
+import {  ProjetCompagne } from 'src/app/shared/models/projet-campagne';
 import { Injectable, NgZone } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { map } from 'rxjs';
+
+const POST_REF = "pojet-campagne";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
 
-  posts$: Post[] = [];
+  posts$: ProjetCompagne[] = [];
 
   constructor(
     public afs: AngularFirestore, // Inject Firestore service
@@ -23,16 +24,16 @@ export class PostService {
 
 
   getPosts() {
-   return this.afs.collection('posts').get();
+   return this.afs.collection(POST_REF).get();
   }
 
    getById(id: string) {
-    return this.afs.collection('posts').doc(id).get();
+    return this.afs.collection(POST_REF).doc(id).get();
 
   }
 
   getByUserId(id: string){
-     this.afs.collection('posts', ref => ref.where('author.uid', '==', id))
+     this.afs.collection(POST_REF, ref => ref.where('author.uid', '==', id))
 
                       .valueChanges()
                       .subscribe(d =>{
@@ -42,8 +43,8 @@ export class PostService {
                       })
   }
 
-  save(post: Post){
-    this.afs.collection('posts').add(post)
+  save(post: ProjetCompagne){
+    this.afs.collection(POST_REF).add(post)
     .then((res) => {
       this.router.navigate(['account', this.authService.userData.uid])
     })
