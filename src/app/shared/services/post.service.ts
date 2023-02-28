@@ -36,7 +36,6 @@ export class PostService {
 
   getByUserId(id: string){
      this.afs.collection(POST_REF, ref => ref.where('author.uid', '==', id))
-
                       .valueChanges()
                       .subscribe(d =>{
                         d.map((data: any) => {
