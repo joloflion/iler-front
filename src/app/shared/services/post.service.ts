@@ -24,7 +24,9 @@ export class PostService {
 
 
   getPosts() {
-   return this.afs.collection(POST_REF).get();
+   return this.afs.collection(POST_REF, ref =>
+    ref.limit(10)
+    ).get();
   }
 
    getById(id: string) {
