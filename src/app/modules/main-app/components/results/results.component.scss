@@ -1,0 +1,39 @@
+.result{
+  width: 100%;
+  height: 180px;
+  background-image: url('../../../../../assets/images/result.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+.overlayer{
+  width: 100%;
+  height: 180px;
+  padding-top: 20px;
+  background-color: #3e755fa1;
+
+}
+h3{
+    color: #FFFFFF;
+    font-family: "Averia Sans Libre", Sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: -0.3px;
+}
+.count{
+  color: #6cbe03;
+    font-family: "Averia Sans Libre", Sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 768px) {
+  .result{
+    width: 100%;
+    height: 450px;
+
+  }
+}
+

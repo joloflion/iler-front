@@ -1,0 +1,9 @@
+<div  class="container px-5 p-4 mb-5 rounded">
+  <app-title [title] ="projetTitle" ></app-title>
+  <div class="row px-3">
+    <div class="col-12 col-md-4 mt-3 " *ngFor="let service of services">
+      <service-button [service]="service"></service-button>
+    </div>
+  </div>
+</div>
+

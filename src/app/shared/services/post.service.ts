@@ -5,7 +5,7 @@ import {  ProjetCompagne } from 'src/app/shared/models/projet-campagne';
 import { Injectable, NgZone } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
-const POST_REF = "pojet-campagne";
+const POST_REF = "projet-campagnes";
 
 @Injectable({
   providedIn: 'root'

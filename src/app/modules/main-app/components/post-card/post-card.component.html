@@ -1,0 +1,36 @@
+<div *ngIf="post" class="card mx-2" (click)="go(post.id!)" data-aos="flip-left" data-aos-duration="1500">
+  <div class="img p-2" style="background-image: url('{{post.image}}');">
+    <circle-progress
+    class="smooth align-self-center"
+    [percent]="(post.rised/post.target)*100"
+    [radius]="20"
+    [animation]="true"
+    [animationDuration]="500"
+    [outerStrokeWidth]="4"
+    [outerStrokeColor]="colorByDeadline(post.target, post.rised)"
+    [innerStrokeWidth]="4"
+    [innerStrokeColor]="'#dddddd'"
+    [space]="-3"
+    [startFromZero]="false"
+    [showSubtitle]="false"
+    [backgroundColor]="'#ffffff'"
+    [titleFontSize]="'16'" > </circle-progress>
+  </div>
+  <div>
+    <h2 class="mt-2">{{post.title}}</h2>
+    <h6 class="text-muted">{{post.author?.displayName}}</h6>
+    <p class="text-muted">{{post.description | truncate}}</p>
+    <div class="d-flex justify-content-between">
+      <h3 class="text-dark">Budget: {{post.target}} </h3>
+      <h3 class="text-success">Collecte: {{post.rised}} </h3>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-between">
+      <p>
+        <i class="fa fa-user text-muted"></i>
+        <span class="text-muted"> {{post.author.name}}</span>
+      </p>
+    </div>
+  </div>
+
+</div>

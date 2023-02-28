@@ -1,0 +1,33 @@
+.container{
+  margin-top: 120px;
+  margin-bottom: 60px;
+  background-color: #ffffff;
+}
+
+.card{
+  border: none !important;
+
+}
+h3{
+  font-size: large;
+  font-weight: 500;
+}
+
+.btn{
+
+  background-color: #1d9873;
+  color: #ffffff;
+
+}
+.google-btn{
+  background-color: #DB4437;
+}
+
+.panel{
+  background-image: url('../../../../../assets/images/panel.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+}
+

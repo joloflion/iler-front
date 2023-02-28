@@ -34,18 +34,7 @@ export class AuthService {
   // Sign in with email/password
   SignIn(email: string, password: string) {
     return this.afAuth
-      .signInWithEmailAndPassword(email, password)
-      .then((result) => {
-       // this.SetUserData(result.user, "");
-        this.afAuth.authState.subscribe((user) => {
-          if (user) {
-            this.router.navigate(['account/', user.uid]);
-          }
-        });
-      })
-      .catch((error) => {
-        window.alert(error.message);
-      });
+      .signInWithEmailAndPassword(email, password);
   }
   // Sign up with email/password
   SignUp(email: string, password: string, name: string, group: string) {
