@@ -1,3 +1,21 @@
 <div class="container-fluid m-0 p-5">
-
+  <div class="card card-body mb-4 pt-2" style="border: none !important; background-color: #F4F4F4;">
+    <div class="form-group">
+      <label for="">Montant</label>
+      <input  class="form-control form-control-lg" type="number" [value]="1000"/>
+    </div>
+  </div>
+  <label for="">Envoyer avec: </label>
+   <div class="card card-body mt-3" [class.selected]="selctedPaiementOption == po" *ngFor="let po of paiementOptions" (click)="onSelect(po)" >
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-between align-items-center" >
+          <img [src]="po.image" alt="">
+           <input  class="form-control" type="tel"  placeholder="Numéro" [value]="po.phone" />
+        </div>
+        <h5 width="40px">{{po.name}}</h5>
+      </div>
+   </div>
+   <div class="mt-4 text-center">
+    <button class="square-button"  style="width: 230px">Valider</button>
+   </div>
 </div>

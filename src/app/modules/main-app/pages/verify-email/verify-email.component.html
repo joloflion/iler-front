@@ -1,24 +1,27 @@
-<div class="container mt-5 pt-5">
-  <div class="mt-5">
-    <div class="authBlock">
-      <h3>Merci pour votre inscription</h3>
-      <div class="formGroup" *ngIf="authService.userData as user">
-        <p class="text-center">
-          Afin d'activer votre compte ,
-          Veillez click sur le lien envoyé sur votre email :
-           <strong>{{user.email}}</strong>.</p>
-      </div>
+<div class="container mt-5 pt-5 justify-content-center">
+  <div class="card card-body text-center">
+    <div class="mt-5">
+      <div class="authBlock">
+        <h3>Merci pour votre inscription</h3>
+        <div class="formGroup my-5" *ngIf="authService.userData as user">
+          <p class="text-center">
+            Afin d'activer votre compte ,
+            Veillez click sur le lien envoyé sur votre email :
+             <strong>{{user.email}}</strong>.</p>
+        </div>
 
-      <!-- Calling SendVerificationMail() method using authService Api -->
-      <div class="formGroup">
-        <button type="button" class="btn btn-primary" (click)="authService.SendVerificationMail()">
-          <i class="fas fa-redo-alt"></i>
-          Renvoyer le lien
-        </button>
+        <!-- Calling SendVerificationMail() method using authService Api -->
+        <div class="formGroup">
+          <button type="button" class="rounded-button" (click)="authService.SendVerificationMail()">
+            <i class="fas fa-redo-alt"></i>
+            Renvoyer le lien
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="text-center mt-5">
-      <a class="btn btn-outline-primary" routerLink="/"> Retour à l'acceuil</a>
+      <div class="text-center mt-5">
+        <a class="btn btn-outline-success" routerLink="/"> Retour à l'acceuil</a>
+      </div>
     </div>
   </div>
+
 </div>

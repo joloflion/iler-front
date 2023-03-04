@@ -8,7 +8,7 @@
     "rised": 3120,
     "remainingTime": 30,
     "validated": true,
-    "image": "https://example.com/campagne1.jpg",
+    "image": "https://i.ibb.co/7YCD7r5/p1.jpg",
     "author": {
       "name": "Association des agriculteurs bio",
       "address": "Dakar, Sénégal",
@@ -26,7 +26,7 @@
     "rised": 1750,
     "remainingTime": 15,
     "validated": true,
-    "image": "https://example.com/campagne2.jpg",
+    "image": "https://i.ibb.co/d6dmrYV/p2.jpg",
     "author": {
       "name": "Groupe d'agriculteurs locaux",
       "address": "Ziguinchor, Sénégal",
@@ -44,7 +44,7 @@
     "rised": 1250,
     "remainingTime": 20,
     "validated": true,
-    "image": "https://example.com/campagne3.jpg",
+    "image": "https://i.ibb.co/wC18mCs/p3.jpg",
     "author": {
       "name": "Coopérative agricole régionale",
       "address": "Saint-Louis, Sénégal",
@@ -62,7 +62,7 @@
     "rised": 920,
     "remainingTime": 10,
     "validated": true,
-    "image": "https://example.com/campagne4.jpg",
+    "image": "https://i.ibb.co/qR7D6H8/p4.jpg",
     "author": {
       "name": "Association des agriculteurs de la banlieue",
       "address": "Pikine, Sénégal",
@@ -80,7 +80,7 @@
     "rised": 1870,
     "remainingTime": 25,
     "validated": true,
-    "image": "https://example.com/campagne5.jpg",
+    "image": "https://i.ibb.co/kGRnz9F/p5.jpg",
     "author": {
       "name": "Association des riziculteurs du delta",
       "address": "Podor, Sénégal",
@@ -98,7 +98,7 @@
     "rised": 1100,
     "remainingTime": 15,
     "validated": true,
-    "image": "https://example.com/campagne6.jpg",
+    "image": "https://i.ibb.co/pvBjL6P/p6.jpg",
     "author": {
       "name": "Coopérative agricole de la vallée",
       "address": "Thiès, Sénégal",
@@ -116,7 +116,7 @@
     "rised": 680,
     "remainingTime": 5,
     "validated": true,
-    "image": "https://example.com/campagne7.jpg",
+    "image": "https://i.ibb.co/WFTRqXH/p7.jpg",
     "author": {
       "name": "Association des agriculteurs de la côte",
       "address": "Mbour, Sénégal",
@@ -134,7 +134,7 @@
     "rised": 950,
     "remainingTime": 10,
     "validated": true,
-    "image": "https://example.com/campagne9.jpg",
+    "image": "https://i.ibb.co/59MqjxQ/p8.jpg",
     "author": {
       "name": "Coopérative agricole de la plaine",
       "address": "Saint-Louis, Sénégal",
@@ -142,23 +142,5 @@
     },
     "startDate": "2023-04-10",
     "endDate": "2023-05-10"
-  },
-  {
-    "id": "10",
-    "title": "Culture de tomates",
-    "description": "Nous souhaitons collecter des fonds pour financer notre projet de culture de tomates. Nous produirons des tomates de qualité pour répondre à la demande des consommateurs locaux et des restaurants de la région.",
-    "likes": 25,
-    "target": 2000,
-    "rised": 1450,
-    "remainingTime": 20,
-    "validated": true,
-    "image": "https://example.com/campagne10.jpg",
-    "author": {
-      "name": "Association des producteurs de la vallée",
-      "address": "Fatick, Sénégal",
-      "phone": "+221 77 234 56 78"
-    },
-    "startDate": "2023-04-15",
-    "endDate": "2023-05-15"
   }
 ]

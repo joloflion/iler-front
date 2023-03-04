@@ -7,6 +7,7 @@
   --green-color: #6cbe03;
   --background-color: #e5e5e5;
   --dark-color: #374151;
+  --red-color: rgb(247, 35, 56);
 }
 
 html, body {
@@ -80,5 +81,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+
+.mat-mdc-snack-bar-container {
+  &.error-snack {
+    --mdc-snackbar-container-color: var(--red-color);
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+  }
+}
+
+.dialog{
+  overflow: hidden !important;
+}
 
 

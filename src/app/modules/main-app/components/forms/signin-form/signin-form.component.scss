@@ -41,8 +41,7 @@
 .register-photo form .form-control {
   background:#f7f9fc;
   border:none;
-  border-bottom:1px solid #dfe7f1;
-  border-radius:0;
+  border-radius: 4px;
   box-shadow:none;
   outline:none;
   color:inherit;
@@ -55,20 +54,7 @@
   line-height:20px;
 }
 
-.register-photo form .btn-primary {
-  background:#f4476b;
-  border:none;
-  border-radius:4px;
-  padding:11px;
-  box-shadow:none;
-  margin-top:35px;
-  text-shadow:none;
-  outline:none !important;
-}
 
-.register-photo form .btn-primary:hover, .register-photo form .btn-primary:active {
-  background:#eb3b60;
-}
 
 .register-photo form .btn-primary:active {
   transform:translateY(1px);

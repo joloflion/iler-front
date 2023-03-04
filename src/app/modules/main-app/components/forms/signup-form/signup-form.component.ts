@@ -1,5 +1,5 @@
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Component } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { LoaderService } from 'src/app/shared/services/loader.service';
 
@@ -10,34 +10,35 @@ import { LoaderService } from 'src/app/shared/services/loader.service';
 })
 export class SignupFormComponent {
 
-  public errorMessage: string = "";
-  public loading: boolean = false;
   public signUpForm!: FormGroup
 
   public selected: any = null;
   constructor(
     public authService: AuthService,
-    private fb: FormBuilder,
-    private loader: LoaderService
+    private fb: FormBuilder
     ){
-      loader.isLoading.subscribe(v => this.loading = v)
-     this.signUpForm = fb.group(
+     this.signUpForm = this.fb.group(
       {
         userEmail: ['', [Validators.email, Validators.required]],
-        userPwd:   ['', [Validators.minLength(4), Validators.required]],
+        userPwd:   ['', [Validators.minLength(6), Validators.required]],
         name:      ['', [Validators.required]],
-        pwdVerif:  ['', [Validators.required]]
+        pwdVerif:  ['', [Validators.required, this.validateVerifPwd.bind(this)]]
       }
      )
   }
 
+  validateVerifPwd(control: FormControl){
+    if(this.signUpForm?.get('userPwd')?.value !== control.value){
+      return {invalidPwdVerif: true}
+    }
+    return null;
+  }
+
   signUp(){
-
     this.authService
-    .SignUp(this.signUpForm.get('userEmail')?.value , this.signUpForm.get('userPwd')?.value, this.signUpForm.get('name')?.value, this.selected.value)
+    .SignUp(this.signUpForm.get('userEmail')?.value , this.signUpForm?.get('userPwd')?.value, this.signUpForm?.get('name')?.value)
   }
 
-  isFormValid(): boolean{
-    return this.signUpForm.valid && this.selected !== null;
-  }
+
+
 }

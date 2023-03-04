@@ -10,12 +10,19 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import { ErrorDialogComponent } from './errors/error-dialog/error-dialog.component';
+import { LoadingDialogComponent } from './errors/loading/loading-dialog/loading-dialog.component';
+import { AngularMaterialModule } from './material.module';
+import { LoadingDialogService } from './errors/loading/loading.service';
+import { ErrorDialogService } from './errors/error-dialog.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
 @NgModule({
   declarations: [
-
+    ErrorDialogComponent,
+    LoadingDialogComponent
   ],
   imports: [
     CommonModule,
@@ -28,11 +35,8 @@ import { AutocompleteLibModule } from 'angular-ng-autocomplete';
     CarouselModule,
     NgCircleProgressModule.forRoot(),
     GoogleMapsModule,
-    AutocompleteLibModule
-
-
-
-
+    AutocompleteLibModule,
+    MatSnackBarModule
   ],
   exports: [
     VgBufferingModule,
@@ -43,9 +47,11 @@ import { AutocompleteLibModule } from 'angular-ng-autocomplete';
     CarouselModule,
     NgCircleProgressModule,
     GoogleMapsModule,
-    AutocompleteLibModule
+    AutocompleteLibModule,
+    MatSnackBarModule
 
 
-  ]
+  ],
+  providers: [LoadingDialogService, ErrorDialogService]
 })
 export class SharedModule { }

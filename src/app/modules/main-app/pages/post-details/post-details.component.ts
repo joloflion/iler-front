@@ -1,9 +1,10 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ProjetCompagne } from 'src/app/shared/models/projet-campagne';
 import * as moment from 'moment';
 import { MatDialog } from '@angular/material/dialog';
 import { PostService } from 'src/app/shared/services/post.service';
+import { PaiementOptionsComponent } from '../../components/paiement-options/paiement-options.component';
 
 
 
@@ -16,10 +17,12 @@ export class PostDetailsComponent implements OnInit{
   post!: ProjetCompagne;
   closed: boolean = false;
   loading: boolean = true;
+  paiementOpened: boolean = false;
 
   constructor(
      private route: ActivatedRoute,
      private dialog: MatDialog,
+     private router: Router,
      private postService: PostService){
 
   }

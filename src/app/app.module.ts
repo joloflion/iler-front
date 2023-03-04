@@ -15,11 +15,8 @@ import { environment } from '../environments/environment';
 import { AuthService } from './shared/services/auth.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { StarRatingModule } from 'angular-star-rating';
-import { AutocompleteLibModule } from 'angular-ng-autocomplete';
-import { GoogleMapsModule } from '@angular/google-maps';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SharedModule } from './shared/shared.module';
-import { NgCircleProgressModule } from 'ng-circle-progress';
 import { CdTimerModule } from 'angular-cd-timer';
 import { NgAnimatedCounterModule } from '@bugsplat/ng-animated-counter';
 

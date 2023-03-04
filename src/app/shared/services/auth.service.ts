@@ -7,6 +7,9 @@ import {
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { User } from '../models/user';
+import { LoaderService } from './loader.service';
+import { LoadingDialogService } from '../errors/loading/loading.service';
+import { ErrorDialogService } from '../errors/error-dialog.service';
 @Injectable({
   providedIn: 'root',
 })
@@ -16,7 +19,10 @@ export class AuthService {
     public afs: AngularFirestore, // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
     public router: Router,
-    public ngZone: NgZone // NgZone service to remove outside scope warning
+    public ngZone: NgZone,
+    public loader: LoaderService,
+    public loadingDialogService: LoadingDialogService,
+    public errorDialogService: ErrorDialogService
   ) {
     /* Saving user data in localstorage when
     logged in and setting up null when logged out */
@@ -33,11 +39,26 @@ export class AuthService {
   }
   // Sign in with email/password
   SignIn(email: string, password: string) {
+    this.loadingDialogService.openDialog()
+
     return this.afAuth
-      .signInWithEmailAndPassword(email, password);
+      .signInWithEmailAndPassword(email, password).then((cred) => {
+        this.loadingDialogService.hideDialog();
+        this.router.navigate(['dashboard/', cred.user?.uid])
+
+      })
+      .catch((error) =>  {
+        let message: string ='';
+        if(error.message.includes('(auth/user-not-found)')){
+          message = 'Email ou mot de pas incorrect';
+        }
+        this.loadingDialogService.hideDialog()
+        this.errorDialogService.openErrorSnackBar(message)
+      })
   }
   // Sign up with email/password
-  SignUp(email: string, password: string, name: string, group: string) {
+  SignUp(email: string, password: string, name: string) {
+    this.loadingDialogService.openDialog()
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
@@ -47,10 +68,19 @@ export class AuthService {
         result.user?.updateProfile({
           displayName: name,
 
-        }).then(() => this.SetUserData(result.user, group));
+        }).then(() => this.SetUserData(result.user).then(() => this.loadingDialogService.hideDialog()));
       })
       .catch((error) => {
-        window.alert(error.message);
+       let message: string = '';
+         this.loadingDialogService.hideDialog();
+         if(error?.message.includes('(auth/email-already-in-use)')){
+         message = "L'addresse Email que vous avez utilé existe déja"
+         }
+         if(error?.message.includes('(auth/invalid-email)')){
+          message = "Votre adresse email est incorrect"
+         }
+         this.errorDialogService.openErrorSnackBar(message)
+
       });
   }
   // Send email verfificaiton when new user sign up
@@ -84,7 +114,7 @@ export class AuthService {
       .signInWithPopup(provider)
       .then((result) => {
         this.router.navigate(['account/', result.user?.uid]);
-        this.SetUserData(result.user, group);
+        this.SetUserData(result.user);
       })
       .catch((error) => {
         window.alert(error);
@@ -93,7 +123,7 @@ export class AuthService {
   /* Setting up user data when sign in with username/password,
   sign up with username/password and sign in with social auth
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-  SetUserData(user: any, group: any) {
+  SetUserData(user: any) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
@@ -102,8 +132,7 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
-      group: group
+      emailVerified: user.emailVerified
 
     };
     return userRef.set(userData, {

@@ -3,23 +3,31 @@
       <div class="image-holder"></div>
       <form method="post">
           <h2 class="text-center"><strong>Créer mon compte</strong></h2>
-          <div class="form-group"><input class="form-control" type="text" formControlName="name" placeholder="Prénon Nom"></div>
-          <div class="form-group"><input class="form-control" type="email" formControlName="userEmail" placeholder="Votre email"></div>
-          <div class="form-group"><input class="form-control" type="password" formControlName="userPwd" placeholder="Mot de passe"></div>
-          <div class="form-group"><input class="form-control" type="password" formControlName="pwdVerif"  placeholder="Vérifier votre mot de passe"></div>
+          <div class="form-group">
+            <input class="form-control" type="text" formControlName="name" placeholder="Prénon Nom">
+            <span class="error" *ngIf="!this.signUpForm?.get('name')?.valid && this.signUpForm?.get('name')?.touched">Nom invalide</span>
+          </div>
+          <div class="form-group mt-3">
+            <input class="form-control" type="email" formControlName="userEmail" placeholder="Votre email">
+            <span class="error" *ngIf="!this.signUpForm?.get('userEmail')?.valid && this.signUpForm?.get('userEmail')?.touched">Email invalide</span>
+          </div>
+          <div class="form-group mt-3">
+            <input class="form-control" type="password" formControlName="userPwd" placeholder="Mot de passe">
+            <span class="error" *ngIf="!this.signUpForm?.get('userPwd')?.valid && this.signUpForm?.get('userPwd')?.touched">Mot de passe invalide</span>
+          </div>
+          <div class="form-group mt-3">
+            <input class="form-control" type="password" formControlName="pwdVerif"  placeholder="Vérifier votre mot de passe">
+            <span class="error" *ngIf="!this.signUpForm?.get('pwdVerif')?.valid && this.signUpForm?.get('pwdVerif')?.touched">Les mots de passe ne correspondent pas</span>
+          </div>
 
           <div class="form-group mt-4 text-center">
-            <button [disabled]="!signUpForm.valid"  class="square-button" style="width: 80%;" (click)="signUp()" >
-              <span *ngIf="!loading">S'inscrire</span>
-              <i *ngIf="loading" class="fas fa-circle-notch fa-spin fas-5xl"></i>
+            <button [disabled]="!this.signUpForm.valid" [class.disabled]="!this.signUpForm.valid" class="square-button" style="width: 80%;" (click)="signUp()" >
+              <span >S'inscrire</span>
             </button>
           </div>
           <p class="mt-3">
             <a href="sign-in" class="already">Vous avez un compte ? Se connecter</a>
           </p>
-          <div *ngIf="errorMessage.length > 0" class="alert alert-danger">
-            {{errorMessage}}
-           </div>
         </form>
   </div>
 </div>

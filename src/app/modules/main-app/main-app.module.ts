@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainAppComponent } from './main-app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -18,7 +18,6 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { AddPostPageComponent } from './pages/add-post-page/add-post-page.component';
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
 import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
-import { AccountComponent } from '../client-dashboard/pages/account/account.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { WhyUsComponent } from './components/why-us/why-us.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
@@ -87,7 +86,6 @@ import { ConactUsFormComponent } from './components/forms/contact-us-form/contac
     AddPostPageComponent,
     ForgetPasswordComponent,
     VerifyEmailComponent,
-    AccountComponent,
     LoaderComponent,
     WhyUsComponent,
     ProductsListComponent,
