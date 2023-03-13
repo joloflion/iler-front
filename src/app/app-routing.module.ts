@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './shared/guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -8,7 +7,7 @@ const routes: Routes = [
     loadChildren : () => import("./modules/main-app/main-app.module").then(m => m.MainAppModule)
   },
   {
-    path: 'dashboard/:id',
+    path: 'dashboard',
     loadChildren: () => import("./modules/client-dashboard/client-dashboard.module").then(m => m.ClientDashboardModule)
   }
 ];

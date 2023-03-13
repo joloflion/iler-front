@@ -1,0 +1,32 @@
+<div class="container">
+  <h3>Ajouter produits</h3>
+  <div class="row">
+    <div class="col-12 col-md-7">
+     <app-add-product-form></app-add-product-form>
+    </div>
+    <div class="col-12 col-md-5">
+      <mat-card class="example-card mt-2" *ngFor="let p of products">
+        <mat-card-header>
+          <mat-card-title-group>
+            <img mat-card-sm-image [src]="p.images[0]" >
+            <mat-card-title>{{p.productName}}</mat-card-title>
+            <mat-card-subtitle>
+              <p>{{p.typeProduct}}</p>
+
+              <button mat-mini-fab color="primary"  aria-label="Modifier le produit">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-mini-fab color="warn" (click)="confirmDialog(p)"  aria-label="Suppimer le produit">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </mat-card-subtitle>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+

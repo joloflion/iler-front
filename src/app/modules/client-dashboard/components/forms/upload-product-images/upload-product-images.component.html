@@ -1,0 +1,20 @@
+
+<div class="card card-body my-3">
+  <div class="row">
+    <div class="col-3 m-0" *ngFor="let prev of previewUrls">
+      <div class="card prod-image" style="background-image: url({{prev}}); height: 60px;">
+
+      </div>
+   </div>
+   <div class="col-3 m-0">
+    <label class="uploader" for="upload-image">
+      <input type="file" id="upload-image"  multiple accept="image/png, image/gif, image/jpeg"  (change)="selectFiles($event)" />
+      <i *ngIf="!loading" class="fa fa-image text-muted" aria-hidden="true"></i>
+      <mat-spinner *ngIf="loading" diameter="32"></mat-spinner>
+    </label>
+  </div>
+  </div>
+
+</div>
+
+

@@ -53,7 +53,7 @@
         <app-cart></app-cart>
       </li>
       <li class="nav-item">
-        <a class="nav-link join-button" [href]="authService.userData != null ? 'dashboard/'+ authService.userData!.uid: 'sign-up'">
+        <a class="nav-link join-button" [href]="authService.userData != null ? 'dashboard': 'sign-up'">
           <span *ngIf="!authService.isLoggedIn">Nous rejoindre</span>
           <span *ngIf="authService.isLoggedIn">
             <i class="far fa-user fa-lg"></i>

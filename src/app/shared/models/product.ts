@@ -1,11 +1,11 @@
 export interface Product {
-  id?: string;
-  title: string;
-  price: number;
-  shortDesc?: string;
-  longDesc?: string;
-  star: number;
-  createdAt: string;
-  image: string;
-  categoryId?: string;
+  id: string,
+  typeProduct: string,
+  desc:        string,
+  productName: string,
+  variete:     string,
+  price:       number,
+  images:      string[],
+  tags:        string[],
+  online:      false
 }

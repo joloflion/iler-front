@@ -62,6 +62,7 @@ import { TruncatePipe } from 'src/app/shared/pipes/transform.pipe';
 import { MainAppRoutingModule } from './main-app-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ConactUsFormComponent } from './components/forms/contact-us-form/contact-us-form.component';
+import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 
 
 
@@ -127,7 +128,8 @@ import { ConactUsFormComponent } from './components/forms/contact-us-form/contac
     FormationCardComponent,
     HeaderItemComponent,
     TruncatePipe,
-    ConactUsFormComponent
+    ConactUsFormComponent,
+    BreadCrumbComponent
 
   ],
   imports: [

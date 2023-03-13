@@ -10,9 +10,9 @@
           <button class="btn" (click)="cartService.remove(c)">
             <i class="far fa-trash-alt text-danger"></i>
           </button>
-          <img [src]="c.product.image" class="p-img" />
+          <img [src]="c.product.images[0]" class="p-img" />
           <div class="ml-3">
-            <p>{{c.product.title}}</p>
+            <p>{{c.product.productName}}</p>
             <p class="price">{{c.product.price}} / kg</p>
           </div>
         </div>

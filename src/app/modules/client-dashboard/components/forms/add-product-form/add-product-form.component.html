@@ -1,0 +1,66 @@
+<mat-card>
+  <mat-spinner *ngIf="loaderService.isLoading | async" class="loader"></mat-spinner>
+  <mat-card-content>
+    <form [formGroup]="productForm">
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Type de produit</mat-label>
+          <mat-select formControlName="typeProduct">
+            <mat-option *ngFor="let type of typeProduits" [value]="type" >
+              {{type.nomCategorie}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Nom du produit</mat-label>
+            <mat-select formControlName="productName">
+              <mat-option *ngFor="let type of this.productForm.get('typeProduct')?.value?.produits" [value]="type" >
+                {{type.nomProduit}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Vériété de produit</mat-label>
+            <mat-select formControlName="variete">
+              <mat-option *ngFor="let sousCat of this.productForm.get('productName')?.value?.variete" [value]="sousCat" >
+                {{sousCat}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <mat-form-field appearance="outline" >
+          <mat-label>Description du produit</mat-label>
+          <textarea matInput  [rows]="3" formControlName="desc"></textarea>
+        </mat-form-field>
+      </div>
+      <app-upload-product-images (uploadEmit)="getImages($event)" class="my-3"></app-upload-product-images>
+
+      <div class="row">
+       <div class="col-12 col-md-6">
+        <div class="form-group my-3">
+          <mat-form-field appearance="outline" >
+            <mat-label>Prix</mat-label>
+            <input matInput type="number" placeholder="5 000 " formControlName="price">
+          </mat-form-field>
+        </div>
+       </div>
+       <div class="col-12 col-md-6">
+        <div class="form-group mt-4">
+          <section class="example-section">
+            <mat-checkbox [value]="this.productForm.get('online')?.value" >Mettre en ligne</mat-checkbox>
+          </section>
+        </div>
+       </div>
+      </div>
+
+      <button [disabled]="!this.productForm.valid" mat-raised-button  color="primary" (click)="submit()" >Enregistrer</button>
+    </form>
+  </mat-card-content>
+  </mat-card>

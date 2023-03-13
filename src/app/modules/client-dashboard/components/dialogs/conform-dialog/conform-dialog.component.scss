@@ -1,0 +1,16 @@
+.container{
+  width: 100%;
+ min-height: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cancel{
+  margin-right: 8px;
+}
+
+.buttons{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}

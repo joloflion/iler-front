@@ -1,1 +1,37 @@
-<router-outlet></router-outlet>
+
+<mat-drawer-container
+  [class.drawer-opened]="drawer.opened"
+  class="example-container">
+  <mat-drawer #drawer
+    class="drawer"
+    mode="side"
+    opened="true">
+
+    <mat-toolbar class="header">
+      <div>Logo</div>
+      <mat-icon class="close"
+     (click)="drawer.close()">close</mat-icon>
+    </mat-toolbar>
+    <div class="contents">
+      Drawer
+    </div>
+  </mat-drawer>
+
+  <mat-toolbar class="main header">
+    <mat-icon
+      *ngIf="!drawer.opened"
+      (click)="drawer.toggle()">
+      menu
+    </mat-icon>
+    <div>Header</div>
+  </mat-toolbar>
+
+  <div class="main contents p-5">
+   <router-outlet></router-outlet>
+  </div>
+
+
+  <mat-toolbar class="main footer">
+    Footer
+  </mat-toolbar>
+</mat-drawer-container>

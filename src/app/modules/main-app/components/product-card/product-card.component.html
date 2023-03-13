@@ -1,6 +1,6 @@
 <div class="card" data-aos="zoom-in" data-aos-duration="1500">
   <div class="card-img p-4 text-center">
-    <img [src]="product.image" alt="{{product.title}}"  class="img-fluid">
+    <img [src]="product.images[0]" alt="{{product.productName}}"  class="img-fluid">
     <div class="details text-center">
       <button class="d-btn" (click)="navigate(product.id!)">
         <i class="far fa-eye"></i>
@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="card-body text-center mb-3 mt-3">
-  <h5 class="card-title text-center">{{product.title}}</h5>
+  <h5 class="card-title text-center">{{product.productName}}</h5>
     <p class="card-text text-center">
       <i *ngFor="let s of [1,2,3,4,5] " class="fas fa-star text-warning"></i>
     </p>

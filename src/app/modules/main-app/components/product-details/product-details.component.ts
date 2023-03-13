@@ -38,7 +38,7 @@ export class ProductDetailsComponent implements OnInit {
     var d: any = r.data();
     d.id = r.id;
     this.product = d;
-    this.productService.findByCategory(this.product.categoryId!)
+    this.productService.findByCategory(this.product.typeProduct)
     .then(r =>  {
       r.docs.map(d => {
         var sp: any =d.data()

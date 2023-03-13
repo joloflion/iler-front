@@ -23,13 +23,7 @@ export class ProductsListComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(p =>{
-    p.docs.map(d => {
-      var data: any = d.data();
-      data.id = d.id;
-      this.products.push(data)
-    })
-    })
+    this.productService.getProducts().subscribe(p => this.products = p)
 
   }
 
