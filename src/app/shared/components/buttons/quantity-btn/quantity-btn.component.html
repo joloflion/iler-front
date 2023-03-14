@@ -1,0 +1,10 @@
+<div class="d-flex" >
+  <button (click)="deleteCart()" class="btn0">
+    <mat-icon>delete_outline</mat-icon>
+  </button>
+  <div class="d-flex justify-content-between" style="width:100%">
+    <button (click)="decrease(p)" class="btn1">-</button>
+    <span>{{getQuantity(p)}} / kg</span>
+    <button (click)="increase(p)"  class="btn2">+</button>
+  </div>
+</div>

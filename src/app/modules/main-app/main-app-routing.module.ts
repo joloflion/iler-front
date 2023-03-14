@@ -16,6 +16,7 @@ import { FormationDetailsPageComponent } from './pages/formation-details-page/fo
 import { AuthGuard } from 'src/app/shared/guard/auth.guard';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MainAppComponent } from './main-app.component';
+import { ProductDetailsPageComponent } from './pages/product-details-page/product-details-page.component';
 
 const routes: Routes = [
   {
@@ -63,7 +64,7 @@ const routes: Routes = [
 
       {
         path: 'product/:id',
-        component: ProductDetailsComponent
+        component: ProductDetailsPageComponent
       },
       {
         path: 'cart',

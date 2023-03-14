@@ -1,0 +1,17 @@
+<div
+  [@toastTrigger]="(toast.showsToast$ | async) ? 'open' : 'close'"
+  [class]="toast.toastState$ | async">
+    <div style="max-width: 260px;">
+      <!--We access the toastMessage$ observable in the service-->
+      <mat-icon>check_circle_outline</mat-icon>
+      {{ toast.toastMessage$ | async }}
+    </div>
+
+  <a
+    class="close-btn"
+    (click)="dismiss()">
+    <small>
+      <mat-icon>highlight_off</mat-icon>
+    </small>
+  </a>
+</div>

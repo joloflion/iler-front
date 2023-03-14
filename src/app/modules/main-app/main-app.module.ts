@@ -63,6 +63,9 @@ import { MainAppRoutingModule } from './main-app-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ConactUsFormComponent } from './components/forms/contact-us-form/contact-us-form.component';
 import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
+import { ProductDetails2Component } from './components/product-details2/product-details2.component';
+import { ProductDetailsPageComponent } from './pages/product-details-page/product-details-page.component';
+import { ProductCard2Component } from './components/product-card2/product-card2.component';
 
 
 
@@ -129,7 +132,10 @@ import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.compon
     HeaderItemComponent,
     TruncatePipe,
     ConactUsFormComponent,
-    BreadCrumbComponent
+    BreadCrumbComponent,
+    ProductDetails2Component,
+    ProductDetailsPageComponent,
+    ProductCard2Component
 
   ],
   imports: [

@@ -2,12 +2,19 @@
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+$color-primary: #4c4c4c;
+$color-secondary: #a6a6a6;
+$color-highlight: #ff3f40;
 
 :root {
   --green-color: #6cbe03;
   --background-color: #e5e5e5;
   --dark-color: #374151;
   --red-color: rgb(247, 35, 56);
+  --orange-color: #FFA500;
+  --color-secondary: #a6a6a6;
+
+
 }
 
 html, body {
@@ -94,4 +101,26 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden !important;
 }
 
+.buy--btn {
+	padding: 1.2em 2.0em;
+	border: none;
+	border-radius: 7px;
+	font-size: 0.6em;
+	font-weight: 700;
+	letter-spacing: 1.3px;
+	color: #fff;
+	background-color: var(--orange-color);
+	box-shadow: 2px 2px 25px -7px $color-secondary;
+	cursor: pointer;
+
+	&:active {
+		transform: scale(0.97);
+	}
+}
+
+app-root{
+  z-index: 2;
+}
+
+app-toast, .toast-class {   z-index: 16; }
 

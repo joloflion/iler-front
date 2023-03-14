@@ -1,0 +1,46 @@
+<section class="product">
+	<div class="product__photo">
+		<div class="photo-container">
+			<div class="photo-main">
+				<div class="controls">
+					<i class="material-icons">share</i>
+					<i class="material-icons">favorite_border</i>
+				</div>
+				<img [src]="selectedImage != null ? selectedImage : product.images[0]" class="img-fluid" [alt]="product.productName">
+			</div>
+			<div class="photo-album">
+				<ul class="list-unstyled">
+					<li [class.selectedImage]="(selectedImage == null && product.images[0] === i) || selectedImage === i" class="mx-2" *ngFor="let i of product.images" (click)="selectedImage = i"><img [src]="i" [alt]="product.productName"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="product__info">
+		<div class="title">
+			<h1>{{product.productName}}</h1>
+      <p>
+        <strong>VARIETE: </strong>
+        <span>{{product.variete}}</span>
+      </p>
+		</div>
+		<div class="price">
+			Kg <span>{{product.price}}</span>
+		</div>
+		<div class="variant">
+			<h3>SELECT A COLOR</h3>
+			<ul class="list-unstyled">
+        <li class="mx-2" *ngFor="let i of product.images"><img [src]="i" [alt]="product.productName"></li>
+			</ul>
+		</div>
+		<div class="description">
+			<h3>Caractéristique: </h3>
+			<ul>
+				<li>Apples are nutricious</li>
+				<li>Apples may be good for weight loss</li>
+				<li>Apples may be good for bone health</li>
+				<li>They're linked to a lowest risk of diabetes</li>
+			</ul>
+		</div>
+		<button class="buy--btn">AJOUTER AU PANIER</button>
+	</div>
+</section>

@@ -26,13 +26,18 @@ import {  MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { ToastComponent } from './components/toast/toast.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { QuantityBtnComponent } from './components/buttons/quantity-btn/quantity-btn.component';
 
 
 
 @NgModule({
   declarations: [
     ErrorDialogComponent,
-    LoadingDialogComponent
+    LoadingDialogComponent,
+    ToastComponent,
+    QuantityBtnComponent
   ],
   imports: [
     CommonModule,
@@ -57,7 +62,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatProgressSpinnerModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatChipsModule
 
   ],
   exports: [
@@ -81,7 +87,10 @@ import { MatIconModule } from '@angular/material/icon';
     MatProgressSpinnerModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    ToastComponent,
+    MatChipsModule,
+    QuantityBtnComponent
 
 
   ],
