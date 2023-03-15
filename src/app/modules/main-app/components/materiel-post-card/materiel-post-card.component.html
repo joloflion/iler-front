@@ -1,15 +1,14 @@
 <div class="card p-0 ">
-  <div class="image" style="background-image: url({{post.materiel.image}});">
+  <div class="image" style="background-image: url({{post.image}});">
   </div>
   <div class="card-body">
-    <h3>{{post.materiel.titre}}</h3>
-    <p>{{post.materiel.desc}}</p>
-    <div class="my-3 d-flex">
-      <avatar [name]="post.prop.displayName" class="align-self-end"></avatar>
-      <span  class="text-muted align-self-center">{{post.prop.displayName}}</span>
+    <h3>{{post.titre}}</h3>
+    <p>{{post.desc}}</p>
+    <div>
+      <hr />
     </div>
-    <button class="btn" (click)="navigate()">
-     cfa {{post.prix}} / Jour
+    <button class="rent--btn" (click)="navigate()">
+     cfa  / Jour
     </button>
   </div>
 </div>

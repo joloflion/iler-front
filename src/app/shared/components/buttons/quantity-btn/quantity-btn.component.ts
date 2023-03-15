@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Cart } from 'src/app/shared/models/cart';
 import { Product } from 'src/app/shared/models/product';
 import { CartService } from 'src/app/shared/services/cart.service';
@@ -10,35 +11,34 @@ import { CartService } from 'src/app/shared/services/cart.service';
 })
 export class QuantityBtnComponent implements OnInit  {
 
-  @Input() p!: Product;
-  cart!: Cart;
-  carts: Cart[] = [];
+
+  @Input() cart!: Observable<Cart> | null;
   constructor(private cartService: CartService){
-
+     console.log(this.cart)
   }
 
 
 
-  increase(p: Product){
-    this.cartService.increase(p);
-  }
+  increase(c: Observable<Cart> | null){
 
-  decrease(p: Product){
-   this.cartService.decrease(p);
-  }
+    if(c != undefined){
+      c.subscribe(r => this.cartService.increase(r!))
 
-  getQuantity (p: Product) {
-    return this.cartService.findCartByProduct(p)?.quantity;
+    }
 
   }
 
-  deleteCart(){
-    this.cart = this.cartService.findCartByProduct(this.p)
-    this.cartService.remove(this.cart);
+  decrease(c: Observable<Cart> | null){
+   //this.cartService.decrease(c);
+  }
+
+
+
+  deleteCart(c: Observable<Cart> | null){
+  // this.cartService.remove(c);
   }
 
   ngOnInit(): void {
-    this.cartService.cart$.subscribe(c => this.carts = c)
 
   }
 

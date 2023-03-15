@@ -4,4 +4,4 @@
     {{carts.length}}
   </div>
 </button>
-<app-small-cart *ngIf="opened" (closed)="listenClose($event)" ></app-small-cart>
+<app-small-cart *ngIf="opened" (closed)="listenClose($event)" [carts]="carts" ></app-small-cart>

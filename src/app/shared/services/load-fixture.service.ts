@@ -4,7 +4,9 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ProjetCompagne } from '../models/projet-campagne';
 
 
-const PROJET_CAMP_REF = "projet-campagnes"
+const PROJET_CAMP_REF = "projet-campagnes";
+const MATERIEL_RESERVATION = 'materiels';
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +23,14 @@ export class LoadFixtureService {
       })
     })
       }
+
+  public loadMateriel(){
+        this.httpClient.get("assets/data-fixtures/materiel.json").subscribe((data: any) =>{
+          data.forEach((d : any)=> {
+            this.afs.collection(MATERIEL_RESERVATION).add(d)
+
+          })
+        })
+          }
 
 }

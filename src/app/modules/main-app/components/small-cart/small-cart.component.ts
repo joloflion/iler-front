@@ -9,15 +9,13 @@ import { CartService } from 'src/app/shared/services/cart.service';
   styleUrls: ['./small-cart.component.scss']
 })
 export class SmallCartComponent {
-  public carts: Cart[] = [];
+  @Input() carts: Cart[] = [];
   @Output() closed = new EventEmitter<boolean>();
 
    constructor(
      public cartService: CartService,
      public router: Router){
-      cartService.cart$.subscribe((c:any) => {
-        this.carts = c;
-      })
+
 
 
    }

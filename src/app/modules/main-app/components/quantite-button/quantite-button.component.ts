@@ -18,7 +18,7 @@ export class QuantiteButtonComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cart = this.cartService.findCartByProduct(this.product);
+
   }
 
 

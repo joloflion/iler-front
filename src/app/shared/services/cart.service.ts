@@ -1,91 +1,112 @@
 import { Product } from './../models/product';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
 import { Cart } from '../models/cart';
-const CART = "cart";
+import { AngularFirestore, QueryFn } from '@angular/fire/compat/firestore';
+import { ToastService, TOAST_STATE } from './toast.service';
+import { increment,  } from '@angular/fire/firestore';
+import { BehaviorSubject, map, Observable } from 'rxjs';
+
+const CART_REF = "carts";
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
- cart$ = new BehaviorSubject(this.loadCartLocal());
-  constructor() {
+
+  $carts: BehaviorSubject<Cart[]> = new BehaviorSubject<Cart[]>([]) ;
+  constructor(
+    private afb: AngularFirestore,
+    private toast: ToastService
+    ) {
+    this.getProductsChange()
+    .subscribe(res => this.$carts.next(res))
+  }
+
+  getProductsChange(): Observable<Cart[]>{
+    return this.afb.collection<Cart>(CART_REF).snapshotChanges().pipe(
+       map(changes => {
+         return changes.map(change => {
+           const item = change.payload.doc.data() as Cart;
+           item.id = change.payload.doc.id;
+           return item;
+         });
+       })
+     );
+    }
+
+  add(cart: Cart){
+    this.afb.collection(CART_REF).add(cart)
+    .then(res => {
+      this.toast.showToast(TOAST_STATE.success, "Produit ajouté avec succès !");
+      this.dismiss();
+    })
+    .catch(error => {
+      this.toast.showToast(TOAST_STATE.danger, error);
+      this.dismiss();
+    })
 
   }
 
-  add(cart: Cart){
-    this.cart$.subscribe((cartList:any) => {
-      if(!cartList.includes(cart)){
-        cartList.push(cart)
-        this.saveCartLocal(cartList);
-        this.cart$.next(cartList);
+public  increase(c: Cart){
+  console.log(c.id)
+  this.afb.collection(CART_REF).doc(c.id).update({'quantity': increment(1)})
+  .then(res => {
+    this.toast.showToast(TOAST_STATE.success, "Produit ajouté avec succès !");
+    this.dismiss();
+  })
+  .catch(error => {
+    this.toast.showToast(TOAST_STATE.danger, error);
+    this.dismiss();
+  })
 
-      }
+  }
+
+  decrease(c: Cart){
+    this.afb.collection(CART_REF).doc(c.id).update({'quantity': increment(-1)})
+    .then(res => {
+      this.toast.showToast(TOAST_STATE.success, "Produit ajouté avec succès !");
+      this.dismiss();
+    })
+    .catch(error => {
+      this.toast.showToast(TOAST_STATE.danger, error);
+      this.dismiss();
     })
   }
 
-public  increase(p: Product){
-  this.cart$.subscribe(r => {
-   r.find(v => p.id === v.product.id)!.quantity ++
-  })
-  }
+  public getMycart(){
 
-  decrease(p: Product){
-    this.cart$.subscribe(r => {
-     var result = r.find(v => p.id === v.product.id);
-      result!.quantity > 1 ? result!.quantity -- : 1;
-     })
-  }
-
-  getTotal(){
-    var total: number = 0;
-    this.cart$.subscribe(r => r.map(v => total += v.product.price*v.quantity));
-    return total;
-  }
-
-  public totalByProd(p: Product): any{
-    var price;
-    this.cart$.subscribe(r => {
-     var result = r.find(v => v.product.id === p.id);
-     price = ''+result!.quantity*result!.product.price;
-    });
-    return price;
   }
 
   remove(cart: Cart){
-    this.cart$.subscribe((cartList: any) => {
-      if(cartList.includes(cart)){
-        var newP = cartList.filter((obj:Cart) => {return obj !== cart});
-        this.saveCartLocal(newP);
-        this.cart$.next(newP);
-      }
+    this.afb.collection(CART_REF).doc(cart.id).delete()
+    .then(res => {
+      this.toast.showToast(TOAST_STATE.success, "Produit retiré avec succès !");
+      this.dismiss();
+    })
+    .catch(error => {
+      this.toast.showToast(TOAST_STATE.danger, error);
+      this.dismiss();
     })
   }
 
-  findCartByProduct(p: Product): any{
-   var cart: any
-
-   this.cart$.subscribe(c => {
-   cart = c.find(v => v.product.id === p.id);
-  })
-   return cart;
+  dismiss(){
+    setTimeout(() => this.toast.dismissToast(), 3000)
   }
 
-  isFound(p: Product): boolean{
-    var status = false;
-    this.cart$.subscribe(v => {
-     if(v.find(c => c.product.id === p.id) !== undefined) {
-       status = true;
-     }})
-    return status;
+  isExist(p: Product): Observable<any>{
+      const whereClause: QueryFn = ref => ref.where('product.id', '==', p.id);
+    return this.afb.collection(CART_REF, whereClause).valueChanges().pipe(
+      map(values => values[0]),
+    );
+
   }
 
-  saveCartLocal(cart: Cart[]){
-    localStorage.setItem(CART, JSON.stringify(cart))
+  findCartByProduct(p: Product): Observable<Cart | undefined> {
+  return this.$carts.pipe(map((v) => v.find(r => r.product === p)))
   }
 
 
 
-  loadCartLocal(): Cart[]{
-    return localStorage.getItem(CART) != null ? JSON.parse(localStorage.getItem(CART)!) : [];
-  }
+
+
+
 }

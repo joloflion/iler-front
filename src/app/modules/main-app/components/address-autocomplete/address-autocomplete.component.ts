@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'address-autocomplete',
@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./address-autocomplete.component.scss']
 })
 export class AddressAutocompleteComponent {
+  @Output()  addressEvent: EventEmitter<any> = new EventEmitter<any>();
   public keyword = 'nom';
   public opened: boolean = false;
   public data = [
@@ -115,7 +116,7 @@ export class AddressAutocompleteComponent {
 
 
    selectEvent(item: any) {
-     // do something with selected item
+     this.addressEvent.emit(item);
    }
 
    onChangeSearch(val: string) {

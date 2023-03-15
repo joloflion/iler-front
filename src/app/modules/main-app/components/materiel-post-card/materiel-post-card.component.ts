@@ -1,6 +1,7 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, Input } from '@angular/core';
 import { MaterielPost } from 'src/app/shared/models/materiel-post';
+import { Materiel } from 'src/app/shared/models/materiel';
 
 @Component({
   selector: 'materiel-post-card',
@@ -8,7 +9,7 @@ import { MaterielPost } from 'src/app/shared/models/materiel-post';
   styleUrls: ['./materiel-post-card.component.scss']
 })
 export class MaterielPostCardComponent {
-  @Input() post!: MaterielPost;
+  @Input() post!: Materiel;
 
   constructor(private router: Router, private route: ActivatedRoute){}
 

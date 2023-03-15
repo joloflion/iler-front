@@ -1,0 +1,64 @@
+[{
+    "titre": "Tracteur John Deere 5082E",
+    "desc": "Tracteur agricole John Deere 5082E avec une puissance de 82 ch. Idéal pour les exploitations agricoles de taille moyenne.",
+    "image": "https://www.lectura-specs.fr/models/renamed/detail_max_retina/tracteurs-4wd-5082e-john-deere.jpg",
+    "marque": "John Deere",
+    "puissance": "82 ch",
+    "position": {
+      "lat": 14.7727,
+      "lng": -17.2865
+    },
+    "disponible": true,
+    "proprietaire": {
+      "nom": "Société Agricole Sénégalaise",
+      "tel": "+221 33 865 86 87"
+    }
+  },
+  {
+    "titre": "Moissonneuse-batteuse Claas Lexion 760",
+    "desc": "Moissonneuse-batteuse Claas Lexion 760 avec une puissance de 408 ch. Idéale pour les grandes exploitations céréalières.",
+    "image": "https://www.truck1-fr.ch/img/Machine_agricole_Moissonneuse_batteuse_CLAAS_Lexion_760_TT-xxl-7663/7663_7700510842996.jpg",
+    "marque": "Claas",
+    "puissance": "408 ch",
+    "position": {
+      "lat": 14.7101,
+      "lng": -17.4268
+    },
+    "disponible": false,
+    "proprietaire": {
+      "nom": "Location Agricole du Sénégal",
+      "tel": "+221 77 777 77 77"
+    }
+  },
+  {
+    "titre": "Charrue Gregoire Besson RWY7",
+    "desc": "Charrue Gregoire Besson RWY7 avec une largeur de travail de 7 corps. Idéale pour les grandes exploitations agricoles.",
+    "image": "https://www.truck1.fr/img/Machine_agricole_Charrue_Gregoire_Besson_RB_47-xxl-7663/7663_4739401655542.jpg",
+    "marque": "Gregoire Besson",
+    "puissance": "non applicable",
+    "position": {
+      "lat": 14.7273,
+      "lng": -17.3567
+    },
+    "disponible": true,
+    "proprietaire": {
+      "nom": "Location Matériels Agricoles du Sénégal",
+      "tel": "+221 33 123 45 67"
+    }
+  },
+  {
+    "titre": "Faneuse Kuhn GA 13131",
+    "desc": "Faneuse Kuhn GA 13131 avec une largeur de travail de 13 mètres. Idéale pour le fanage des foins et des fourrages.",
+    "image": "https://www.fr.kuhn-canada.com/sites/default/files/media-nextpage-img/GA8121_Action_04.jpg",
+    "marque": "Kuhn",
+    "puissance": "non applicable",
+    "position": {
+      "lat": 14.7876,
+      "lng": -17.4729
+    },
+    "disponible": false,
+    "proprietaire": {
+      "nom": "Sénégal Location Matériels Agricoles",
+      "tel": "+221 77 888 88 88"
+    }
+  }]

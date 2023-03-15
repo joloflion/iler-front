@@ -14,9 +14,6 @@ export class CartDetailsComponent {
   constructor(public cartService: CartService){
     document.body.scroll({top: 0})
 
-    cartService.cart$.subscribe((c:any) => {
-      this.carts = c;
-    })
   }
 
 }

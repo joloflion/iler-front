@@ -35,6 +35,10 @@
 .success-toast {
   @extend %default-toast;
   border-left: 6px solid $success;
+  .icon{
+    color: $success;
+    margin-right: 5px;
+  }
 }
 
 // Warning
@@ -48,3 +52,5 @@
   @extend %default-toast;
   border-left: 6px solid $danger;
 }
+
+

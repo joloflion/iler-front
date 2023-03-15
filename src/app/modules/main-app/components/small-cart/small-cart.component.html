@@ -18,16 +18,16 @@
         </div>
 
         <div>
-          <button class="next" (click)="cartService.increase(c.product)">+</button>
+          <button class="next" (click)="cartService.increase(c)">+</button>
           <div class="quantity">{{c.quantity}}</div>
-          <button class="prev" (click)="cartService.decrease(c.product)">-</button>
+          <button class="prev" (click)="cartService.decrease(c)">-</button>
         </div>
       </div>
      </div>
   </div>
   <div class="d-flex justify-content-between px-4">
     <p>TOTAL</p>
-    <p class="total">{{cartService.getTotal()}} F cfa</p>
+    <p class="total"> F cfa</p>
   </div>
   <div class="text-center">
     <button class="rounded-button" (click)="navigate()">

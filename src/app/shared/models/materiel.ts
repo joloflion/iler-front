@@ -1,12 +1,17 @@
 export interface Materiel {
-  titre: string
-  desc: string
-  image: string
-  marque: string
-  puissance: string
+  id?: string,
+  titre: string,
+  desc: string,
+  image: string,
+  marque: string,
+  puissance: string,
   position: {
-    lat: number
+    lat: number,
     lng: number
   },
-  disponible: boolean;
+  disponible: boolean,
+  proprietaire?: {
+    nom: string,
+    tel: string
+  }
 }

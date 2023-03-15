@@ -18,14 +18,13 @@ export class CartComponent implements OnInit {
 
   constructor(
     public cartService: CartService){
-    cartService.cart$.subscribe((c:any) => {
-      this.carts = c;
-    })
 
   }
 
   ngOnInit(): void {
-
+  this.cartService.$carts.subscribe(v => {
+    this.carts = v;
+  })
 }
 
 listenClose(value: boolean){

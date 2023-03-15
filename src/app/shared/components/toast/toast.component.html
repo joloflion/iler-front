@@ -1,9 +1,9 @@
 <div
   [@toastTrigger]="(toast.showsToast$ | async) ? 'open' : 'close'"
   [class]="toast.toastState$ | async">
-    <div style="max-width: 260px;">
+    <div style="max-width: 260px; " class="d-flex align-items-center">
       <!--We access the toastMessage$ observable in the service-->
-      <mat-icon>check_circle_outline</mat-icon>
+      <mat-icon class="icon">check_circle_outline</mat-icon>
       {{ toast.toastMessage$ | async }}
     </div>
 

@@ -9,17 +9,17 @@
       <div class="d-flex justify-content-around align-items-center mt-5">
         <div class="align-items-end">
           <p class="label">Prix</p>
-          <h5 class="price">{{cartService.totalByProd(product)}}</h5>
+          <h5 class="price"></h5>
         </div>
         <div class="align-self-end">
           <p class="label">Quantité</p>
-          <app-quantite-button  *ngIf="cartService.isFound(product)" [product]="product"></app-quantite-button>
+          <app-quantite-button   [product]="product"></app-quantite-button>
         </div>
         <div class="align-self-end">
-          <button class="rounded-button" (click)="addViewCart(product, cartService.isFound(product))">
+          <button class="rounded-button" (click)="addViewCart(product, true)">
             <i class="fas fa-cart-plus"></i>
-            <span *ngIf="cartService.isFound(product)">Voir le panier</span>
-            <span *ngIf="!cartService.isFound(product)">Ajouter au panier</span>
+            <span >Voir le panier</span>
+            <span >Ajouter au panier</span>
           </button>
         </div>
 
