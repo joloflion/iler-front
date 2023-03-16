@@ -3,18 +3,25 @@
     <h1>Encore Plus proche des agriculteurs</h1>
     <h2>Achetez, vendez des produits agricoles entre professionnels</h2>
     <div class="search d-flex align-items-center">
-      <input type="search" placeholder="Je recherche ..." (keypress)="search($event)"  />
+      <form class="example-form">
+        <input type="text"
+               placeholder="Je Rechercher ..."
+               [formControl]="searchInput"
+               [matAutocomplete]="auto"
+               class="example-input">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let r of $searchResult | async" [value]="r.label">
+            <img width="32px" [src]="r.imgLink" />
+            <span>{{r.label}}</span>
+          </mat-option>
+        </mat-autocomplete>
+      </form>
       <button class="d-flex align-items-center justify-content-center">
         <mat-icon>search</mat-icon>
         <span class="d-none d-md-flex">Rechercher</span>
       </button>
     </div>
-    <div class="autocomplet" *ngIf="($searchResult | async)?.length != undefined && isOpened">
-      <mat-option *ngFor="let r of $searchResult | async" [value]="r" (click)="select()">
-        <img [src]="r.imgLink" width="32px" />
-        {{r.label}}
-      </mat-option>
-    </div>
+
     <div class="categorie">
       <div class="row p-0 justify-content-center">
         <div [class.border-left]="i > 0" *ngFor="let c of categories, let i = index" class="col-12 col-md-3 col-lg-2 p-0 m-0 text-center cat-item text-center">

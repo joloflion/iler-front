@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { FormControl } from '@angular/forms';
+import { Observable, map, startWith } from 'rxjs';
 import { SearchItem } from 'src/app/shared/models/search-item';
 import { ScrollTopService } from 'src/app/shared/services/scrolltop.service';
 import { SearchService } from 'src/app/shared/services/search.service';
@@ -20,6 +21,8 @@ export class HeaderItemComponent implements OnInit {
   $searchResult! : Observable<SearchItem[]>;
 
   isOpened: boolean = false;
+
+  searchInput: FormControl = new FormControl('');
 
 
   categories = [
@@ -43,12 +46,14 @@ export class HeaderItemComponent implements OnInit {
 
   ngOnInit(){
 
+     this.searchInput.valueChanges.
+     subscribe(r => {
+      this.$searchResult = this.seachService.findResult(r);
+     })
+
   }
 
-  search(key: any){
-   this.$searchResult = this.seachService.findResult(key.target.value??"");
-    this.isOpened = true;
-  }
+
 
   select(){
    this.isOpened = false;
@@ -59,6 +64,7 @@ export class HeaderItemComponent implements OnInit {
   scrollToId(id: string) {
     this.scrollService.scrollToElementById(id);
   }
+
 
 
 }
