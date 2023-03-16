@@ -1,24 +1,21 @@
 <div class="cover">
-  <div class="wrapper p-5">
-      <h1 class="mt-5">yombal bay mi</h1>
-      <h3 class="mt-3">Rejoignez une communauté <br> d'agriculteurs passionnés</h3>
-
-      <ul class="list-unstyled text-white mt-5">
-        <li>
-          <i class="fas fa-check"></i>
-          Financez votre projet
-        </li>
-        <li>
-          <i class="fas fa-check my-3"></i>
-          Faites-vous accompanger</li>
-        <li>
-          <i class="fas fa-check"></i>
-          Vendez vos produits
-        </li>
-      </ul>
-      <p class="mt-5">
-        <a class="join-button mt-5" href="sign-up">Nous Rejoindre</a>
-      </p>
-  </div>
+ <div class="wrapper pt-5 text-center">
+    <h1>Encore Plus proche des agriculteurs</h1>
+    <h2>Achetez, vendez des produits agricoles entre professionnels</h2>
+    <div class="search d-flex align-items-center">
+      <input type="search" placeholder="Je recherche ..." />
+      <button class="d-flex align-items-center justify-content-center">
+        <mat-icon>search</mat-icon>
+        <span class="d-none d-md-flex">Rechercher</span>
+      </button>
+    </div>
+    <div class="categorie">
+      <div class="row p-0 justify-content-center">
+        <div [class.border-left]="i > 0" *ngFor="let c of categories, let i = index" class="col-12 col-md-3 col-lg-2 p-0 m-0 text-center cat-item text-center">
+          <span>{{c.name}}</span>
+        </div>
+      </div>
+    </div>
+ </div>
 </div>
 

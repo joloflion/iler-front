@@ -9,7 +9,23 @@ import { AfterViewInit, Component } from '@angular/core';
 })
 export class HeaderItemComponent {
 
-
+  categories = [
+    {
+      name: "Alimentaires"
+    },
+    {
+      name: "Semences"
+    },
+    {
+      name: "Engrais / Fertilisants"
+    },
+    {
+      name: "Pesticides"
+    },
+    {
+      name: "Matériels"
+    }
+  ]
 
 
 }
