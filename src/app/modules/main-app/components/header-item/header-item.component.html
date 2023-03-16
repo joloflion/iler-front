@@ -3,11 +3,17 @@
     <h1>Encore Plus proche des agriculteurs</h1>
     <h2>Achetez, vendez des produits agricoles entre professionnels</h2>
     <div class="search d-flex align-items-center">
-      <input type="search" placeholder="Je recherche ..." />
+      <input type="search" placeholder="Je recherche ..." (keypress)="search($event)"  />
       <button class="d-flex align-items-center justify-content-center">
         <mat-icon>search</mat-icon>
         <span class="d-none d-md-flex">Rechercher</span>
       </button>
+    </div>
+    <div class="autocomplet" *ngIf="($searchResult | async)?.length != undefined && isOpened">
+      <mat-option *ngFor="let r of $searchResult | async" [value]="r" (click)="select()">
+        <img [src]="r.imgLink" width="32px" />
+        {{r.label}}
+      </mat-option>
     </div>
     <div class="categorie">
       <div class="row p-0 justify-content-center">

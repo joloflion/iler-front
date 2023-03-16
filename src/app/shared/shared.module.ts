@@ -29,6 +29,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ToastComponent } from './components/toast/toast.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { QuantityBtnComponent } from './components/buttons/quantity-btn/quantity-btn.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 
@@ -63,7 +64,8 @@ import { QuantityBtnComponent } from './components/buttons/quantity-btn/quantity
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatChipsModule
+    MatChipsModule,
+    MatAutocompleteModule
 
   ],
   exports: [
@@ -90,7 +92,8 @@ import { QuantityBtnComponent } from './components/buttons/quantity-btn/quantity
     MatIconModule,
     ToastComponent,
     MatChipsModule,
-    QuantityBtnComponent
+    QuantityBtnComponent,
+    MatAutocompleteModule
 
 
   ],

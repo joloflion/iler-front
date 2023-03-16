@@ -11,6 +11,19 @@
   padding: 0;
 }
 
+.autocomplet{
+ width: 60%;
+ position: absolute;
+ margin-top: 20vh;
+ z-index: 16;
+ background-color: #F4F4F4;
+ left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
 .wrapper{
   width: 100vw;
   height: 88vh;
