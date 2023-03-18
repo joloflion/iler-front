@@ -1,10 +1,51 @@
 <div class="container p-0 p-5">
   <div class="row">
-    <div class="col-8">
+    <div class="col-12 col-md-8">
       <app-product-details2 [product]="product"></app-product-details2>
     </div>
-    <div class="col-4">
-
+    <div class="col-12 col-md-4">
+      <mat-card>
+       <mat-card-header>
+        <mat-card-title>Livraison</mat-card-title>
+       </mat-card-header>
+       <mat-card-content>
+        <p>Délais de livraison</p>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center">
+          <img src="assets/images/delivery-car.png" width="42px" alt="">
+          <h3>24h</h3>
+        </div>
+       </mat-card-content>
+      </mat-card>
+      <mat-card class="mt-3">
+        <mat-card-header>
+         <mat-card-title>Fournisseur</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="d-flex  align-items-center">
+            <img src="assets/images/iler.png" width="32px" />
+            <h1>Iler</h1>
+          </div>
+          <ul class="list-unstyled">
+            <li>
+              <mat-icon> call</mat-icon>
+              <span>77744...</span>
+            </li>
+            <li>
+              <mat-icon> location_on</mat-icon>
+              <span>Parcelle unité 22</span>
+            </li>
+            <li>
+              <mat-icon>check_circle</mat-icon>
+              <span>Vérifié</span>
+            </li>
+          </ul>
+          <hr>
+          <button mat-raised-button color="primary">
+            Contacter le founisseur
+          </button>
+        </mat-card-content>
+       </mat-card>
     </div>
   </div>
 </div>

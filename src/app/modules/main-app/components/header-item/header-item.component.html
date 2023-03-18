@@ -2,25 +2,23 @@
  <div class="wrapper pt-5 text-center">
     <h1>Encore Plus proche des agriculteurs</h1>
     <h2>Achetez, vendez des produits agricoles entre professionnels</h2>
-    <div class="search d-flex align-items-center">
-      <form class="example-form">
-        <input type="text"
-               placeholder="Je Rechercher ..."
-               [formControl]="searchInput"
-               [matAutocomplete]="auto"
-               class="example-input">
-        <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let r of $searchResult | async" [value]="r.label">
-            <img width="32px" [src]="r.imgLink" />
-            <span>{{r.label}}</span>
-          </mat-option>
-        </mat-autocomplete>
-      </form>
-      <button class="d-flex align-items-center justify-content-center">
-        <mat-icon>search</mat-icon>
-        <span class="d-none d-md-flex">Rechercher</span>
-      </button>
-    </div>
+    <mat-card>
+      <div class="search d-flex align-items-center">
+        <form class="example-form">
+          <input type="search"
+                 placeholder="Je Rechercher ..."
+                 [formControl]="searchInput"
+                 [matAutocomplete]="auto"
+                 class="example-input">
+          <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelect($event)" >
+            <mat-option *ngFor="let r of $searchResult | async" [value]="r.label">
+              <img width="32px" [src]="r.imgLink" />
+              <span>{{r.label}}</span>
+            </mat-option>
+          </mat-autocomplete>
+        </form>
+      </div>
+    </mat-card>
 
     <div class="categorie">
       <div class="row p-0 justify-content-center">

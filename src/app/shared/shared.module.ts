@@ -30,6 +30,8 @@ import { ToastComponent } from './components/toast/toast.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { QuantityBtnComponent } from './components/buttons/quantity-btn/quantity-btn.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { StarComponent } from './components/star/star.component';
 
 
 
@@ -38,7 +40,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     ErrorDialogComponent,
     LoadingDialogComponent,
     ToastComponent,
-    QuantityBtnComponent
+    QuantityBtnComponent,
+    StarComponent
   ],
   imports: [
     CommonModule,
@@ -65,7 +68,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatToolbarModule,
     MatIconModule,
     MatChipsModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatExpansionModule
 
   ],
   exports: [
@@ -93,7 +97,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     ToastComponent,
     MatChipsModule,
     QuantityBtnComponent,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatExpansionModule,
+    StarComponent
 
 
   ],

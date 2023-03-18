@@ -1,8 +1,37 @@
-<div class="card p-4">
-  <h3>Catégorie produit</h3>
-  <ul>
-    <li *ngFor="let c of categories">
-      {{c.name}}
-    </li>
-  </ul>
-</div>
+<mat-card class="py-2 px-3"  >
+  <mat-card-title>Rechercher plus vite</mat-card-title>
+  <hr>
+  <div class="d-flex justify-content-between">
+    <button  mat-stroked-button>Réinitialiser</button>
+    <button mat-raised-button color="primary">Appliquer</button>
+  </div>
+
+</mat-card>
+<mat-card class="py-2 px-3 mt-3" *ngFor="let item of filters" >
+  <mat-card-title>
+   <div class="d-flex justify-content-between">
+    <span class="cat-title">{{item.title}}</span>
+    <button  *ngIf="!item.opened" (click)="item.opened = !item.opened">+</button>
+    <button *ngIf="item.opened"  (click)="item.opened = !item.opened">-</button>
+   </div>
+  </mat-card-title>
+  <mat-card-content class="mt-3" *ngIf="item.opened" >
+    <mat-accordion *ngFor="let c of item.items" class="mt-3" >
+      <mat-expansion-panel (opened)="c.selected = true"
+                           (closed)="c.selected = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+           {{c.category}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <mat-option *ngFor="let it of c.items " >
+            <mat-checkbox  [checked]="it.selected"  class="example-ripple-checkbox">
+              <span>{{it.label}}</span>
+            </mat-checkbox>
+          </mat-option>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card-content>
+</mat-card>

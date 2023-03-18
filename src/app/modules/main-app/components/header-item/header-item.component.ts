@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable, map, startWith } from 'rxjs';
 import { SearchItem } from 'src/app/shared/models/search-item';
 import { ScrollTopService } from 'src/app/shared/services/scrolltop.service';
@@ -14,7 +15,9 @@ import { SearchService } from 'src/app/shared/services/search.service';
 })
 export class HeaderItemComponent implements OnInit {
 
-  constructor(private seachService: SearchService, private scrollService: ScrollTopService){
+  constructor(private seachService: SearchService,
+    private router: Router,
+     private scrollService: ScrollTopService){
 
   }
 
@@ -55,10 +58,8 @@ export class HeaderItemComponent implements OnInit {
 
 
 
-  select(){
-   this.isOpened = false;
-   this.scrollToId('productlist')
-
+  onSelect(any: any){
+   this.router.navigate(['product'])
   }
 
   scrollToId(id: string) {

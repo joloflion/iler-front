@@ -16,7 +16,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 88vh;
+  height: 545px;
   background-image: url('../../../../../assets/images/header-bac.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -28,7 +28,7 @@
 .autocomplet{
  width: 60%;
  position: absolute;
- margin-top: 20vh;
+ margin-top: 200px;
  z-index: 16;
  background-color: #F4F4F4;
  left: 0;
@@ -40,15 +40,15 @@
 
 .wrapper{
   width: 100vw;
-  height: 88vh;
-  background-color: #01010267;
+  height: 545px;
+  background-color: #27272d8a;
   position: relative;
 }
 
 .categorie{
   width: 70%;
   position: absolute;
-  margin-top: 30vh;
+  top: 320px;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -92,12 +92,11 @@
   margin-top: 10vh;
 
   input{
-    width: 80% !important;
+    width: 100% !important;
     border: none;
     height: 60px;
     outline: none;
-    border-top-left-radius: 7px;
-    border-bottom-left-radius: 7px;
+    border-radius: 7px;
     padding-left: 20px;
   }
 

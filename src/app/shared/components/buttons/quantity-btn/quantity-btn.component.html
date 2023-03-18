@@ -1,10 +1,17 @@
-<div class="d-flex" >
-  <button (click)="deleteCart(cart)" class="btn0">
-    <mat-icon>delete_outline</mat-icon>
-  </button>
-  <div class="d-flex justify-content-between" style="width:100%">
-    <button  class="btn1" (click)="decrease(cart)">-</button>
-    <span> {{(cart | async )?.quantity}} / kg</span>
-    <button   class="btn2" (click)="increase(cart)">+</button>
+<mat-card>
+  <div class="d-flex" >
+    <button (click)="deleteCart(cart)" class="btn0">
+      <mat-icon>delete_outline</mat-icon>
+    </button>
+    <div class="d-flex justify-content-between" style="width:100%">
+      <button  class="btn1" (click)="decrease(cart)">-</button>
+      <span> {{(cart | async )?.quantity}} / kg</span>
+      <button   class="btn2" (click)="increase(cart)">+</button>
+    </div>
+    <button (click)="deleteCart(cart)" class="btn0n">
+      <mat-icon>shopping_basket</mat-icon>
+    </button>
   </div>
-</div>
+</mat-card>
+
+

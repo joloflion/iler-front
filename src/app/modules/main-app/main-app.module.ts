@@ -66,6 +66,7 @@ import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.compon
 import { ProductDetails2Component } from './components/product-details2/product-details2.component';
 import { ProductDetailsPageComponent } from './pages/product-details-page/product-details-page.component';
 import { ProductCard2Component } from './components/product-card2/product-card2.component';
+import { ProductSideFilterComponent } from './components/product-side-filter/product-side-filter.component';
 
 
 
@@ -135,7 +136,8 @@ import { ProductCard2Component } from './components/product-card2/product-card2.
     BreadCrumbComponent,
     ProductDetails2Component,
     ProductDetailsPageComponent,
-    ProductCard2Component
+    ProductCard2Component,
+    ProductSideFilterComponent
 
   ],
   imports: [
