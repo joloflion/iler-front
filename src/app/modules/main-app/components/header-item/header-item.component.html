@@ -1,3 +1,4 @@
+<!--
 <div class="cover">
  <div class="wrapper pt-5 text-center">
     <h1>Encore Plus proche des agriculteurs</h1>
@@ -29,4 +30,63 @@
     </div>
  </div>
 </div>
+-->
 
+<div class="container-fluid p-0">
+  <div class="row p-0">
+    <div class="col-12 col-md-9 p-0">
+      <owl-carousel-o [options]="customOptions" >
+        <ng-container *ngFor="let i of imageSlide">
+          <ng-template carouselSlide [id]="i.id.toString()">
+            <div style="background-image: url({{i.img}});" class="slide-image">
+              <nav class="menu">
+                <input checked="checked" class="menu-toggler" type="checkbox">
+                <label for="menu-toggler"></label>
+                <ul>
+                  <li class="menu-item">
+                    <a class="fas fa-cat" href=""></a>
+                  </li>
+                  <li class="menu-item">
+                    <a class="fas fa-cookie-bite" href="#"></a>
+                  </li>
+                  <li class="menu-item">
+                    <a class="fab fa-earlybirds" href="#"></a>
+                  </li>
+                  <li class="menu-item">
+                    <a class="fab fa-fly"href="#"></a>
+                  </li>
+                  <li class="menu-item">
+                    <a class ="far fa-gem" href="#"></a>
+                  </li>
+                  <li class="menu-item">
+                    <a class="fas fa-glass-cheers" href="#"></a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+    <div class="col-12 col-md-3  pt-2">
+      <div class="row px-3">
+        <div class="col-12 p-0">
+          <div ngClass="cat-item"  *ngFor="let c of categories, let i = index" class="d-flex justify-content-space align-items-center">
+            <div class="bg-white p-3 border-circle">
+              <img [src]="c.icon" class="align-self-center" />
+            </div>
+            <div class="d-flex justify-content-between" style="width:100%;">
+              <h3 class="align-self-center mt-3">{{c.name}}</h3>
+              <mat-icon class="align-self-center">keyboard_arrow_right</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <div class="card card-body p-0 mt-3">
+          <img class="img-fluid" src="assets/images/small.jpg" style="height: 35vh;" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

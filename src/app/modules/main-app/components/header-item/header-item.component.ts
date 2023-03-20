@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Observable, map, startWith } from 'rxjs';
 import { SearchItem } from 'src/app/shared/models/search-item';
 import { ScrollTopService } from 'src/app/shared/services/scrolltop.service';
@@ -30,19 +31,24 @@ export class HeaderItemComponent implements OnInit {
 
   categories = [
     {
-      name: "Alimentaires"
+      name: "Alimentaires",
+      icon: "assets/images/harvest.png"
     },
     {
-      name: "Semences"
+      name: "Semences",
+      icon: "assets/images/sow.png"
     },
     {
-      name: "Engrais / Fertilisants"
+      name: "Engrais",
+      icon: "assets/images/engrais.png"
     },
     {
-      name: "Pesticides"
+      name: "Pesticides",
+      icon: "assets/images/chemical.png"
     },
     {
-      name: "Matériels"
+      name: "Matériels",
+      icon: "assets/images/robot.png"
     }
   ];
 
@@ -65,6 +71,65 @@ export class HeaderItemComponent implements OnInit {
   scrollToId(id: string) {
     this.scrollService.scrollToElementById(id);
   }
+
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 700,
+    autoplay: true,
+
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 1
+      },
+      740: {
+        items: 1
+      },
+      940: {
+        items: 1
+      },
+      992:{
+        items: 1
+      },
+     1200: {
+         items: 1
+      }
+    },
+    nav: false
+  }
+
+
+  imageSlide = [{
+    id: 1,
+    img: "assets/images/materiel.jpg",
+    tile: "",
+    actions: [
+      {
+        label: "",
+        link: ""
+      }
+    ]
+  },
+  {
+    id: 2,
+    img: "assets/images/food.jpg",
+    tile: "",
+    actions: [
+      {
+        label: "",
+        link: ""
+      }
+    ]
+  },
+
+];
+
 
 
 
