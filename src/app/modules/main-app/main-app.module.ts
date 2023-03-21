@@ -67,6 +67,7 @@ import { ProductDetails2Component } from './components/product-details2/product-
 import { ProductDetailsPageComponent } from './pages/product-details-page/product-details-page.component';
 import { ProductCard2Component } from './components/product-card2/product-card2.component';
 import { ProductSideFilterComponent } from './components/product-side-filter/product-side-filter.component';
+import { HeaderItem2Component } from './components/header-item2/header-item2.component';
 
 
 
@@ -137,7 +138,8 @@ import { ProductSideFilterComponent } from './components/product-side-filter/pro
     ProductDetails2Component,
     ProductDetailsPageComponent,
     ProductCard2Component,
-    ProductSideFilterComponent
+    ProductSideFilterComponent,
+    HeaderItem2Component
 
   ],
   imports: [
