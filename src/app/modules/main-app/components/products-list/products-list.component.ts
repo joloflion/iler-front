@@ -11,7 +11,7 @@ import { ProductService } from 'src/app/shared/services/product.service';
 export class ProductsListComponent implements OnInit{
 
   productTitle: Title = {
-    name: "Produits",
+    name: "Produits de la saison",
     desc: "Nos meilleurs produits de la saison",
     type: "",
     link: ""

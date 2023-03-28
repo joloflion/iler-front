@@ -1,29 +1,15 @@
 .title{
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-i{
-  color: #6cbe03;
-}
-h3{
-  color: #6cbe03;
-  font-family: "Poppins", Sans-serif;
-  font-size: 16px;
-  font-weight: 700;
+  background-color: #FFFFFF;
+  padding: 8px 20px ;
+  color: var(--dark-color);
   text-transform: uppercase;
 }
-h5{
-  font-size: 22px;
-  line-height: 26px;
-  font-weight: 700;
-  color: #374151
 
+button{
+  background-color: transparent;
+  color: var(--green-color);
+  border: none;
+  outline: none;
+  font-size: 12px;
 }
 
-
-@media only screen and (max-width: 768px) {
-  h5{
-    font-size: 36px;
-    line-height: 44px;
-  }
-}

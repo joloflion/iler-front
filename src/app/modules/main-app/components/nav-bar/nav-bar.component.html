@@ -1,70 +1,61 @@
-<nav class="navbar navbar-expand d-flex justify-content-between align-items-center navbar-dark bg-white fixed-top px-2 px-md-3">
-<nav role="navigation">
-  <div id="menuToggle">
-    <input type="checkbox" />
-    <span></span>
-    <span></span>
-    <span></span>
-    <ul id="menu">
-      <div class="menu-list">
-        <a [routerLinkActiveOptions]="{ exact: true }"  [routerLink]="['/']"        [routerLinkActive]="'is-active'" ><li>Acceuil</li></a>
-        <a [routerLinkActiveOptions]="{ exact: false }" [routerLink]="['/service']" [routerLinkActive]="'is-active'"><li>Services</li></a>
-        <a [routerLinkActiveOptions]="{ exact: false }" [routerLink]="['/product']" [routerLinkActive]="'is-active'"><li>Produits</li></a>
-        <a [routerLinkActiveOptions]="{ exact: true }"  [routerLink]="['/post/materiel']" [routerLinkActive]="'is-active'"><li>Matériels</li></a>
-        <a [routerLinkActiveOptions]="{ exact: true }"  [routerLink]="['/contact']" [routerLinkActive]="'is-active'"><li>Contact</li></a>
+<div class="top-nav">
+  <div class="container-fluid p-0 px-5 py-3 main-nav">
+    <!--start top nav-->
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="brand">
+          <img src="assets/images/iler.png" />
+        </span>
+        <div class="search-bar d-md-flex justify-content-between d-none">
+          <input type="search" placeholder="Rechercher ... " />
+          <button>Rechercher</button>
+        </div>
+        <div class="d-flex align-items-center">
+          <a href="">
+            <i class="fa fa-user fa-lg text-white"></i>
+          </a>
+          <div style="width: 20px;"></div>
+         <app-cart></app-cart>
+        </div>
       </div>
-    </ul>
+    <!--end top nav-->
   </div>
-</nav>
- <div class="align-self-center d-flex ">
-  <a class="navbar-brand align-items-center" href="#">
-    <img class="logo" src="assets/images/iler.png" alt="">
-  </a>
- </div>
-  <div class="collapse navbar-collapse" >
-    <ul class="navbar-nav ms-auto">
-      <li class="nav-item">
-        <a class="nav-link " [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/']" [routerLinkActive]="'is-active'" >
-          Acceuil
-        </a>
-      </li>
+  <div class="d-flex">
+    <button class="bars">
+      <i class="fa fa-bars fa-lg text-muted" aria-hidden="true"></i>
+    </button>
+    <div class="search-bar justify-content-between ">
+      <input type="search" placeholder="Rechercher ... " />
+      <button>Rechercher</button>
+    </div>
+  </div>
 
-      <li class="nav-item">
-        <a class="nav-link " [routerLink]="['/service']" [routerLinkActive]="'is-active'" >
-          Services
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link " [routerLinkActiveOptions]="{ exact: false }" [routerLink]="['/product']" [routerLinkActive]="'is-active'" >
-          Produits
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link " [routerLinkActiveOptions]="{ exact: false }" [routerLink]="['/post/materiel']" [routerLinkActive]="'is-active'" >
-          Matériels
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link "[routerLink]="['/contact']" [routerLinkActive]="'is-active'" >
-         Contact
-        </a>
-      </li>
-      <li class="nav-item">
-        <app-cart></app-cart>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link join-button" [href]="authService.userData != null ? 'dashboard': 'sign-up'">
-          <span *ngIf="!authService.isLoggedIn">Nous rejoindre</span>
-          <span *ngIf="authService.isLoggedIn">
-            <i class="far fa-user fa-lg"></i>
-            MON ESPACE
-          </span>
-        </a>
-      </li>
-    </ul>
+  <div class="bottom-nav d-none d-md-block">
+    <nav class="navbar navbar-expand-lg" style="background-color: #FFFFFF;">
+      <div class="container-fluid" style="background-color: #FFFFFF;;">
+        <div class="collapse navbar-collapse px-5" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Acceuil</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Nos services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Appros de nous</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Nous-contacter</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </div>
-  <app-cart class="d-block d-md-none align-self-center"></app-cart>
-</nav>
+
+</div>
+
 
 
 

@@ -1,16 +1,20 @@
 .cart-btn{
   border: none;
   background-color: transparent;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+ // box-shadow: rgba(232, 231, 231, 0.2) 0px 2px 8px 0px;
   img{
-    width: 30px;
+    width: 22px;
   }
   position: relative;
 }
 .shopping-icon{
-    font-size: 35px;
-    height: 35px ;
-    width: 35px;
-    color: #4DAF48;
+    font-size: 25px;
+    height: 25px ;
+    width: 25px;
+    color: #FFFFFF;
 }
 .price{
   margin-top: -4px;

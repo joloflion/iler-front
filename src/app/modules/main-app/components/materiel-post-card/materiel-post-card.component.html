@@ -3,12 +3,27 @@
   </div>
   <div class="card-body">
     <h3>{{post.titre}}</h3>
-    <p>{{post.desc}}</p>
-    <div>
-      <hr />
+     <ul class="list-unstyled">
+      <li>
+        <span class="text-muted">Marque:</span>
+         {{post.marque}}</li>
+      <li>
+        <span class="text-muted">Model:</span>
+        {{post.marque}}</li>
+     </ul>
+     <app-star [range]="4"></app-star>
+    <div class="prop">
+      <p class="text-muted">
+        <i class="fa fa-user text-muted" aria-hidden="true"></i>
+        {{post.proprietaire?.nom}}
+      </p>
+      <p class="text-muted">
+        <i class="fa fa-location-arrow" aria-hidden="true"></i>
+        {{post.proprietaire?.nom}}
+      </p>
     </div>
     <button class="rent--btn" (click)="navigate()">
-     cfa  / Jour
+    {{post.price}} cfa  / Jour
     </button>
   </div>
 </div>

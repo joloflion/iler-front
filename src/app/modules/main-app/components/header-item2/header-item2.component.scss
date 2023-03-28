@@ -28,11 +28,12 @@ body {
 
 .heading-page
 {
+
       text-transform: uppercase;
     font-size: 43px;
     font-weight: bolder;
     letter-spacing: 3px;
-    color: white !important;
+    color: var(--green-color) !important;
 }
 a {
   color: inherit;
@@ -248,7 +249,10 @@ textarea, label {
 /*------------------------------------------------
 	Start Styling
 -------------------------------------------------*/
-.mt20{margin-top:20px;}
+.mt20{
+  margin-top:10px;
+  font-size: 32px !important;
+}
 .site-wrapper {
   border-top: 4px solid var(--green-color); }
 
@@ -260,7 +264,7 @@ textarea, label {
   z-index: 100; }
 
 .page-title {
-  margin-bottom: 75px; }
+  margin-bottom: 55px; }
   .page-title img {
     margin-bottom: 20px; }
   .page-title h2 {
@@ -302,7 +306,7 @@ textarea, label {
       left: -moz-calc(100% + 14px);
       left: calc(100% + 14px); }
     .section-title h3::before {
-      background-color: #888c93;
+      background-color: #ffffff84;
       width: 96px;
       bottom: 14px; }
     .section-title h3::after {
@@ -334,13 +338,12 @@ textarea, label {
 }
 
 .page-home {
+  transition: background-image 0.8s ease-in-out;
+
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   vertical-align: middle; }
-  .page-home .overlay {
-    //background-color: rgba(153, 158, 168, 0.97);
-}
 
 /* End of container */
 .hexagon-item {
@@ -428,7 +431,7 @@ textarea, label {
     -o-transform-origin: center center;
     transform-origin: center center; }
     .hex-item div::before, .hex-item div::after {
-      background-color: #a8abb0;
+      background-color: #ffffffb2;
       content: "";
       position: absolute;
       width: 100%;

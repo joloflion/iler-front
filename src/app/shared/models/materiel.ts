@@ -13,5 +13,6 @@ export interface Materiel {
   proprietaire?: {
     nom: string,
     tel: string
-  }
+  },
+  price: string;
 }
