@@ -1,7 +1,7 @@
 <div class="container-fluid p-0">
   <div class="row">
-    <div class="col-md-2  ps-5 d-none d-flex">
-      <div class="side-nav py-3">
+    <div class="col-md-2  ps-5 d-none d-md-flex">
+      <div class="side-nav py-3 px-0">
          <ul class="p-0 list-unstyled px-3">
           <li *ngFor="let c of categories ; let i = index" class="item" [class.border-bottom]="i < categories.length - 1 ">{{c.name}}</li>
          </ul>
