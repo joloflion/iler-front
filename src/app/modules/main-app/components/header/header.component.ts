@@ -103,6 +103,49 @@ export class HeaderComponent {
     }
   ]
 
+  topProducts = [
+    {
+      img: "assets/images/salade.jpg",
+      title: "",
+      price: "",
+      col: "col-12 col-md-6"
+
+    },
+    {
+      img: "assets/images/moisoneuse.jpg",
+      title: "",
+      price: "",
+      col: "col-12 col-md-6"
+
+    },
+    {
+      img: "assets/images/fraise.jpg",
+      title: "",
+      price: "",
+      col: "col-12 col-md-6"
+    },
+    {
+      img: "assets/images/tomate.jpg",
+      title: "",
+      price: "",
+      col: "col-12 col-md-6"
+
+    },
+    {
+      img: "assets/images/engrais.jpg",
+      title: "",
+      price: "",
+      col: "col-12 col-md-6"
+    },
+    {
+      img: "assets/images/tract.jpg",
+      title: "",
+      price: "",
+      col: "col-12 col-md-6"
+
+    }
+  ]
+
 
 
   constructor(
