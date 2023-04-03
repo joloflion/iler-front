@@ -3,7 +3,10 @@
     <div class="col-md-2  ps-5 d-none d-md-flex">
       <div class="side-nav py-3 px-0">
          <ul class="p-0 list-unstyled px-3">
-          <li *ngFor="let c of categories ; let i = index" class="item" [class.border-bottom]="i < categories.length - 1 ">{{c.name}}</li>
+          <li *ngFor="let c of categories ; let i = index" class="item" [class.border-bottom]="i < categories.length - 1 ">
+            <a [routerLink]="c.link"> {{c.name}}</a>
+
+          </li>
          </ul>
       </div>
     </div>
@@ -24,8 +27,12 @@
         <div class="col-12 col-md-4">
          <div class="row">
           <div *ngFor="let p of topProducts" class="{{p.col}} mt-2 p-1">
-            <div class="w-100" style="background: url({{p.img}}); height: 125px; background-position: center; background-size: cover; border-radius: 4px;">
-
+            <div class="w-100 product" style="background: url({{p.img}}); height: 125px; background-position: center; background-size: cover; border-radius: 4px; height: 125px;">
+            <div class="cover w-100 text-center" style="height: 125px; border-radius: 7px; background-color: #6dbe0395;" >
+              <h5 class="text-white">{{p.price}}</h5>
+              <button *ngIf="p.category !== 'MATERIEL'" class="btn-cover">Ajouter au panier</button>
+              <button *ngIf="p.category === 'MATERIEL'" class="btn-cover">Louer</button>
+            </div>
             </div>
          </div>
         </div>

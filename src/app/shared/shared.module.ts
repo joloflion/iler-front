@@ -23,7 +23,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {  MatButtonModule } from '@angular/material/button';
 import {  MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { ToastComponent } from './components/toast/toast.component';
@@ -32,6 +32,9 @@ import { QuantityBtnComponent } from './components/buttons/quantity-btn/quantity
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { StarComponent } from './components/star/star.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { CartComponent } from './components/cart/cart.component';
+import { SmallCartComponent } from './components/small-cart/small-cart.component';
 
 
 
@@ -41,7 +44,10 @@ import { StarComponent } from './components/star/star.component';
     LoadingDialogComponent,
     ToastComponent,
     QuantityBtnComponent,
-    StarComponent
+    StarComponent,
+    NavBarComponent,
+    CartComponent,
+    SmallCartComponent
   ],
   imports: [
     CommonModule,
@@ -99,7 +105,10 @@ import { StarComponent } from './components/star/star.component';
     QuantityBtnComponent,
     MatAutocompleteModule,
     MatExpansionModule,
-    StarComponent
+    StarComponent,
+    NavBarComponent,
+    CartComponent,
+    SmallCartComponent
 
 
   ],

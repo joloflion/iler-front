@@ -29,7 +29,10 @@
   width: 100%;
 }
 
-.item{
+.item a {
+  text-decoration: none;
+  list-style: none;
+  color: var(--dark-color);
   display: block;
   padding: 15px 5px;
   font-size: 16px;
@@ -50,3 +53,21 @@
 img{
   width: 100%;
 }
+.product{
+  cursor: pointer;
+ .cover{
+   visibility: hidden;
+   padding-top: 23%;
+ }
+ &:hover{
+  .cover{
+   transition: visibility 1s ease-in-out;
+    visibility: visible;
+  }
+ }
+}
+
+
+
+
+

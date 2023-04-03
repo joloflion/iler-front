@@ -13,7 +13,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PostCarourselComponent } from './components/post-caroursel/post-caroursel.component';
 import { TitleComponent } from './components/title/title.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { AddPostPageComponent } from './pages/add-post-page/add-post-page.component';
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
@@ -24,7 +23,6 @@ import { ProductsListComponent } from './components/products-list/products-list.
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ServiceButtonComponent } from './components/service-button/service-button.component';
-import { CartComponent } from './components/cart/cart.component';
 import { ResultsComponent } from './components/results/results.component';
 import { CoachCardComponent } from './components/coach-card/coach-card.component';
 import { CoachListComponent } from './components/coach-list/coach-list.component';
@@ -35,7 +33,6 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductFilterComponent } from './components/product-filter/product-filter.component';
 import { QuantiteButtonComponent } from './components/quantite-button/quantite-button.component';
 import { CartDetailsComponent } from './pages/cart-details/cart-details.component';
-import { SmallCartComponent } from './components/small-cart/small-cart.component';
 import { RentabiliteComponent } from './components/rentabilite/rentabilite.component';
 import { ProjectFormComponent } from './components/forms/project-form/project-form.component';
 import { ServiceDetailsComponent } from './pages/service-details/service-details.component';
@@ -87,7 +84,6 @@ import { HeaderItem2Component } from './components/header-item2/header-item2.com
     FooterComponent,
     PostCarourselComponent,
     TitleComponent,
-    NavBarComponent,
     AboutUsComponent,
     AddPostPageComponent,
     ForgetPasswordComponent,
@@ -98,7 +94,6 @@ import { HeaderItem2Component } from './components/header-item2/header-item2.com
     ProductCardComponent,
     ProductDetailsComponent,
     ServiceButtonComponent,
-    CartComponent,
     ResultsComponent,
     CoachCardComponent,
     CoachListComponent,
@@ -109,7 +104,6 @@ import { HeaderItem2Component } from './components/header-item2/header-item2.com
     ProductFilterComponent,
     QuantiteButtonComponent,
     CartDetailsComponent,
-    SmallCartComponent,
     RentabiliteComponent,
     ProjectFormComponent,
     ServiceDetailsComponent,

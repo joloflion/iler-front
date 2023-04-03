@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import("./modules/client-dashboard/client-dashboard.module").then(m => m.ClientDashboardModule)
+  },
+  {
+    path: 'price',
+    loadChildren: () => import("./market-price/market-price.module").then(m => m.MarketPriceModule)
   }
 ];
 

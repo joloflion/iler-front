@@ -99,7 +99,7 @@ export class HeaderComponent {
     },
     {
       name: "Prix du marché",
-      link: ""
+      link: "/price"
     }
   ]
 
@@ -107,41 +107,47 @@ export class HeaderComponent {
     {
       img: "assets/images/salade.jpg",
       title: "",
-      price: "",
-      col: "col-12 col-md-6"
+      price: "3200 / kg",
+      col: "col-12 col-md-6",
+      category: "ALIMENTAIRE"
 
     },
     {
       img: "assets/images/moisoneuse.jpg",
       title: "",
-      price: "",
-      col: "col-12 col-md-6"
+      price: "1200 / kg",
+      col: "col-12 col-md-6",
+      category: "ALIMENTAIRE"
 
     },
     {
       img: "assets/images/fraise.jpg",
       title: "",
-      price: "",
-      col: "col-12 col-md-6"
+      price: "4300 / kg",
+      col: "col-12 col-md-6",
+      category: "ALIMENTAIRE"
     },
     {
       img: "assets/images/tomate.jpg",
       title: "",
-      price: "",
-      col: "col-12 col-md-6"
+      price: "750 / kg",
+      col: "col-12 col-md-6",
+      category: "ALIMENTAIRE"
 
     },
     {
       img: "assets/images/engrais.jpg",
       title: "",
-      price: "",
-      col: "col-12 col-md-6"
+      price: "5000",
+      col: "col-12 col-md-6",
+      category: "ENGRAIS"
     },
     {
       img: "assets/images/tract.jpg",
       title: "",
-      price: "",
-      col: "col-12 col-md-6"
+      price: "6500 / Jour",
+      col: "col-12 col-md-6",
+      category: "MATERIEL"
 
     }
   ]
