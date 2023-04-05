@@ -1,1 +1,22 @@
-<p>list-price works!</p>
+<div class="container px-0 px-md-5 mt-5">
+  <h3 class="text-left font-weight-bold">Les prix du marché</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Produit</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Locatlité</th>
+        <th scope="col">Date de mise à jour</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of products">
+        <th>{{p.product}}</th>
+        <td>{{p.price}}</td>
+        <td>{{p.location}}</td>
+        <td>{{p.updateDate}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

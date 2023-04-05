@@ -1,1 +1,43 @@
-<p>add-price works!</p>
+<div class="card card-body py-4">
+  <h3 class="text-left font-weight-bold">Ajouter votre prix</h3>
+  <form >
+    <div class="row mt-4">
+      <div class="col-12 col-md-12">
+        <label for="">Choisir le produit</label>
+        <div class="ng-autocomplete mt-2">
+          <ng-autocomplete
+            [data]="data"
+            [searchKeyword]="keyword"
+            (selected)='selectEvent($event)'
+            [itemTemplate]="itemTemplate"
+            class="form-control"
+            placeholder="le roduit"
+            [notFoundTemplate]="notFoundTemplate">
+          </ng-autocomplete>
+
+          <ng-template #itemTemplate let-item>
+          <a [innerHTML]="item.nom"></a>
+          </ng-template>
+
+          <ng-template #notFoundTemplate let-notFound>
+          <div [innerHTML]="notFound"></div>
+          </ng-template>
+          </div>
+      </div>
+      <div class="col-12 mt-3">
+        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Votre localité</label>
+        <select  class="custom-select my-1 mr-sm-2 form-control form-control-lg" id="inlineFormCustomSelectPref">
+          <option selected class="text-muted">Votre localité</option>
+          <option *ngFor="let r of regions" [value]="r.name">{{r.name}}</option>
+        </select>
+      </div>
+      <div class="col-12 mt-3">
+        <label for="">Votre prix</label>
+        <input type="number" class="form-control form-control-lg mt-2" placeholder="Votre prix">
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <button class="reservation--btn" style="max-width: 210px">Envoyer</button>
+    </div>
+  </form>
+</div>

@@ -39,6 +39,10 @@ this.route.params.subscribe(p => {
        sp.id = d.id;
        this.products.push(sp)
      })
+     console.log(this.products)
+   })
+   .catch(error => {
+    console.log(error)
    })
  })
 
@@ -49,7 +53,8 @@ addViewCart(p: Product, isExist: boolean){
  if(!isExist){
    var cart: Cart = {
      product: p,
-     quantity: 1
+     quantity: 1,
+     userId: sessionStorage.getItem('iler-user')??""
    }
    this.cartService.add(cart)
  }else{

@@ -46,8 +46,15 @@ export class CartService {
 
   }
 
+  getTotal(){
+   let total = 0;
+   return this.$carts.pipe(map((v) => {
+     v.map(r => total +=  r.product.price * r.quantity);
+     return total;
+    }))
+  }
+
 public  increase(c: Cart){
-  console.log(c.id)
   this.afb.collection(CART_REF).doc(c.id).update({'quantity': increment(1)})
   .then(res => {
     this.toast.showToast(TOAST_STATE.success, "Produit ajouté avec succès !");

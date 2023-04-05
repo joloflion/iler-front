@@ -4,4 +4,5 @@ export interface Cart {
   product: Product;
   quantity: 1;
   total?: 0;
+  userId?: string;
 }

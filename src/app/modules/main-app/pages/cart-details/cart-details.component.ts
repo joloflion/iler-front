@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cart } from 'src/app/shared/models/cart';
 import { CartService } from 'src/app/shared/services/cart.service';
 
@@ -7,12 +7,17 @@ import { CartService } from 'src/app/shared/services/cart.service';
   templateUrl: './cart-details.component.html',
   styleUrls: ['./cart-details.component.scss']
 })
-export class CartDetailsComponent {
+export class CartDetailsComponent implements OnInit{
 
   public carts: Cart[] = [];
 
   constructor(public cartService: CartService){
     document.body.scroll({top: 0})
+
+  }
+
+
+  ngOnInit(): void {
 
   }
 

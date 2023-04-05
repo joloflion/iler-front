@@ -11,6 +11,7 @@ export class ProductDetails2Component implements OnInit{
   selectedImage!: string ;
 
   ngOnInit(){
-    this.selectedImage = this.product.images[0]
+    this.selectedImage = this.product.images[0];
+
   }
 }

@@ -30,7 +30,8 @@ export class ProductCard2Component implements OnInit{
   add(prod: Product){
     let cart: Cart = {
       product: prod,
-      quantity: 1
+      quantity: 1,
+      userId: sessionStorage.getItem('iler-user')??""
     }
     this.cartService.add(cart);
   }

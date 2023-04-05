@@ -10,6 +10,7 @@ import { User } from '../models/user';
 import { LoaderService } from './loader.service';
 import { LoadingDialogService } from '../errors/loading/loading.service';
 import { ErrorDialogService } from '../errors/error-dialog.service';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -146,4 +147,6 @@ export class AuthService {
       this.router.navigate(['sign-in']);
     });
   }
+
+
 }
