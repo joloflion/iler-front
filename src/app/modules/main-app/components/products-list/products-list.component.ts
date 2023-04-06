@@ -10,12 +10,9 @@ import { ProductService } from 'src/app/shared/services/product.service';
 })
 export class ProductsListComponent implements OnInit{
 
-  productTitle: Title = {
-    name: "Produits de la saison",
-    desc: "Nos meilleurs produits de la saison",
-    type: "",
-    link: ""
-  }
+  @Input() category!: string;
+
+  productTitle!: Title ;
   products: Product[] = [];
 
   constructor(private productService: ProductService){
@@ -23,8 +20,26 @@ export class ProductsListComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(p => this.products = p)
-
+    this.productService.getProductsByCategorie(this.category).subscribe(p => this.products = p);
+    this.productTitle = this.category == 'alimentaire' ? {
+      name: "Produits de la saison",
+      desc: "Nos meilleurs produits de la saison",
+      type: "",
+      link: "",
+      bg: "#6cbe03"
+    }: this.category == 'semence' ? {
+      name: "Semences",
+      desc: "Nos meilleurs produits de la saison",
+      type: "",
+      link: "",
+      bg: "#FFA500"
+    }: {
+      name: "Engrais / Fertilisants / Pesticides",
+      desc: "Nos meilleurs produits de la saison",
+      type: "",
+      link: "",
+      bg: "#4c4c4c"
+    }
   }
 
 }

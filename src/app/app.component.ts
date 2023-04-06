@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import * as AOS from 'aos';
 import { LoadFixtureService } from './shared/services/load-fixture.service';
+import { v4 as uuidv4 } from 'uuid';
 
 import { getAnonymousUserId, getAnonymousUserIdWithSecret } from 'anonymous-user-id';
 const requestDetails = {
   domain: 'test.test',
   ip: '1.1.1.1',
-  userAgent: 'test/1.0',
+  userAgent: 'test/1.0'
 };
 
 const id1 = getAnonymousUserId('salt', requestDetails);
 const id2 = getAnonymousUserIdWithSecret('secret', requestDetails);
-
 
 
 @Component({
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     AOS.init();//AOS - 2
     //AOS.refresh();//refresh method is called on window resize and so on, as it doesn't require to build new store with AOS elements and should be as light as possible.
     if(sessionStorage.getItem('iler-user') == undefined){
-      sessionStorage.setItem("iler-user", id1);
+      sessionStorage.setItem("iler-user", uuidv4());
     }
 
   }

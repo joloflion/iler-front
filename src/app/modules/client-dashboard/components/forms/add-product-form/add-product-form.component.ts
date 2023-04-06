@@ -146,8 +146,103 @@ export class AddProductFormComponent {
   }
 ]
 
+   },
+   {
+    nomCategorie: "Semences",
+    produits: [
+      {    "nomProduit": "Tomate",    "variete": ["Coeur de boeuf", "Roma", "Cerise"]
+  },
+  {
+    "nomProduit": "Carotte",
+    "variete": ["Nantaise", "Danvers", "Touchon"]
+  },
+  {
+    "nomProduit": "Salade",
+    "variete": ["Laitue", "Mâche", "Roquette"]
+  },
+  {
+    "nomProduit": "Courgette",
+    "variete": ["Ronde de Nice", "Verte Maraîchère", "Jaune Gold Rush"]
+  },
+  {
+    "nomProduit": "Haricot",
+    "variete": ["Beurre", "Mangetout", "Nain"]
+  },
+  {
+    "nomProduit": "Poivron",
+    "variete": ["Ancho", "Piquillo", "Lamuyo"]
+  },
+  {
+    "nomProduit": "Aubergine",
+    "variete": ["Blanche", "Ronde de Valence", "Noire de Barbentane"]
+  },
+  {
+    "nomProduit": "Pois",
+    "variete": ["Petit Provençal", "Mangetout", "Nain"]
+  },
+  {
+    "nomProduit": "Radis",
+    "variete": ["Rond écarlate", "Noir Gros long d'Hiver", "Rose de Chine"]
+  },
+  {
+    "nomProduit": "Fraise",
+    "variete": ["Gariguette", "Ciflorette", "Mara des Bois"]
+  },
+  {
+    "nomProduit": "Arachide",
+    "variete": ["Fleur 11", "Sabou"]
+  },
+  {
+    nomProduit: "Oignon",
+    variete: ["Red creole", "Texas grano", "Sweet spanish", "Valencia", "Yellow granex"]
+  },
+]
+
+   },
+   {
+    nomCategorie: "Engrais / Fertilisant",
+    produits: [  {    "nomProduit": "Engrais organique",    "variete": ["Ortie", "Algues", "Guano"]
+  },
+  {
+    "nomProduit": "Engrais chimique",
+    "variete": ["NPK", "Urée", "Superphosphate"]
+  },
+  {
+    "nomProduit": "Fertilisant liquide",
+    "variete": ["BioGrow", "Fish-Mix", "Alg-A-Mic"]
+  },
+  {
+    "nomProduit": "Fertilisant granulé",
+    "variete": ["Osmocote", "Miracle-Gro", "Scotts Turf Builder"]
+  },
+  {
+    "nomProduit": "Engrais azoté",
+    "variete": ["Sulfate d'ammonium", "Nitrate d'ammonium", "Uréa"]
+  },
+  {
+    "nomProduit": "Fertilisant phosphaté",
+    "variete": ["Superphosphate triple", "Acide phosphorique", "Phosphate naturel"]
+  },
+  {
+    "nomProduit": "Engrais potassique",
+    "variete": ["Sulfate de potassium", "Chlorure de potassium", "Nématite"]
+  },
+  {
+    "nomProduit": "Fertilisant pour plantes d'intérieur",
+    "variete": ["Goutte-à-goutte", "Engrais à libération lente", "Fertilisant foliaire"]
+  },
+  {
+    "nomProduit": "Fertilisant pour plantes carnivores",
+    "variete": ["Engrais liquide pour plantes carnivores", "Mousse de sphaigne", "Tourbe blonde"]
+  },
+  {
+    "nomProduit": "Engrais bio pour légumes",
+    "variete": ["Compost", "Fumier", "Algues marines"]
+  }
+]
    }
   ]
+
 
 
    constructor(private fb: FormBuilder,

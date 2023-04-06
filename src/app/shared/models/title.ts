@@ -3,4 +3,5 @@ export interface Title {
     desc: string;
     type: string;
     link: string;
+    bg?: string;
 }

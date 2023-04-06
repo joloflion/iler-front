@@ -17,7 +17,8 @@ export class MaterialListComponent implements OnInit {
       name: "Matériéls",
       desc: "Louer du matériéls agricoles",
       type: "",
-      link: ""
+      link: "",
+      bg: "#ff3f40"
     };
 
     constructor(private materielService: MaterielService){

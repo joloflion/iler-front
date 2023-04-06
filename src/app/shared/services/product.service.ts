@@ -29,6 +29,18 @@ export class ProductService {
     );
    }
 
+   getProductsByCategorie(categorie: string): Observable<Product[]> {
+    return this.afs.collection(PRODUCT_REF, ref => ref.where('categorie', '==', categorie)).get().pipe(
+      map(querySnapshot => {
+        return querySnapshot.docs.map(doc => {
+          const item = doc.data() as Product;
+          item.id = doc.id;
+          return item;
+        });
+      })
+    );
+   }
+
    getProductsChange(){
    return this.afs.collection<Product>(PRODUCT_REF).snapshotChanges().pipe(
       map(changes => {

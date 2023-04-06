@@ -22,7 +22,7 @@ export class CartService {
   }
 
   getProductsChange(): Observable<Cart[]>{
-    return this.afb.collection<Cart>(CART_REF).snapshotChanges().pipe(
+    return this.afb.collection<Cart>(CART_REF, ref => ref.where('userId', '==', sessionStorage.getItem('iler-user'))).snapshotChanges().pipe(
        map(changes => {
          return changes.map(change => {
            const item = change.payload.doc.data() as Cart;
@@ -54,7 +54,7 @@ export class CartService {
     }))
   }
 
-public  increase(c: Cart){
+  increase(c: Cart){
   this.afb.collection(CART_REF).doc(c.id).update({'quantity': increment(1)})
   .then(res => {
     this.toast.showToast(TOAST_STATE.success, "Produit ajouté avec succès !");
